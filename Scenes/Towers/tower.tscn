@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1k767oe7iwhm"]
+[gd_scene load_steps=5 format=3 uid="uid://d1k767oe7iwhm"]
 
 [ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
 [ext_resource type="Script" uid="uid://c60ju7b0wc3y0" path="res://Scripts/Towers/tower.gd" id="1_uwg1x"]
 [ext_resource type="Texture2D" uid="uid://dgjr61kwuebg3" path="res://Graphics/Towers/TowerCores/tower_test.aseprite" id="2_d6h38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwg1x"]
+size = Vector2(28, 28)
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_uwg1x")
@@ -25,3 +28,11 @@ position = Vector2(14, 14)
 
 [node name="4" type="Node2D" parent="Placements"]
 position = Vector2(-14, 14)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_uwg1x")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

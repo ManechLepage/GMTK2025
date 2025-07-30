@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=7 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Texture2D" uid="uid://ch630lqefbfrk" path="res://Graphics/conveyor_belt.aseprite" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 
 [node name="Main" type="Node2D"]
+
+[node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
+script = ExtResource("1_kry3j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7u77a")
@@ -34,7 +38,7 @@ scale = Vector2(1.25, 1.25)
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(-6, -12)
+position = Vector2(-6, -10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
