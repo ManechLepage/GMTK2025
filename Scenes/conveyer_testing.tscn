@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://xeuda2jhcjha"]
+
+[ext_resource type="Texture2D" uid="uid://ch630lqefbfrk" path="res://Graphics/conveyor_belt.aseprite" id="1_hepda"]
+[ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_booo6"]
+
+[node name="Conveyer Testing" type="Node2D"]
+
+[node name="ConveyorBelt" type="Line2D" parent="."]
+texture_repeat = 2
+position = Vector2(5, -1)
+points = PackedVector2Array(-84, 49, -84, 16, 35, -84, 72, -82, 73, -41, -50, 49)
+closed = true
+texture = ExtResource("1_hepda")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("2_booo6")
