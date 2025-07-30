@@ -2,6 +2,19 @@ extends Line2D
 
 
 func _ready() -> void:
+	_update_conveyor()
+
+
+func _process(_delta) -> void:
+	var pin := $"../Pins/Sprite2D8"
+	pin.position = get_global_mouse_position()
+
+
+func _on_conveyor_updater_timeout() -> void:
+	_update_conveyor()
+
+
+func _update_conveyor() -> void:
 	var pins_parent := $"../Pins"
 	var pins_positions: Array[Vector2] = []
 	
