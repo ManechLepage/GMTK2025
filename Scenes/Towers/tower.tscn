@@ -11,3 +11,17 @@ script = ExtResource("1_uwg1x")
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_d6h38")
+
+[node name="Placements" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="Placements"]
+position = Vector2(-14, -14)
+
+[node name="2" type="Node2D" parent="Placements"]
+position = Vector2(14, -14)
+
+[node name="3" type="Node2D" parent="Placements"]
+position = Vector2(14, 14)
+
+[node name="4" type="Node2D" parent="Placements"]
+position = Vector2(-14, 14)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=6 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Texture2D" uid="uid://ch630lqefbfrk" path="res://Graphics/conveyor_belt.aseprite" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 
@@ -12,16 +14,27 @@ environment = SubResource("Environment_7u77a")
 
 [node name="ConveyorBelt" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(-17, -11, 59, -73, 81, 18, -14, 15)
+position = Vector2(5, -1)
+points = PackedVector2Array(-84, 49, -84, 16, 35, -84, 72, -82, 73, -41, -50, 49)
 closed = true
 texture = ExtResource("1_bo1nx")
 texture_mode = 1
 joint_mode = 2
+script = ExtResource("2_8gbba")
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource("3_jjvhh")]
+position = Vector2(-61, 30)
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource("3_jjvhh")]
+position = Vector2(55, -61)
+scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(0, -1)
+position = Vector2(-6, -12)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

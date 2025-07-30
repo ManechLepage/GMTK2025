@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmid7b5v2obbj"]
+
+[ext_resource type="Texture2D" uid="uid://diarodxnkkgph" path="res://Graphics/Obstacles/obstacle01.aseprite" id="1_15o2q"]
+
+[node name="Obstacle" type="Sprite2D"]
+texture = ExtResource("1_15o2q")
