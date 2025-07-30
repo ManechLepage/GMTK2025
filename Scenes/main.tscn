@@ -19,12 +19,17 @@ environment = SubResource("Environment_7u77a")
 [node name="ConveyorBelt" type="Line2D" parent="."]
 texture_repeat = 2
 position = Vector2(5, -1)
-points = PackedVector2Array(-84, 49, -84, 16, 35, -84, 72, -82, 73, -41, -50, 49)
 closed = true
 texture = ExtResource("1_bo1nx")
 texture_mode = 1
 joint_mode = 2
 script = ExtResource("2_8gbba")
+all_points = PackedVector2Array(-84, 49, -84, 16, 35, -84, 72, -82, 73, -41, -50, 49)
+
+[node name="Area2D" type="Area2D" parent="ConveyorBelt"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConveyorBelt/Area2D"]
+polygon = PackedVector2Array(-84, 49, -84, 16, 35, -84, 72, -82, 73, -41, -50, 49)
 
 [node name="Obstacles" type="Node2D" parent="."]
 
@@ -38,7 +43,7 @@ scale = Vector2(1.25, 1.25)
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(-6, -10)
+position = Vector2(11, -26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
