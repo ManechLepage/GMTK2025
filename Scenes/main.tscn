@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8eqjqsaps8ap"]
+
+[ext_resource type="TileSet" uid="uid://deu6xu08hxeyb" path="res://Resources/tile_set.tres" id="1_jjgbg"]
+
+[sub_resource type="Environment" id="Environment_7u77a"]
+
+[node name="Main" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7u77a")
+
+[node name="TileMap" type="Node2D" parent="."]
+scale = Vector2(1, 0.98377)
+
+[node name="BackgroundTiles" type="TileMapLayer" parent="TileMap"]
+tile_set = ExtResource("1_jjgbg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
