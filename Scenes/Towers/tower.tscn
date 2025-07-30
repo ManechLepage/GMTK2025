@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1k767oe7iwhm"]
+[gd_scene load_steps=4 format=3 uid="uid://d1k767oe7iwhm"]
 
 [ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
+[ext_resource type="Script" uid="uid://c60ju7b0wc3y0" path="res://Scripts/Towers/tower.gd" id="1_uwg1x"]
 [ext_resource type="Texture2D" uid="uid://dgjr61kwuebg3" path="res://Graphics/Towers/TowerCores/tower_test.aseprite" id="2_d6h38"]
 
 [node name="Tower" type="Node2D"]
+script = ExtResource("1_uwg1x")
 
 [node name="Cog" parent="." instance=ExtResource("1_nh6md")]
 

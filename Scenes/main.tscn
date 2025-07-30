@@ -21,6 +21,7 @@ joint_mode = 2
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
+position = Vector2(0, -1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
