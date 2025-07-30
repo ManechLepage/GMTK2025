@@ -22,7 +22,6 @@ joint_mode = 2
 script = ExtResource("2_booo6")
 
 [node name="Pins" type="Node2D" parent="."]
-position = Vector2(-25, -11)
 script = SubResource("GDScript_booo6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pins"]

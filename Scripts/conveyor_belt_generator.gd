@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	var pin := $"../Pins/Sprite2D8"
-	pin.position = get_global_mouse_position()
+	pin.global_position = get_global_mouse_position()
 
 
 func _on_conveyor_updater_timeout() -> void:
