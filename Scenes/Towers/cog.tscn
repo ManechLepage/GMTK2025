@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://n6jkd8kidghl"]
+
+[ext_resource type="Script" uid="uid://dwbm1buab5uww" path="res://Scripts/Towers/cog.gd" id="1_6i2nj"]
+[ext_resource type="Texture2D" uid="uid://b63ciabbeg86u" path="res://Graphics/Towers/Cogs/cog01.aseprite" id="1_teu6r"]
+[ext_resource type="Texture2D" uid="uid://b3sv1pqsvg3u1" path="res://Graphics/Towers/Cogs/cog02.aseprite" id="2_6i2nj"]
+[ext_resource type="Texture2D" uid="uid://c1rna00q7cpwh" path="res://Graphics/Towers/Cogs/cog03.aseprite" id="3_xpupe"]
+
+[node name="Cog" type="Node2D"]
+script = ExtResource("1_6i2nj")
+speed = 1.0
+
+[node name="Cog1" type="Sprite2D" parent="."]
+texture = ExtResource("1_teu6r")
+
+[node name="Cog2" type="Sprite2D" parent="."]
+texture = ExtResource("2_6i2nj")
+
+[node name="Cog3" type="Sprite2D" parent="."]
+texture = ExtResource("3_xpupe")

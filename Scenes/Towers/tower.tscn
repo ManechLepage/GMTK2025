@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1k767oe7iwhm"]
+
+[ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
+[ext_resource type="Texture2D" uid="uid://dgjr61kwuebg3" path="res://Graphics/Towers/TowerCores/tower_test.aseprite" id="2_d6h38"]
+
+[node name="Tower" type="Node2D"]
+
+[node name="Cog" parent="." instance=ExtResource("1_nh6md")]
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("2_d6h38")
