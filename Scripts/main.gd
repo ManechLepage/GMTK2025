@@ -1,0 +1,45 @@
+class_name Main
+extends Node2D
+
+@onready var resources: Control = %Resources
+
+var core: int = 0
+var gold: int = 0
+var copper: int = 0
+var steel: int = 0
+var wood: int = 0
+
+func add_core(value: int) -> void:
+	core += value
+	update_core()
+
+func add_gold(value: int) -> void:
+	gold += value
+	update_gold()
+
+func add_copper(value: int) -> void:
+	copper += value
+	update_copper()
+
+func add_steel(value: int) -> void:
+	steel += value
+	update_steel()
+
+func add_wood(value: int) -> void:
+	wood += value
+	update_wood()
+
+func update_core() -> void:
+	resources.get_child(0).text = str(core)
+
+func update_gold() -> void:
+	resources.get_child(1).text = str(gold)
+
+func update_copper() -> void:
+	resources.get_child(2).text = str(copper)
+
+func update_steel() -> void:
+	resources.get_child(3).text = str(steel)
+
+func update_wood() -> void:
+	resources.get_child(4).text = str(wood)

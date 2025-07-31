@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=20 format=3 uid="uid://8eqjqsaps8ap"]
 
+[ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
@@ -12,6 +13,10 @@
 [ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="10_fdnlq"]
 [ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="11_d1ilt"]
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]
+[ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="13_k12tt"]
+[ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="14_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="15_b3802"]
+[ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 
@@ -22,6 +27,7 @@ _data = {
 point_count = 7
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_h1bgf")
 
 [node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
 script = ExtResource("1_kry3j")
@@ -110,22 +116,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("12_6iyac")
 
-[node name="Resources" type="Control" parent="CanvasLayer/Control"]
+[node name="Resources" type="Control" parent="CanvasLayer/Control" groups=["Main"]]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -163.0
-offset_bottom = 230.0
+offset_left = -171.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = 239.0
 grow_horizontal = 0
 
 [node name="CoreLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = -1.0
 offset_top = 4.0
-offset_right = 159.0
+offset_right = 119.0
 offset_bottom = 40.0
 theme_override_font_sizes/font_size = 40
 text = "0"
@@ -134,9 +144,9 @@ vertical_alignment = 1
 
 [node name="GoldLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = -1.0
 offset_top = 37.0
-offset_right = 159.0
+offset_right = 119.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 40
 text = "0"
@@ -145,10 +155,10 @@ vertical_alignment = 1
 
 [node name="CopperLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 73.0
-offset_right = 159.0
-offset_bottom = 109.0
+offset_left = -25.0
+offset_top = 70.0
+offset_right = 119.0
+offset_bottom = 106.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 2
@@ -156,10 +166,10 @@ vertical_alignment = 1
 
 [node name="SteelLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 108.0
-offset_right = 159.0
-offset_bottom = 144.0
+offset_left = -1.0
+offset_top = 105.0
+offset_right = 119.0
+offset_bottom = 141.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 2
@@ -167,11 +177,43 @@ vertical_alignment = 1
 
 [node name="WoodLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 143.0
-offset_right = 159.0
-offset_bottom = 179.0
+offset_left = -6.0
+offset_top = 140.0
+offset_right = 119.0
+offset_bottom = 176.0
 theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="GoldTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 38.0
+offset_right = 162.0
+offset_bottom = 78.0
+texture = ExtResource("13_k12tt")
+
+[node name="CopperTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 71.0
+offset_right = 162.0
+offset_bottom = 111.0
+texture = ExtResource("14_h1bgf")
+
+[node name="SteelTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 105.0
+offset_right = 162.0
+offset_bottom = 145.0
+texture = ExtResource("15_b3802")
+
+[node name="WoodTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 140.0
+offset_right = 162.0
+offset_bottom = 180.0
+texture = ExtResource("16_fevyy")
