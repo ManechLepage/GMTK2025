@@ -4,10 +4,16 @@ extends Node
 var selected_tower: Tower
 var hovered_tower: Tower
 
+var menu_select: Tower
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("LeftClick"):
 		if hovered_tower:
 			selected_tower = hovered_tower
+			if menu_select:
+				menu_select.unselect()
+			menu_select = hovered_tower
+			selected_tower.select()
 	else:
 		selected_tower = null
 

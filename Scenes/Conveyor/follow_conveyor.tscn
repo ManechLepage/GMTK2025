@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btvmslswlncgg"]
+
+[ext_resource type="Texture2D" uid="uid://bby13r7efcf2g" path="res://Graphics/ConveyorBelt/arrows.aseprite" id="1_l0u8a"]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.929134, 1)
+texture = ExtResource("1_l0u8a")

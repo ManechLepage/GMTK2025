@@ -14,9 +14,10 @@ size = Vector2(28, 28)
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_uwg1x")
 
-[node name="Collision2" type="Area2D" parent="."]
+[node name="AreaOfAttackCollision" type="Area2D" parent="."]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfAttackCollision"]
 shape = SubResource("CircleShape2D_plphn")
 debug_color = Color(0, 0.568627, 0.858824, 0)
 
@@ -50,7 +51,7 @@ position = Vector2(-14, 14)
 shape = SubResource("RectangleShape2D_uwg1x")
 debug_color = Color(0.923395, 0.202619, 0.480407, 0.0784314)
 
-[connection signal="mouse_entered" from="Collision2" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Collision2" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="AreaOfAttackCollision" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="AreaOfAttackCollision" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Collision" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Collision" to="." method="_on_area_2d_mouse_exited"]
