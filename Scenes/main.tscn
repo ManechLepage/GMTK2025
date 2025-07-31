@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://8eqjqsaps8ap"]
 
-[ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
