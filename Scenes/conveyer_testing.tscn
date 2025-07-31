@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhi8ba444fw0u"]
 
 [ext_resource type="Texture2D" uid="uid://ch630lqefbfrk" path="res://Graphics/conveyor_belt.aseprite" id="1_hepda"]
-[ext_resource type="Script" path="res://Scripts/conveyor_belt_generator.gd" id="2_booo6"]
+[ext_resource type="Script" uid="uid://b51xbrepsqc8r" path="res://Scripts/conveyor_belt_generator.gd" id="2_booo6"]
 [ext_resource type="Texture2D" uid="uid://cyfx3et47rdiy" path="res://Graphics/Debugging/Pin.aseprite" id="2_hepda"]
 
 [sub_resource type="GDScript" id="GDScript_booo6"]
