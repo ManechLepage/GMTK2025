@@ -26,7 +26,6 @@ environment = SubResource("Environment_7u77a")
 [node name="ConveyorBelt" type="Line2D" parent="."]
 texture_repeat = 2
 position = Vector2(5, -1.00001)
-scale = Vector2(1, 1)
 points = PackedVector2Array(-85, 18, 30, -82, 74, -82, 74, -42, -52, 50, -85, 50)
 closed = true
 texture = ExtResource("2_21xkr")
@@ -36,7 +35,6 @@ all_points = Array[Vector2]([Vector2(-85, 18), Vector2(30, -82), Vector2(74, -82
 
 [node name="Path2D" type="Path2D" parent="ConveyorBelt"]
 position = Vector2(-3.8147e-06, 7.62939e-06)
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_kry3j")
 script = ExtResource("4_21xkr")
 
