@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=6 format=3 uid="uid://bgxhvtv1i180h"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_querw"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="2_8kxym"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="2_cfbiy"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="3_8kxym"]
+[ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="5_cfbiy"]
+
+[resource]
+script = ExtResource("3_8kxym")
+name = "Box"
+texture = ExtResource("5_cfbiy")
+drop = Dictionary[ExtResource("1_querw"), Vector2i]({
+ExtResource("2_8kxym"): Vector2i(2, 4),
+ExtResource("2_cfbiy"): Vector2i(0, 1)
+})
+health = 3
+metadata/_custom_type_script = "uid://cjcywhuonibh0"

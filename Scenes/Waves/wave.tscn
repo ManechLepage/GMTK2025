@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpl0mh056ebqp"]
+
+[ext_resource type="Script" uid="uid://cpmfqispd7jc" path="res://Scripts/Pieces/Waves/wave.gd" id="1_tf781"]
+
+[node name="Wave" type="Node"]
+script = ExtResource("1_tf781")

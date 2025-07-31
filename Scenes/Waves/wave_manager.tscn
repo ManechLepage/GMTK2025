@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxmk7tabins44"]
+
+[ext_resource type="Script" uid="uid://cediaya3dkpks" path="res://Scripts/Pieces/Waves/wave_manager.gd" id="1_24b6x"]
+
+[node name="WaveManager" type="Node"]
+script = ExtResource("1_24b6x")

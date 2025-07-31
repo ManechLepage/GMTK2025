@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rk2l4omm2lsw"]
+
+[ext_resource type="Script" uid="uid://7dcnrsvd38ty" path="res://Scripts/Pieces/piece_display.gd" id="1_kwv0i"]
+
+[node name="Piece" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_kwv0i")
+
+[node name="Texture" type="Sprite2D" parent="."]

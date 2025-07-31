@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dseik1ylmutl5"]
+
+[ext_resource type="Script" uid="uid://be0mcwhm0uxaa" path="res://Scripts/Pieces/Waves/wave_group.gd" id="1_xhtdj"]
+
+[node name="WaveGroup" type="Node"]
+script = ExtResource("1_xhtdj")

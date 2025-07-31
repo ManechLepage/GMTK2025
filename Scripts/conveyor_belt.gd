@@ -4,7 +4,11 @@ extends Line2D
 @onready var towers: Node2D = $"../Towers"
 
 @export var all_points: Array[Vector2]
-@onready var path_2d: Path2D = $Path2D
+@export var speed: float = 50.0
+
+@onready var arrows: Path2D = $Arrows
+@onready var pieces: Path2D = $Pieces
+
 
 func _ready() -> void:
 	pass
@@ -21,9 +25,11 @@ func _process(delta: float) -> void:
 
 func update_points() -> void:
 	points = _find_polygon(get_all_points())
-	path_2d.curve.clear_points()
+	pieces.curve.clear_points()
+	arrows.curve.clear_points()
 	for point in points:
-		path_2d.curve.add_point(point)
+		pieces.curve.add_point(point)
+		arrows.curve.add_point(point)
 
 func _find_polygon(points: Array[Vector2]) -> Array[Vector2]:
 	

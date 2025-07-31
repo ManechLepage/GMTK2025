@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=14 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
+[ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
+[ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="10_fdnlq"]
+[ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="11_d1ilt"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 
@@ -23,20 +28,25 @@ script = ExtResource("1_kry3j")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7u77a")
 
-[node name="ConveyorBelt" type="Line2D" parent="."]
+[node name="ConveyorBelt" type="Line2D" parent="." groups=["ConveyorBelt"]]
 texture_repeat = 2
 position = Vector2(5, -1.00001)
-scale = Vector2(1, 1)
 points = PackedVector2Array(-85, 18, 30, -82, 74, -82, 74, -42, -52, 50, -85, 50)
 closed = true
+width = 15.0
 texture = ExtResource("2_21xkr")
 texture_mode = 1
 script = ExtResource("2_8gbba")
 all_points = Array[Vector2]([Vector2(-85, 18), Vector2(30, -82), Vector2(74, -82), Vector2(74, -42), Vector2(-52, 50), Vector2(-85, 50)])
 
-[node name="Path2D" type="Path2D" parent="ConveyorBelt"]
+[node name="Arrows" type="Path2D" parent="ConveyorBelt"]
+visible = false
 position = Vector2(-3.8147e-06, 7.62939e-06)
-scale = Vector2(1, 1)
+curve = SubResource("Curve2D_kry3j")
+script = ExtResource("4_21xkr")
+
+[node name="Pieces" type="Path2D" parent="ConveyorBelt"]
+position = Vector2(-3.8147e-06, 7.62939e-06)
 curve = SubResource("Curve2D_kry3j")
 script = ExtResource("4_21xkr")
 
@@ -52,10 +62,32 @@ scale = Vector2(1.25, 1.25)
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(11, -26)
+position = Vector2(14, -22)
+
+[node name="Tower3" parent="Towers" instance=ExtResource("1_jjgbg")]
+position = Vector2(14, -22)
+
+[node name="Tower4" parent="Towers" instance=ExtResource("1_jjgbg")]
+position = Vector2(14, -22)
 
 [node name="Tower2" parent="Towers" instance=ExtResource("1_jjgbg")]
 position = Vector2(-23, -3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="WaveManager" parent="." instance=ExtResource("7_hptm8")]
+
+[node name="Wave1" parent="WaveManager" instance=ExtResource("8_d1ilt")]
+
+[node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
+delay = 4.0
+piece = ExtResource("10_fdnlq")
+quantity = 3
+repetition_delay = 2.0
+
+[node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
+delay = 1.0
+piece = ExtResource("11_d1ilt")
+quantity = 2
+repetition_delay = 1.0
