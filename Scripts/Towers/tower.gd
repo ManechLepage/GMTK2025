@@ -21,4 +21,5 @@ func _on_area_2d_mouse_exited() -> void:
 	Game.get_input_handler().hovered_tower = null
 
 func update_stats() -> void:
-	area_of_attack.scale = attack_radius
+	area_of_attack.scale.x = attack_radius
+	area_of_attack.scale.y = attack_radius
