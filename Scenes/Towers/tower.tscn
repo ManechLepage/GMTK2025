@@ -51,6 +51,8 @@ position = Vector2(-14, 14)
 shape = SubResource("RectangleShape2D_uwg1x")
 debug_color = Color(0.923395, 0.202619, 0.480407, 0.0784314)
 
+[node name="AttackManager" type="Node" parent="."]
+
 [connection signal="mouse_entered" from="AreaOfAttackCollision" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="AreaOfAttackCollision" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Collision" to="." method="_on_area_2d_mouse_entered"]

@@ -3,6 +3,11 @@ extends Node
 
 var difficulty_time_multiplier: float = 1.0
 
+enum Effects {
+	FREEZE,
+	BURN
+}
+
 func get_input_handler() -> SelectionHandler:
 	return get_tree().get_first_node_in_group("InputHandler")
 
