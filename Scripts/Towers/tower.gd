@@ -7,7 +7,7 @@ extends Node2D
 @onready var area_of_attack: Sprite2D = $AreaOfAttack
 @onready var area_of_attack_collision: Area2D = $AreaOfAttackCollision
 
-var loop_interior: bool = true
+@export var loop_interior: bool = true
 
 var current_upgrades: Array[Upgrade]
 
