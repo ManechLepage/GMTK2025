@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=15 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
 [ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="10_fdnlq"]
 [ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="11_d1ilt"]
+[ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 
@@ -91,3 +92,78 @@ delay = 1.0
 piece = ExtResource("11_d1ilt")
 quantity = 2
 repetition_delay = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_6iyac")
+
+[node name="Resources" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_bottom = 230.0
+grow_horizontal = 0
+
+[node name="CoreLabel" type="Label" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 4.0
+offset_right = 159.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 37.0
+offset_right = 159.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CopperLabel" type="Label" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 73.0
+offset_right = 159.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SteelLabel" type="Label" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 108.0
+offset_right = 159.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WoodLabel" type="Label" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 143.0
+offset_right = 159.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
