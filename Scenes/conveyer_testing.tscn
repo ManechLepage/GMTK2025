@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhi8ba444fw0u"]
+[gd_scene load_steps=5 format=3 uid="uid://dhi8ba444fw0u"]
 
 [ext_resource type="Texture2D" uid="uid://ch630lqefbfrk" path="res://Graphics/conveyor_belt.aseprite" id="1_hepda"]
 [ext_resource type="Script" uid="uid://b51xbrepsqc8r" path="res://Scripts/conveyor_belt_generator.gd" id="2_booo6"]
 [ext_resource type="Texture2D" uid="uid://cyfx3et47rdiy" path="res://Graphics/Debugging/Pin.aseprite" id="2_hepda"]
+[ext_resource type="Texture2D" uid="uid://48w8v2s4epci" path="res://Graphics/Debugging/ExcludedPin.aseprite" id="4_jv3wa"]
 
 [node name="Conveyer Testing" type="Node2D"]
 
@@ -53,11 +54,11 @@ texture = ExtResource("2_hepda")
 
 [node name="Sprite2D" type="Sprite2D" parent="ExcludedPins"]
 position = Vector2(30, -46)
-texture = ExtResource("2_hepda")
+texture = ExtResource("4_jv3wa")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ExcludedPins"]
 position = Vector2(62, 43)
-texture = ExtResource("2_hepda")
+texture = ExtResource("4_jv3wa")
 
 [node name="ConveyorUpdater" type="Timer" parent="."]
 wait_time = 0.025
