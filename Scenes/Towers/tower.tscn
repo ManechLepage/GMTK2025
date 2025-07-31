@@ -51,7 +51,7 @@ position = Vector2(-14, 14)
 shape = SubResource("RectangleShape2D_uwg1x")
 debug_color = Color(0.923395, 0.202619, 0.480407, 0.0784314)
 
-[node name="AttackManager" type="Node" parent="."]
+[node name="AttackManager" type="Node2D" parent="."]
 script = ExtResource("5_gd21c")
 
 [connection signal="area_entered" from="AreaOfAttackCollision" to="." method="_on_area_of_attack_collision_area_entered"]

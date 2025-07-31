@@ -3,6 +3,10 @@ extends Node2D
 
 var attack: Attack
 
+func _process(delta: float) -> void:
+	position.x += cos(rotation) * delta * attack.bullet_speed
+	position.y += sin(rotation) * delta * attack.bullet_speed
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().is_in_group("Piece"):
 		destroy(area.get_parent() as PieceDisplay)
