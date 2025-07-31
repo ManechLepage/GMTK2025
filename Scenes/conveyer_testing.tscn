@@ -22,7 +22,7 @@ script = ExtResource("2_booo6")
 [node name="IncludedPins" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="IncludedPins"]
-position = Vector2(-1, 65)
+position = Vector2(2, 66)
 texture = ExtResource("2_hepda")
 
 [node name="Sprite2D2" type="Sprite2D" parent="IncludedPins"]
@@ -42,7 +42,7 @@ position = Vector2(133, -98)
 texture = ExtResource("2_hepda")
 
 [node name="Sprite2D6" type="Sprite2D" parent="IncludedPins"]
-position = Vector2(153, -10)
+position = Vector2(86, -19)
 texture = ExtResource("2_hepda")
 
 [node name="Sprite2D7" type="Sprite2D" parent="IncludedPins"]
@@ -50,7 +50,7 @@ position = Vector2(92, 120)
 texture = ExtResource("2_hepda")
 
 [node name="Sprite2D8" type="Sprite2D" parent="IncludedPins"]
-position = Vector2(87, 41)
+position = Vector2(139, 64)
 texture = ExtResource("2_hepda")
 
 [node name="ExcludedPins" type="Node2D" parent="."]
@@ -60,7 +60,7 @@ position = Vector2(30, -46)
 texture = ExtResource("2_hepda")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ExcludedPins"]
-position = Vector2(61, 66)
+position = Vector2(62, 43)
 texture = ExtResource("2_hepda")
 
 [node name="ConveyorUpdater" type="Timer" parent="."]
