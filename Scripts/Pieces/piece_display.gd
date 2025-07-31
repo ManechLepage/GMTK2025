@@ -15,9 +15,11 @@ func deal_damage(value: float, effects: Array[Game.Effects]) -> void:
 	piece.health -= value
 	health_bar.value = piece.health
 	
-	if piece.health < 0:
+	if piece.health <= 0:
 		on_death()
 
 func on_death() -> void:
 	var items: Array[Item] = piece.get_items_on_death()
+	for item in items:
+		Game.add_item(item)
 	queue_free()

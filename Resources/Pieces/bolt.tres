@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="4_mhnxs"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_en4re")
 name = "Bolt"
 texture = ExtResource("4_mhnxs")

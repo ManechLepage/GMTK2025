@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 func create_piece(piece: Piece) -> void:
 	var piece_display: PieceDisplay = PIECE.instantiate()
 	add_child(piece_display)
-	piece_display.load_piece(piece)
+	piece_display.load_piece(piece.duplicate(true))

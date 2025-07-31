@@ -1,5 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bakmxl2txwotw"]
+[gd_scene load_steps=3 format=3 uid="uid://bakmxl2txwotw"]
 
 [ext_resource type="PackedScene" uid="uid://b1enmqnpu0uko" path="res://Scenes/Towers/projectile.tscn" id="1_u04ay"]
 
+[sub_resource type="Gradient" id="Gradient_u04ay"]
+colors = PackedColorArray(0.577466, 0.0718708, 0, 1, 0.844364, 0.483019, 1.54018e-06, 1)
+
 [node name="Projectile" instance=ExtResource("1_u04ay")]
+self_modulate = Color(4, 4, 4, 1)
+points = PackedVector2Array(0, 0, 20.97, 0)
+width = 5.0
+default_color = Color(0.488332, 0.999463, 1, 1)
+gradient = SubResource("Gradient_u04ay")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="BeamParticles" parent="." index="0"]
+amount = 50
+lifetime = 0.5
+lifetime_randomness = 0.51
+emission_rect_extents = Vector2(40, 3)
+direction = Vector2(0, 1)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+color = Color(0.451517, 0.153014, 0, 1)

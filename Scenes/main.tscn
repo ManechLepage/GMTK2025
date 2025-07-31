@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=27 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
@@ -11,15 +11,24 @@
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/tower01.tscn" id="8_b3802"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
-[ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="10_fdnlq"]
-[ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="11_d1ilt"]
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="12_ee4r6"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="13_gt3je"]
 [ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="13_k12tt"]
+[ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="14_3pmx8"]
 [ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="14_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="15_b3802"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="15_u50mg"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
+[ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 0.5
+glow_bloom = 0.27
+glow_blend_mode = 1
 
 [sub_resource type="Curve2D" id="Curve2D_kry3j"]
 _data = {
@@ -27,7 +36,28 @@ _data = {
 }
 point_count = 7
 
-[node name="Main" type="Node2D"]
+[sub_resource type="Resource" id="Resource_ee4r6"]
+resource_local_to_scene = true
+script = ExtResource("13_gt3je")
+name = "Bolt"
+texture = ExtResource("14_3pmx8")
+drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({})
+health = 4
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_gt3je"]
+resource_local_to_scene = true
+script = ExtResource("13_gt3je")
+name = "Box"
+texture = ExtResource("17_1w6v2")
+drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
+ExtResource("15_u50mg"): Vector2i(2, 4),
+ExtResource("16_cbgmd"): Vector2i(0, 1)
+})
+health = 3
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_h1bgf")
 
 [node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
@@ -69,19 +99,16 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Tower" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(14, -22)
-
 [node name="Tower5" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(81.73, -3)
-loop_interior = false
-
-[node name="Tower6" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(-126, -38)
+position = Vector2(149, -45)
 loop_interior = false
 
 [node name="Tower2" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(-29, 5)
+position = Vector2(25, 86)
+
+[node name="Tower3" parent="Towers" instance=ExtResource("8_b3802")]
+position = Vector2(74, 86)
+loop_interior = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -92,13 +119,13 @@ zoom = Vector2(3, 3)
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = ExtResource("10_fdnlq")
+piece = SubResource("Resource_ee4r6")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = ExtResource("11_d1ilt")
+piece = SubResource("Resource_gt3je")
 quantity = 2
 repetition_delay = 1.0
 
@@ -114,7 +141,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("12_6iyac")
 
-[node name="Resources" type="Control" parent="CanvasLayer/Control" groups=["Main"]]
+[node name="Resources" type="Control" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1

@@ -9,6 +9,8 @@
 size = Vector2(30, 27)
 
 [node name="Piece" type="PathFollow2D" groups=["Piece"]]
+z_index = 2
+z_as_relative = false
 rotates = false
 script = ExtResource("1_kwv0i")
 

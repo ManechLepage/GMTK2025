@@ -1,15 +1,29 @@
 class_name Projectile
-extends Node2D
+extends Line2D
 
 var attack: Attack
+var piece: PieceDisplay
+
+@onready var beam_particles: CPUParticles2D = $BeamParticles
 
 func _process(delta: float) -> void:
-	position.x += cos(rotation) * delta * attack.bullet_speed
-	position.y += sin(rotation) * delta * attack.bullet_speed
+	points[1] = to_local(piece.global_position)
+	
+	beam_particles.rotation = points[0].angle_to_point(points[1])
+	
+	beam_particles.position.x = (points[0].x + points[1].x) / 2
+	beam_particles.position.y = (points[0].y + points[1].y) / 2
+	
+	beam_particles.emission_rect_extents.x = beam_particles.position.x * 2
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().is_in_group("Piece"):
-		destroy(area.get_parent() as PieceDisplay)
+func _ready() -> void:
+	width = 0.0
+	
+	var tween = create_tween()
+	tween.tween_property(self, "width", 5.0, 1 / (attack.attack_speed * 3))
+	
+	await tween.finished
+	destroy(piece)
 
 func destroy(piece: PieceDisplay) -> void:
 	piece.deal_damage(attack.damage, attack.effects)
