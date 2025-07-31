@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b434ba74uq75h"]
+
+[ext_resource type="FontFile" uid="uid://0xjxaoc3y1lw" path="res://Graphics/upheavtt.ttf" id="1_1d0bg"]
+
+[resource]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_1d0bg")
