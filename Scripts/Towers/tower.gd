@@ -11,6 +11,8 @@ extends Node2D
 
 var current_upgrades: Array[Upgrade]
 
+var pieces_in_range: Array[PieceDisplay]
+
 func _ready() -> void:
 	update_stats()
 	Game.add_tower.emit(self)
@@ -32,3 +34,10 @@ func select() -> void:
 
 func unselect() -> void:
 	area_of_attack.visible = false
+
+func _on_area_of_attack_collision_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("Piece"):
+		pieces_in_range.append(area.get_parent())
+
+func _on_area_of_attack_collision_area_exited(area: Area2D) -> void:
+	pieces_in_range.erase(area.get_parent())
