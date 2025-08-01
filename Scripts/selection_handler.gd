@@ -36,13 +36,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
 		did_move_mouse = false
 		if hovered_tower:
+			if menu_select != null and hovered_tower != menu_select:
+				menu_select.unselect()
 			selected_tower = hovered_tower
-			if menu_select == hovered_tower:
-				menu_select.unselect()
-				menu_select = null
-				return
-			if menu_select:
-				menu_select.unselect()
+			#if menu_select == hovered_tower:
+				#menu_select.unselect()
+				#menu_select = null
+				#return
+			#if menu_select:
+				#menu_select.unselect()
 			menu_select = hovered_tower
 			selected_tower.select()
 			show_radius_tower = selected_tower
