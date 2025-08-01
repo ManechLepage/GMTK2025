@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
+[ext_resource type="Script" uid="uid://tyi5c7jbrg63" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
@@ -60,6 +61,9 @@ metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_h1bgf")
+
+[node name="ShopHandler" type="Node2D" parent="."]
+script = ExtResource("2_gt3je")
 
 [node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
 script = ExtResource("1_kry3j")

@@ -9,6 +9,7 @@ extends Node2D
 @onready var attack_manager: AttackManager = $AttackManager
 
 @export var loop_interior: bool = true
+@export var placed: bool = true
 
 var current_upgrades: Array[Upgrade]
 
