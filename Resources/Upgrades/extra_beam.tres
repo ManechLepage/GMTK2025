@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://cg0503vlyrk71"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_750e5"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="2_354ee"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="2_y3ly8"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="4_xfsoo"]
+
+[resource]
+script = ExtResource("2_y3ly8")
+cost = Dictionary[ExtResource("1_750e5"), int]({
+ExtResource("2_354ee"): 1,
+ExtResource("4_xfsoo"): 5
+})
+description = "+1 Beam to normal attack"
+name = "Extra beam"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

@@ -29,7 +29,6 @@ func has(item: Item, value: int) -> bool:
 	elif item.name == "Gold":
 		return value <= gold
 	elif item.name == "Copper":
-		print(value, copper)
 		return value <= copper
 	elif item.name == "Steel":
 		return value <= steel

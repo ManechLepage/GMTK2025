@@ -6,12 +6,12 @@ extends Node2D
 @onready var area_of_attack: Sprite2D = $AreaOfAttack
 @onready var area_of_attack_collision: Area2D = $AreaOfAttackCollision
 @onready var attack_manager: AttackManager = $AttackManager
+@onready var upgrade_manager: UpgradeManager = $UpgradeManager
 
 @export var loop_interior: bool = true
 @export var placed: bool = true
 
 var current_upgrades: Array[Upgrade]
-
 var current_shop: Array[Upgrade]
 
 @export var upgrade_pool: Array[Upgrade]
@@ -55,3 +55,6 @@ func load_new_shop() -> void:
 			var upgrade: Upgrade = temp_upgrade_pool.pick_random()
 			temp_upgrade_pool.erase(upgrade)
 			current_shop.append(upgrade)
+
+func apply_upgrade(upgrade: Upgrade) -> void:
+	upgrade_manager.apply_upgrade(upgrade)

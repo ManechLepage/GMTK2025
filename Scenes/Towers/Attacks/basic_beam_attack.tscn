@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtw1blaln2iy0"]
+
+[ext_resource type="PackedScene" uid="uid://7t06ms6wybc4" path="res://Scenes/Towers/Attacks/attack.tscn" id="1_2qu33"]
+[ext_resource type="PackedScene" uid="uid://bakmxl2txwotw" path="res://Scenes/Towers/Projectiles/beam.tscn" id="2_1ojj3"]
+
+[node name="BasicBeamAttack" instance=ExtResource("1_2qu33")]
+projectile_scene = ExtResource("2_1ojj3")
+damage = 1.0

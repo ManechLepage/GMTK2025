@@ -71,8 +71,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		wave_manager.play_next_wave()
 	
 	if Input.is_action_just_pressed("Escape"):
-		get_tree().paused = false
-		tower_menu.hide_menu()
+		if menu_select:
+			get_tree().paused = false
+			tower_menu.hide_menu()
 
 func _select_tower(tower) -> void:
 	selected_tower = tower

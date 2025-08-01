@@ -11,7 +11,7 @@
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
 [ext_resource type="Shader" uid="uid://bibmcns78lo7j" path="res://Scripts/Shaders/blur.gdshader" id="5_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
-[ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/tower01.tscn" id="8_b3802"]
+[ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/laser_bot.tscn" id="8_b3802"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]

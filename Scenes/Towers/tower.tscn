@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1k767oe7iwhm"]
+[gd_scene load_steps=16 format=3 uid="uid://d1k767oe7iwhm"]
 
 [ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
 [ext_resource type="Script" uid="uid://c60ju7b0wc3y0" path="res://Scripts/Towers/tower.gd" id="1_uwg1x"]
 [ext_resource type="Texture2D" uid="uid://dgjr61kwuebg3" path="res://Graphics/Towers/TowerCores/tower_test.aseprite" id="2_d6h38"]
 [ext_resource type="Texture2D" uid="uid://oc8dseb8ykwr" path="res://Graphics/radius.aseprite" id="2_plphn"]
 [ext_resource type="Script" uid="uid://b47tcxaow82i" path="res://Scripts/Towers/attack_manager.gd" id="5_gd21c"]
+[ext_resource type="Script" uid="uid://bs4infhabd4nr" path="res://Scripts/Towers/Upgrades/upgrade_manager.gd" id="6_qv61g"]
+[ext_resource type="Script" uid="uid://cjknsanyiri5i" path="res://Scripts/Towers/Upgrades/Functional Upgrades/attack_speed.gd" id="7_xiwfb"]
+[ext_resource type="Resource" uid="uid://b5agm42c21d85" path="res://Resources/Upgrades/attack_speed.tres" id="8_58dwc"]
+[ext_resource type="Script" uid="uid://b7ngebj1wb1ei" path="res://Scripts/Towers/Upgrades/Functional Upgrades/damage.gd" id="9_6oj4v"]
+[ext_resource type="Resource" uid="uid://dn2c4s7hc5cpl" path="res://Resources/Upgrades/damage.tres" id="10_4ebrd"]
+[ext_resource type="Script" uid="uid://cr72utkx20a4o" path="res://Scripts/Towers/Upgrades/Functional Upgrades/extra_beam.gd" id="11_a541n"]
+[ext_resource type="Resource" uid="uid://cg0503vlyrk71" path="res://Resources/Upgrades/extra_beam.tres" id="12_8e02y"]
+[ext_resource type="PackedScene" uid="uid://dtw1blaln2iy0" path="res://Scenes/Towers/Attacks/basic_beam_attack.tscn" id="12_12u6a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plphn"]
 radius = 64.0312
@@ -54,6 +62,22 @@ debug_color = Color(0.923395, 0.202619, 0.480407, 0.0784314)
 
 [node name="AttackManager" type="Node2D" parent="."]
 script = ExtResource("5_gd21c")
+
+[node name="UpgradeManager" type="Node" parent="."]
+script = ExtResource("6_qv61g")
+
+[node name="AttackSpeed" type="Node" parent="UpgradeManager"]
+script = ExtResource("7_xiwfb")
+upgrade = ExtResource("8_58dwc")
+
+[node name="Damage" type="Node" parent="UpgradeManager"]
+script = ExtResource("9_6oj4v")
+upgrade = ExtResource("10_4ebrd")
+
+[node name="ExtraBeam" type="Node" parent="UpgradeManager"]
+script = ExtResource("11_a541n")
+beam_attack = ExtResource("12_12u6a")
+upgrade = ExtResource("12_8e02y")
 
 [connection signal="area_entered" from="AreaOfAttackCollision" to="." method="_on_area_of_attack_collision_area_entered"]
 [connection signal="area_exited" from="AreaOfAttackCollision" to="." method="_on_area_of_attack_collision_area_exited"]

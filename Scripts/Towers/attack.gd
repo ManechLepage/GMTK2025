@@ -11,13 +11,14 @@ extends Node2D
 @export var effects: Array[Game.Effects]
 
 var parent: AttackManager
+@export var target_index: int = 0
 
 func _ready() -> void:
-	update_attack_speed()
 	parent = get_parent()
+	update_attack_speed()
 
 func update_attack_speed() -> void:
-	timer.wait_time = 1.0 / attack_speed
+	timer.wait_time = 1.0 / (attack_speed * parent.attack_speed_multiplier)
 
 func load_new_projectile(target_piece: PieceDisplay) -> void:
 	var projectile: Projectile = projectile_scene.instantiate()
@@ -26,8 +27,7 @@ func load_new_projectile(target_piece: PieceDisplay) -> void:
 	projectile.piece = target_piece
 	
 	add_child(projectile)
-	
 
 func _on_timer_timeout() -> void:
-	if parent.pieces_in_range.size() > 0:
-		load_new_projectile(parent.pieces_in_range[0])
+	if parent.pieces_in_range.size() > target_index:
+		load_new_projectile(parent.pieces_in_range[target_index])

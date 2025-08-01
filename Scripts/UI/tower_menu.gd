@@ -59,6 +59,9 @@ func hide_description() -> void:
 
 func choose_upgrade(upgrade: UpgradeDisplay) -> void:
 	current_tower.current_upgrades.append(upgrade.upgrade)
+	current_tower.update_stats()
+	current_tower.apply_upgrade(upgrade.upgrade)
+	
 	display_tower_upgrades()
 	
 	if not upgrade.upgrade.stays_in_pool:

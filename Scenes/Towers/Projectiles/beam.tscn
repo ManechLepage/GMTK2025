@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bakmxl2txwotw"]
 
-[ext_resource type="PackedScene" uid="uid://cscqvh207v54t" path="res://Scenes/Towers/projectile.tscn" id="1_u04ay"]
+[ext_resource type="PackedScene" uid="uid://cscqvh207v54t" path="res://Scenes/Towers/projectile.tscn" id="1_670g0"]
 
 [sub_resource type="Gradient" id="Gradient_u04ay"]
 colors = PackedColorArray(0.577466, 0.0718708, 0, 1, 0.844364, 0.483019, 1.54018e-06, 1)
 
-[node name="Projectile" instance=ExtResource("1_u04ay")]
+[node name="Projectile" instance=ExtResource("1_670g0")]
 self_modulate = Color(4, 4, 4, 1)
 points = PackedVector2Array(0, 0, 20.97, 0)
 width = 5.0
