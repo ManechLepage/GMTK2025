@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=43 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -27,6 +27,13 @@
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
 [ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
+[ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="23_neg2b"]
+[ext_resource type="Texture2D" uid="uid://80flbgmsbuan" path="res://Graphics/UI/Buttons/WaveStart/normal.aseprite" id="28_ueoa1"]
+[ext_resource type="Texture2D" uid="uid://ckvintgpgiipk" path="res://Graphics/UI/Buttons/WaveStart/pressed.aseprite" id="29_7k868"]
+[ext_resource type="Texture2D" uid="uid://g1pjnd45babd" path="res://Graphics/UI/Buttons/WaveStart/hovered.aseprite" id="30_hpc6h"]
+[ext_resource type="Texture2D" uid="uid://dxdaccf2ghqou" path="res://Graphics/UI/Buttons/WavePause/normal.aseprite" id="31_e08e2"]
+[ext_resource type="Texture2D" uid="uid://7j22tgt2sntu" path="res://Graphics/UI/Buttons/WavePause/pressed.aseprite" id="32_neg2b"]
+[ext_resource type="Texture2D" uid="uid://cde7sm7bpvt45" path="res://Graphics/UI/Buttons/WavePause/hovered.aseprite" id="33_r33sp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u50mg"]
 shader = ExtResource("19_u50mg")
@@ -303,6 +310,14 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="CoreTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 6.0
+offset_right = 162.0
+offset_bottom = 46.0
+texture = ExtResource("23_neg2b")
+
 [node name="GoldTexture" type="TextureRect" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
 offset_left = 122.0
@@ -342,3 +357,45 @@ offset_top = 381.0
 offset_bottom = 664.0
 hidden_pos = Vector2(395, 677)
 shown_pos = Vector2(395, 42)
+
+[node name="WaveButtonStart" type="TextureButton" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -92.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("28_ueoa1")
+texture_pressed = ExtResource("29_7k868")
+texture_hover = ExtResource("30_hpc6h")
+stretch_mode = 0
+
+[node name="WaveButtonPause" type="TextureButton" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -92.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("31_e08e2")
+texture_pressed = ExtResource("32_neg2b")
+texture_hover = ExtResource("33_r33sp")
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/Control/WaveButtonStart" to="SelectionHandler" method="play_wave_request"]
+[connection signal="pressed" from="CanvasLayer/Control/WaveButtonPause" to="SelectionHandler" method="_on_wave_button_pause_pressed"]

@@ -4,6 +4,14 @@ extends Node2D
 @onready var resources: Control = %Resources
 @onready var tower_menu: TowerMenu = %TowerMenu
 
+enum GameState {
+	BUILDING,
+	ROUND,
+	PAUSED
+}
+
+var game_state: GameState
+
 var core: int = 3
 var gold: int = 3
 var copper: int = 5
@@ -16,12 +24,18 @@ func _ready() -> void:
 	update_gold()
 	update_steel()
 	update_wood()
+	
+	game_state = GameState.BUILDING
 
 func can_buy(cost: Dictionary[Item, int]) -> bool:
 	for item: Item in cost.keys():
 		if not has(item, cost[item]):
 			return false
 	return true
+
+func finish_wave() -> void:
+	game_state = GameState.BUILDING
+	add_core(1)
 
 func has(item: Item, value: int) -> bool:
 	if item.name == "Core":
