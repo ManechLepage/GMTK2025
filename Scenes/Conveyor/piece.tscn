@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://rk2l4omm2lsw"]
+[gd_scene load_steps=7 format=3 uid="uid://rk2l4omm2lsw"]
 
 [ext_resource type="Script" uid="uid://7dcnrsvd38ty" path="res://Scripts/Pieces/piece_display.gd" id="1_kwv0i"]
 [ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="2_sqr73"]
 [ext_resource type="Texture2D" uid="uid://c6388sxjb81lu" path="res://Graphics/UI/Health Bar/over.aseprite" id="3_6ycih"]
+[ext_resource type="Texture2D" uid="uid://btq5iuxkgqgsy" path="res://Graphics/UI/Health Bar/under.aseprite" id="3_lbv4f"]
 [ext_resource type="Texture2D" uid="uid://dracyhprxjjqt" path="res://Graphics/UI/Health Bar/progress.aseprite" id="4_lbv4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ycih"]
@@ -21,10 +22,11 @@ texture = ExtResource("2_sqr73")
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 z_index = 10
 z_as_relative = false
-offset_left = -12.0
-offset_top = -20.0
-offset_right = 13.0
-offset_bottom = -12.0
+offset_left = -9.0
+offset_top = -15.0
+offset_right = 28.0
+offset_bottom = -7.0
+scale = Vector2(0.47, 0.47)
 max_value = 10.0
 step = 0.1
 value = 10.0
@@ -33,9 +35,10 @@ stretch_margin_left = 4
 stretch_margin_top = 4
 stretch_margin_right = 4
 stretch_margin_bottom = 4
+texture_under = ExtResource("3_lbv4f")
 texture_over = ExtResource("3_6ycih")
 texture_progress = ExtResource("4_lbv4f")
-texture_progress_offset = Vector2(2, 0)
+texture_progress_offset = Vector2(1, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false

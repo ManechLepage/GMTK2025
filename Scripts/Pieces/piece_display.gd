@@ -14,6 +14,11 @@ func load_piece(_piece: Piece) -> void:
 	texture.texture = piece.texture
 	health_bar.max_value = piece.health
 	health_bar.value = piece.health
+	animate_piece()
+
+func animate_piece() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.3).from(Vector2(0.0, 0.0)).set_trans(Tween.TRANS_BACK)
 
 func deal_damage(value: float, effects: Array[Game.Effects] = []) -> void:
 	piece.health -= value

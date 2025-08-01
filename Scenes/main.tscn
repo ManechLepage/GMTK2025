@@ -76,7 +76,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
-[sub_resource type="Resource" id="Resource_aqgau"]
+[sub_resource type="Resource" id="Resource_536cc"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -87,7 +87,7 @@ ExtResource("16_cbgmd"): Vector2i(0, 2)
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_8cuat"]
+[sub_resource type="Resource" id="Resource_aqgau"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -227,13 +227,13 @@ process_mode = 1
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_aqgau")
+piece = SubResource("Resource_536cc")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_8cuat")
+piece = SubResource("Resource_aqgau")
 quantity = 2
 repetition_delay = 1.0
 
