@@ -7,6 +7,7 @@ extends Node2D
 @onready var area_of_attack_collision: Area2D = $AreaOfAttackCollision
 @onready var attack_manager: AttackManager = $AttackManager
 @onready var upgrade_manager: UpgradeManager = $UpgradeManager
+@onready var texture: Sprite2D = $Texture
 
 @export var loop_interior: bool = true
 @export var placed: bool = true
@@ -26,7 +27,8 @@ func _on_area_2d_mouse_entered() -> void:
 	Game.get_input_handler().hovered_tower = self
 
 func _on_area_2d_mouse_exited() -> void:
-	Game.get_input_handler().hovered_tower = null
+	if Game.get_input_handler().hovered_tower == self:
+		Game.get_input_handler().hovered_tower = null
 
 func update_stats() -> void:
 	area_of_attack.scale.x = attack_radius

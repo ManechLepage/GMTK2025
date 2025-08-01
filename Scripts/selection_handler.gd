@@ -44,24 +44,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if selected_tower != null and hovered_tower != selected_tower:
 				selected_tower.unselect()
 			
-			selected_tower = hovered_tower
-			selected_tower.select()
-			
-			tower_offset = hovered_tower.global_position - main.get_global_mouse_position()
-			
+			_select_tower(hovered_tower)
 			can_drag_tower = true
-
-		else:
-			if selected_tower != null:
-				selected_tower.unselect()
-				selected_tower = null
-			tower_offset = null
 	
 	if Input.is_action_just_released("LeftClick"):
-		if selected_tower:
-			selected_tower.unselect()
-			selected_tower = null
-		tower_offset
+		_unselect_tower()
+		tower_offset = null
+		can_drag_tower = false
 	
 	if Input.is_action_just_released("RightClick"):
 		if hovered_tower:
@@ -74,6 +63,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Escape"):
 		if is_in_menu:
 			exit_menu()
+
+func _select_tower(tower) -> void:
+	selected_tower = tower
+	tower_offset = hovered_tower.global_position - main.get_global_mouse_position()
+	selected_tower.select()
+
+func _unselect_tower() -> void:
+	if selected_tower:
+		selected_tower.unselect()
+	selected_tower = null
 
 func play_wave_request() -> void:
 	if main.game_state == main.GameState.BUILDING:
