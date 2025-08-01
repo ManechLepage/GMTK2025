@@ -1,8 +1,18 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b434ba74uq75h"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b434ba74uq75h"]
 
 [ext_resource type="FontFile" uid="uid://0xjxaoc3y1lw" path="res://Graphics/upheavtt.ttf" id="1_1d0bg"]
+[ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="1_3dhvu"]
 [ext_resource type="Texture2D" uid="uid://b75vyt18ks4uy" path="res://Graphics/UI/Panels/small_panel.aseprite" id="1_3ftuj"]
 [ext_resource type="Texture2D" uid="uid://d3gc5quux3wr2" path="res://Graphics/UI/Panels/big_panel.aseprite" id="2_4ryyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kijf5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cotv"]
+texture = ExtResource("1_3dhvu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dhvu"]
 texture = ExtResource("1_3ftuj")
@@ -19,7 +29,8 @@ texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [resource]
-Button/styles/focus = null
+Button/styles/focus = SubResource("StyleBoxEmpty_kijf5")
+Button/styles/hover = SubResource("StyleBoxTexture_5cotv")
 Button/styles/normal = SubResource("StyleBoxTexture_3dhvu")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_1d0bg")

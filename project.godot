@@ -49,6 +49,7 @@ InputHandler=""
 ConveyorBelt=""
 Piece=""
 Main=""
+TowerMenu=""
 
 [input]
 

@@ -17,6 +17,9 @@ func get_conveyor_belt() -> ConveyorBelt:
 func get_main() -> Main:
 	return get_tree().get_first_node_in_group("Main")
 
+func get_tower_menu() -> TowerMenu:
+	return get_tree().get_first_node_in_group("TowerMenu")
+
 signal add_tower(tower: Tower)
 
 func wait(time: float) -> void:
