@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=37 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
+[ext_resource type="Shader" uid="uid://bibmcns78lo7j" path="res://Scripts/Shaders/blur.gdshader" id="5_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/tower01.tscn" id="8_b3802"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
@@ -25,7 +26,7 @@
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
-[ext_resource type="Shader" path="res://Scenes/background.gdshader" id="19_u50mg"]
+[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u50mg"]
@@ -58,7 +59,13 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="Resource" id="Resource_1w6v2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ueoa1"]
+shader = ExtResource("5_ueoa1")
+shader_parameter/samples = 22
+shader_parameter/lod = 2
+shader_parameter/tint_color = Color(0, 0, 0, 0.119)
+
+[sub_resource type="Resource" id="Resource_ueoa1"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -67,7 +74,7 @@ drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({})
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_ueoa1"]
+[sub_resource type="Resource" id="Resource_6vcvc"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -92,6 +99,7 @@ shader_parameter/fine_grid_subdivisions = 1.0
 shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
 
 [node name="Main" type="Node2D" groups=["Main"]]
+process_mode = 1
 script = ExtResource("1_h1bgf")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -127,6 +135,7 @@ mouse_filter = 2
 script = ExtResource("2_gt3je")
 
 [node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
+process_mode = 3
 script = ExtResource("1_kry3j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -180,23 +189,42 @@ loop_interior = false
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
+[node name="Blur" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 15
+z_as_relative = false
+material = SubResource("ShaderMaterial_ueoa1")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="WaveManager" parent="." instance=ExtResource("7_hptm8")]
 
 [node name="Wave1" parent="WaveManager" instance=ExtResource("8_d1ilt")]
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_1w6v2")
+piece = SubResource("Resource_ueoa1")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_ueoa1")
+piece = SubResource("Resource_6vcvc")
 quantity = 2
 repetition_delay = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_cbgmd")
@@ -310,4 +338,9 @@ offset_bottom = 180.0
 texture = ExtResource("16_fevyy")
 
 [node name="TowerMenu" parent="CanvasLayer/Control" instance=ExtResource("23_gt3je")]
+unique_name_in_owner = true
 layout_mode = 1
+offset_top = 381.0
+offset_bottom = 664.0
+hidden_pos = Vector2(395, 677)
+shown_pos = Vector2(395, 42)

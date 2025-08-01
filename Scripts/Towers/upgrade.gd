@@ -3,3 +3,4 @@ extends Resource
 
 @export var cost: Dictionary[Item, int]
 @export_multiline var description: String
+@export var name: String
