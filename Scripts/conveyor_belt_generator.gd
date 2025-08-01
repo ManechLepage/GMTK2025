@@ -1,13 +1,15 @@
 extends Line2D
 
+var draggable_pins
 
 func _ready() -> void:
+	draggable_pins = $"../DraggablePins"
 	_update_conveyor()
 
 
 func _process(_delta) -> void:
-	var draggable_pins := $"../DraggablePins"
-	draggable_pins.global_position = get_global_mouse_position()
+	if Input.is_action_pressed("LeftClick"):
+		draggable_pins.global_position = get_global_mouse_position()
 
 
 func _on_conveyor_updater_timeout() -> void:
@@ -27,9 +29,9 @@ func _update_conveyor() -> void:
 
 	for pin in excluded_pin_parent.get_children():
 		excluded_pin_positions.append(pin.global_position)
-	
+
 	for pin in draggable_pin_parent.get_children():
-		included_pin_positions.append(pin.global_position)
+		excluded_pin_positions.append(pin.global_position)
 
 	var polygon = _find_polygon(included_pin_positions, excluded_pin_positions)
 	points = polygon
@@ -38,15 +40,15 @@ func _update_conveyor() -> void:
 func _find_polygon(included: Array[Vector2], excluded: Array[Vector2], max_iters=100) -> Array[Vector2]:
 	var hull := _find_hull_polygon(included)
 	var it := 0
-	
+
 	while it < max_iters:
 		var changed := false
-		
+
 		# First, exclude points strictly inside
 		var result: Array = _insert_worst(hull, excluded, true)
 		hull = result[0]
 		var inc = result[1]
-		
+
 		if inc != null:
 			changed = true
 			var new_excs: Array[Vector2] = []
@@ -54,18 +56,18 @@ func _find_polygon(included: Array[Vector2], excluded: Array[Vector2], max_iters
 				if p != inc and _point_in_polygon(p, hull):
 					new_excs.append(p)
 			excluded = new_excs
-		
+
 		# Next, include points strictly outside
 		result = _insert_worst(hull, included, false)
 		hull = result[0]
-		
+
 		var inc2 = result[1]
 		if inc2 != null:
 			changed = true
-		
+
 		if not changed:
 			break
-	
+
 	return hull
 
 
@@ -97,13 +99,13 @@ func _insert_worst(hull, points, inside=true) -> Array:
 	var hull_set := {}  # To avoid duplicates
 	for p in hull:
 		hull_set[p] = true
-	
+
 	var best_e
 	var best_i
 	var best_d
 	var midpoints
 	var L
-	
+
 	if inside:
 		var candidates: Array[Vector2] = []
 		for p in points:
@@ -115,11 +117,11 @@ func _insert_worst(hull, points, inside=true) -> Array:
 		for p in points:
 			if not hull_set.has(p) and not _point_in_polygon(p, hull):
 				candidates.append(p)
-		
+
 		best_e = null
 		best_i = -1
 		best_d = INF
-		
+
 		if candidates.size() > 0:
 			midpoints = []
 			L = hull.size()
@@ -128,7 +130,7 @@ func _insert_worst(hull, points, inside=true) -> Array:
 				var b = hull[(i + 1) % L]
 				var mid := Vector2((a.x + b.x) * 0.5, (a.y + b.y) * 0.5)
 				midpoints.append([mid.x, mid.y, i])
-			
+
 			for p in candidates:
 				for m in midpoints:
 					var mx = m[0]
@@ -139,23 +141,23 @@ func _insert_worst(hull, points, inside=true) -> Array:
 						best_d = d
 						best_e = p
 						best_i = i
-	
+
 	if best_e == null:
 		return [hull, null]
-	
+
 	if inside:
 		midpoints = []
 		L = hull.size()
-		
+
 		for i in range(L):
 				var a = hull[i]
 				var b = hull[(i + 1) % L]
 				var mid := Vector2((a.x + b.x) * 0.5, (a.y + b.y) * 0.5)
 				midpoints.append([i, mid])
-		
+
 		best_i = -1
 		best_d = INF
-		
+
 		for pair in midpoints:
 			var i = pair[0]
 			var m = pair[1]
@@ -163,13 +165,13 @@ func _insert_worst(hull, points, inside=true) -> Array:
 			if d < best_d:
 				best_d = d
 				best_i = i
-	
+
 	var new_hull: Array[Vector2] = []
 	for idx in range(hull.size()):
 		new_hull.append(hull[idx])
 		if idx == best_i:
 			new_hull.append(best_e)
-	
+
 	return [new_hull, best_e]
 
 
@@ -179,7 +181,7 @@ func _insert_closest(hull, points, inside=true) -> Array:
 	var hull_set := {}  # To avoid duplicates
 	for p in hull:
 		hull_set[p] = true
-	
+
 	var remaining := []
 	if inside:
 		for p in points:
@@ -189,19 +191,19 @@ func _insert_closest(hull, points, inside=true) -> Array:
 		for p in points:
 			if not hull_set.has(p) and not _point_in_polygon(p, hull):
 				remaining.append(p)
-	
+
 	if not remaining:
 		return [hull, false]
-	
+
 	var midpoints := []
 	var L = hull.size()
-	
+
 	for i in range(L):
 		var a = hull[i]
 		var b = hull[(i + 1) % L]
 		var mid := Vector2((a.x + b.x) * 0.5, (a.y + b.y) * 0.5)
 		midpoints.append([i, mid])
-	
+
 	# Find closest midpoint
 	var best_e = null
 	var best_i := -1
@@ -215,38 +217,38 @@ func _insert_closest(hull, points, inside=true) -> Array:
 				best_d = d
 				best_e = e
 				best_i = i
-	
+
 	var new_hull: Array[Vector2] = []
 	for idx in range(hull.size()):
 		new_hull.append(hull[idx])
 		if idx == best_i:
 			new_hull.append(best_e)
-	
+
 	return [new_hull, true]
 
 
 func _find_polygon2(included: Array[Vector2], excluded: Array[Vector2], max_iters=100) -> Array[Vector2]:
 	var hull := _find_hull_polygon(included)
 	var it := 0
-	
+
 	while it < max_iters:
 		var changed := false
-		
+
 		# First, exclude points strictly inside
 		var result: Array = _insert_closest(hull, excluded, true)
 		hull = result[0]
 		var inc = result[1]
 		changed = changed or inc
-		
+
 		# Next, include points strictly outside
 		result = _insert_closest(hull, included, false)
 		hull = result[0]
 		var inc2 = result[1]
 		changed = changed or inc2
-		
+
 		if not changed:
 			break
-	
+
 	return hull
 
 
