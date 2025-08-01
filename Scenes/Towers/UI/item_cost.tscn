@@ -6,6 +6,7 @@
 [node name="ItemCost" type="Control"]
 custom_minimum_size = Vector2(14, 10)
 layout_mode = 3
+anchors_preset = 0
 offset_right = 14.0
 offset_bottom = 10.0
 grow_horizontal = 2

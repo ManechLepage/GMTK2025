@@ -29,3 +29,6 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	Game.get_tower_menu().hide_description()
+
+func _on_pressed() -> void:
+	pass # Replace with function body.

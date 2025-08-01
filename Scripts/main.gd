@@ -10,6 +10,24 @@ var copper: int = 0
 var steel: int = 0
 var wood: int = 0
 
+func can_buy(cost: Dictionary[Item, int]) -> bool:
+	for item: Item in cost.keys():
+		if not has(item, cost[item]):
+			return false
+	return true
+
+func has(item: Item, value: int) -> bool:
+	if item.name == "Core":
+		return value <= core
+	elif item.name == "Gold":
+		return value <= gold
+	elif item.name == "Copper":
+		return value <= copper
+	elif item.name == "Steel":
+		return value <= steel
+	return value <= wood
+
+
 func add_core(value: int) -> void:
 	core += value
 	update_core()
