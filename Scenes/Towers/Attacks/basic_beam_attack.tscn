@@ -6,3 +6,4 @@
 [node name="BasicBeamAttack" instance=ExtResource("1_2qu33")]
 projectile_scene = ExtResource("2_1ojj3")
 damage = 1.0
+attack_id = 1

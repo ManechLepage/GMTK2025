@@ -11,7 +11,7 @@ script = ExtResource("2_en4re")
 name = "Bolt"
 texture = ExtResource("4_mhnxs")
 drop = Dictionary[ExtResource("1_sv2cm"), Vector2i]({
-ExtResource("2_tbtui"): Vector2i(1, 3)
+ExtResource("2_tbtui"): Vector2i(1, 2)
 })
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"

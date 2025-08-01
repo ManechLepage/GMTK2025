@@ -22,13 +22,15 @@ func show_menu(_tower: Tower) -> void:
 	position = hidden_pos
 	tween.tween_property(self, "position", shown_pos, 0.5).set_trans(Tween.TRANS_BACK)
 	await tween.finished
-	blur.visible = true
 	
-	for i in h_box_container.get_children():
-		i.clear_previous()
-	
-	load_upgrades()
-	display_tower_upgrades()
+	if Game.get_input_handler().is_in_menu:
+		blur.visible = true
+		
+		for i in h_box_container.get_children():
+			i.clear_previous()
+		
+		load_upgrades()
+		display_tower_upgrades()
 
 func load_upgrades() -> void:
 	for i in range(current_tower.current_shop.size()):

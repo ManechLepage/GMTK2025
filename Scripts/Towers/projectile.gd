@@ -26,7 +26,7 @@ func _ready() -> void:
 	await tween.finished
 	if piece:
 		destroy(piece)
+	queue_free()
 
 func destroy(piece: PieceDisplay) -> void:
 	piece.deal_damage(attack.damage * attack.parent.damage_multiplier, attack.effects)
-	queue_free()

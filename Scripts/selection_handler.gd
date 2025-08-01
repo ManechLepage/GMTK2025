@@ -10,6 +10,8 @@ var can_drag_tower: bool = false
 
 var menu_select: Tower
 
+var is_in_menu: bool
+
 @onready var tower_menu: TowerMenu = %TowerMenu
 
 @onready var main: Main = $".."
@@ -35,6 +37,8 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
+		if is_in_menu:
+			exit_menu()
 		did_move_mouse = false
 		if hovered_tower:
 			if selected_tower != null and hovered_tower != selected_tower:
@@ -60,6 +64,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_released("LeftClick"):
 		if not did_move_mouse and selected_tower != null:
+			is_in_menu = true
 			main.show_menu()
 		
 		did_move_mouse = false
@@ -71,9 +76,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		wave_manager.play_next_wave()
 	
 	if Input.is_action_just_pressed("Escape"):
-		if menu_select:
-			get_tree().paused = false
-			tower_menu.hide_menu()
+		if is_in_menu:
+			exit_menu()
+
+func exit_menu() -> void:
+	get_tree().paused = false
+	tower_menu.hide_menu()
+	is_in_menu = false
 
 func _select_tower(tower) -> void:
 	selected_tower = tower

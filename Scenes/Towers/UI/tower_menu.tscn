@@ -28,7 +28,6 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-mouse_filter = 1
 theme = ExtResource("1_xrv5m")
 script = ExtResource("2_33j12")
 
