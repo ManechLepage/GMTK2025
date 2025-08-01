@@ -6,6 +6,9 @@ extends Panel
 @export var hidden_pos: Vector2
 @export var shown_pos: Vector2
 
+@onready var description: Panel = $Description
+@onready var description_label: Label = $Description/Label
+
 func _ready() -> void:
 	position = hidden_pos
 
@@ -22,3 +25,10 @@ func hide_menu() -> void:
 	position = shown_pos
 	tween.tween_property(self, "position", hidden_pos, 0.5).set_trans(Tween.TRANS_BACK)
 	await tween.finished
+
+func show_description(upgrade: Upgrade) -> void:
+	description.visible = true
+	description_label.text = upgrade.description
+
+func hide_description() -> void:
+	description.visible = false
