@@ -1,7 +1,26 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b434ba74uq75h"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b434ba74uq75h"]
 
 [ext_resource type="FontFile" uid="uid://0xjxaoc3y1lw" path="res://Graphics/upheavtt.ttf" id="1_1d0bg"]
+[ext_resource type="Texture2D" uid="uid://b75vyt18ks4uy" path="res://Graphics/UI/Panels/small_panel.aseprite" id="1_3ftuj"]
+[ext_resource type="Texture2D" uid="uid://d3gc5quux3wr2" path="res://Graphics/UI/Panels/big_panel.aseprite" id="2_4ryyc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3dhvu"]
+texture = ExtResource("1_3ftuj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ftuj"]
+texture = ExtResource("2_4ryyc")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [resource]
+Button/styles/focus = null
+Button/styles/normal = SubResource("StyleBoxTexture_3dhvu")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_1d0bg")
+Panel/styles/panel = SubResource("StyleBoxTexture_3ftuj")

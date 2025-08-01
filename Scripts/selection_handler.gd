@@ -13,6 +13,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
 		if hovered_tower:
 			selected_tower = hovered_tower
+			if menu_select == hovered_tower:
+				menu_select.unselect()
+				menu_select = null
+				return
 			if menu_select:
 				menu_select.unselect()
 			menu_select = hovered_tower

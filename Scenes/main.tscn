@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=28 format=3 uid="uid://8eqjqsaps8ap"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_h1bgf"]
+[ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
+[ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 background_mode = 3
@@ -36,7 +37,7 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="Resource" id="Resource_ee4r6"]
+[sub_resource type="Resource" id="Resource_gt3je"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -45,7 +46,7 @@ drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({})
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_gt3je"]
+[sub_resource type="Resource" id="Resource_3pmx8"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -119,13 +120,13 @@ zoom = Vector2(3, 3)
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_ee4r6")
+piece = SubResource("Resource_gt3je")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_gt3je")
+piece = SubResource("Resource_3pmx8")
 quantity = 2
 repetition_delay = 1.0
 
@@ -152,6 +153,7 @@ offset_top = 9.0
 offset_right = -8.0
 offset_bottom = 239.0
 grow_horizontal = 0
+mouse_filter = 2
 
 [node name="CoreLabel" type="Label" parent="CanvasLayer/Control/Resources"]
 layout_mode = 0
@@ -239,3 +241,6 @@ offset_top = 140.0
 offset_right = 162.0
 offset_bottom = 180.0
 texture = ExtResource("16_fevyy")
+
+[node name="TowerMenu" parent="CanvasLayer/Control" instance=ExtResource("23_gt3je")]
+layout_mode = 1

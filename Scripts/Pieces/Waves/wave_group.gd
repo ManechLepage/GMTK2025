@@ -14,5 +14,4 @@ func start_wave_group() -> void:
 	await Game.wait(delay)
 
 func initiate_piece(piece: Piece) -> void:
-	print("Initiating ", piece.name, "...")
 	Game.get_conveyor_belt().pieces.create_piece(piece)
