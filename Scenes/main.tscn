@@ -1,13 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=35 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
-[ext_resource type="Script" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
+[ext_resource type="Script" uid="uid://tyi5c7jbrg63" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
+[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
+[ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/tower01.tscn" id="8_b3802"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
@@ -23,7 +25,25 @@
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
+[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scenes/background.gdshader" id="19_u50mg"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u50mg"]
+shader = ExtResource("19_u50mg")
+shader_parameter/scale = Vector2(0.07, 0.13)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/background_color = Color(0.299547, 0.299547, 0.299547, 1)
+shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
+shader_parameter/coarse_grid_color = Color(0.393085, 0.393086, 0.393085, 1)
+shader_parameter/coarse_grid_line_width = Vector2(0.05, 0.05)
+shader_parameter/fine_grid_color = Color(0.374139, 0.374139, 0.374139, 0.8)
+shader_parameter/fine_grid_subdivisions = 1.0
+shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vcvc"]
+shader = ExtResource("4_ueoa1")
+shader_parameter/outerRadius = 1.259
+shader_parameter/MainAlpha = 0.629
 
 [sub_resource type="Environment" id="Environment_7u77a"]
 background_mode = 3
@@ -59,8 +79,49 @@ ExtResource("16_cbgmd"): Vector2i(0, 1)
 health = 3
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbgmd"]
+shader = ExtResource("19_u50mg")
+shader_parameter/scale = Vector2(0.25, 0.25)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
+shader_parameter/coarse_grid_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/coarse_grid_line_width = Vector2(0.03, 0.03)
+shader_parameter/fine_grid_color = Color(0.8, 0.8, 0.8, 0.8)
+shader_parameter/fine_grid_subdivisions = 1.0
+shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
+
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_h1bgf")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_u50mg")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_1w6v2")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6vcvc")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="ShopHandler" type="Node2D" parent="."]
 script = ExtResource("2_gt3je")
@@ -79,6 +140,7 @@ closed = true
 width = 15.0
 texture = ExtResource("2_21xkr")
 texture_mode = 1
+joint_mode = 2
 script = ExtResource("2_8gbba")
 all_points = Array[Vector2]([Vector2(-85, 18), Vector2(30, -82), Vector2(74, -82), Vector2(74, -42), Vector2(-52, 50), Vector2(-85, 50)])
 
@@ -112,7 +174,7 @@ loop_interior = false
 position = Vector2(25, 86)
 
 [node name="Tower3" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(74, 86)
+position = Vector2(69, 88)
 loop_interior = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -137,6 +199,7 @@ repetition_delay = 1.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_cbgmd")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bakmxl2txwotw" path="res://Scenes/Towers/Projectiles/projectile01.tscn" id="3_p1krr"]
 
 [node name="Tower" instance=ExtResource("1_4mgm8")]
-valid_upgrades = null
-attack_radius = null
-loop_interior = null
 
 [node name="Attack" parent="AttackManager" index="0" instance=ExtResource("2_4mybs")]
 projectile_scene = ExtResource("3_p1krr")

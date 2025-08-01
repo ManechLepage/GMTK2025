@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://djiht54xlxgxv"]
+[gd_scene load_steps=3 format=3 uid="uid://djiht54xlxgxv"]
 
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_p6vxn"]
+[ext_resource type="Script" uid="uid://y3l7vxxpg2sr" path="res://Scripts/Towers/upgrade_slot.gd" id="2_ijbx3"]
 
 [node name="UpgradeSlot" type="Button"]
 anchors_preset = 15
@@ -11,3 +12,4 @@ offset_bottom = -608.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_p6vxn")
+script = ExtResource("2_ijbx3")
