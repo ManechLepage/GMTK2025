@@ -1,11 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=48 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://tyi5c7jbrg63" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
-[ext_resource type="Script" path="res://Scripts/background.gd" id="3_1w6v2"]
+[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_1w6v2"]
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]
 [ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="12_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://wqcm2lh7w5wc" path="res://Scenes/Towers/TowerTypes/zapper.tscn" id="12_k2e45"]
+[ext_resource type="PackedScene" uid="uid://c5egjdq1cef44" path="res://Scenes/Towers/TowerTypes/freeze_bot.tscn" id="13_536cc"]
 [ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="13_gt3je"]
 [ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="13_k12tt"]
 [ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="14_3pmx8"]
@@ -25,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
+[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
 [ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="21_r33sp"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 [ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="23_neg2b"]
@@ -74,7 +76,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
-[sub_resource type="Resource" id="Resource_jwpg7"]
+[sub_resource type="Resource" id="Resource_aqgau"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -85,7 +87,7 @@ ExtResource("16_cbgmd"): Vector2i(0, 2)
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_k2e45"]
+[sub_resource type="Resource" id="Resource_8cuat"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -187,15 +189,15 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Tower2" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(-6, 60)
-loop_interior = false
-
-[node name="Tower3" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(23, -34)
-
 [node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
 position = Vector2(-25, 2)
+
+[node name="LaserBot" parent="Towers" instance=ExtResource("12_k2e45")]
+position = Vector2(18, -31)
+
+[node name="LaserBot2" parent="Towers" instance=ExtResource("13_536cc")]
+position = Vector2(44, 59)
+loop_interior = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -225,13 +227,13 @@ process_mode = 1
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_jwpg7")
+piece = SubResource("Resource_aqgau")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_k2e45")
+piece = SubResource("Resource_8cuat")
 quantity = 2
 repetition_delay = 1.0
 
@@ -250,6 +252,7 @@ mouse_filter = 2
 theme = ExtResource("12_6iyac")
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0.277)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

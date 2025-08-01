@@ -1,0 +1,13 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5egjdq1cef44"]
+
+[ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_2eaa0"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="2_ptyd5"]
+[ext_resource type="Resource" uid="uid://b5agm42c21d85" path="res://Resources/Upgrades/attack_speed.tres" id="3_auf2m"]
+[ext_resource type="Resource" uid="uid://dn2c4s7hc5cpl" path="res://Resources/Upgrades/damage.tres" id="4_45teh"]
+[ext_resource type="Texture2D" uid="uid://cxedrjjhl4jdi" path="res://Graphics/Towers/TowerCores/freeze_bot.aseprite" id="5_2eaa0"]
+
+[node name="LaserBot" instance=ExtResource("1_2eaa0")]
+upgrade_pool = Array[ExtResource("2_ptyd5")]([ExtResource("3_auf2m"), ExtResource("4_45teh")])
+
+[node name="Texture" parent="." index="3"]
+texture = ExtResource("5_2eaa0")
