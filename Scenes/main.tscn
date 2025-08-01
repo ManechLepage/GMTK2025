@@ -72,7 +72,7 @@ point_count = 7
 shader = ExtResource("5_ueoa1")
 shader_parameter/samples = 22
 shader_parameter/lod = 2
-shader_parameter/tint_color = Color(0, 0, 0, 0.119)
+shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
 [sub_resource type="Resource" id="Resource_jwpg7"]
 resource_local_to_scene = true
@@ -219,6 +219,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="WaveManager" parent="." instance=ExtResource("7_hptm8")]
+process_mode = 1
 
 [node name="Wave1" parent="WaveManager" instance=ExtResource("8_d1ilt")]
 
@@ -384,11 +385,11 @@ texture = ExtResource("16_fevyy")
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = -178.0
-offset_top = -940.0
+offset_top = -949.0
 offset_right = -3.0
-offset_bottom = -657.0
+offset_bottom = -666.0
 hidden_pos = Vector2(395, -616)
-shown_pos = Vector2(395, 42)
+shown_pos = Vector2(395, 52)
 
 [node name="WaveButtonStart" type="TextureButton" parent="CanvasLayer/Control"]
 unique_name_in_owner = true

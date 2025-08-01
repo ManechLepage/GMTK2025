@@ -25,6 +25,8 @@ func show_menu(_tower: Tower) -> void:
 	
 	if Game.get_input_handler().is_in_menu:
 		blur.visible = true
+		var tween2 = create_tween()
+		tween2.tween_property(blur, "modulate:a", 1.0, 0.2).set_ease(Tween.EASE_OUT).from(0.0)
 		
 		for i in h_box_container.get_children():
 			i.clear_previous()
@@ -46,10 +48,11 @@ func display_tower_upgrades() -> void:
 
 func hide_menu() -> void:
 	var tween = create_tween()
-	blur.visible = false
+	tween.tween_property(blur, "modulate:a", 0.0, 0.2).set_ease(Tween.EASE_OUT).from(1.0)
 	position = shown_pos
 	tween.tween_property(self, "position", hidden_pos, 0.5).set_trans(Tween.TRANS_BACK)
 	await tween.finished
+	blur.visible = false
 
 func show_description(upgrade: Upgrade) -> void:
 	if upgrade:

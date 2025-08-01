@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwnr0l2wimhtf"]
+[gd_scene load_steps=11 format=3 uid="uid://dwnr0l2wimhtf"]
 
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_xrv5m"]
 [ext_resource type="Script" uid="uid://brehw688nwlqf" path="res://Scripts/UI/tower_menu.gd" id="2_33j12"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="3_xc1pb"]
 [ext_resource type="Texture2D" uid="uid://bc7m1248odu2b" path="res://Graphics/UI/Decorations/wooden_beam.aseprite" id="5_laegx"]
 [ext_resource type="Texture2D" uid="uid://io8lqt5wlcdb" path="res://Graphics/Items/chains.aseprite" id="6_uwjwb"]
+[ext_resource type="Texture2D" uid="uid://bwrhpic5kbi2i" path="res://Graphics/UI/Decorations/beads.aseprite" id="7_f2hlf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xc1pb"]
 texture = ExtResource("3_xc1pb")
@@ -32,7 +33,7 @@ anchor_bottom = 0.5
 offset_left = -181.0
 offset_top = -277.0
 offset_right = -6.0
-offset_bottom = 10.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -95,36 +96,30 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -58.0
+offset_left = -52.0
 offset_top = 96.0
-offset_right = 26.0
+offset_right = 32.0
 offset_bottom = 224.0
 grow_horizontal = 2
-scale = Vector2(1.395, 1.395)
+scale = Vector2(1.25, 1.25)
 columns = 2
 
 [node name="UpgradeSlot" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeSlot2" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeSlot3" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeSlot4" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeSlot5" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="UpgradeSlot6" parent="GridContainer" instance=ExtResource("2_fwsj6")]
-visible = false
 layout_mode = 2
 
 [node name="GridContainer2" type="GridContainer" parent="."]
@@ -132,12 +127,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -58.0
+offset_left = -52.0
 offset_top = 96.0
-offset_right = 26.0
+offset_right = 32.0
 offset_bottom = 224.0
 grow_horizontal = 2
-scale = Vector2(1.395, 1.395)
+scale = Vector2(1.25, 1.25)
 mouse_filter = 2
 theme = SubResource("Theme_33j12")
 columns = 2
@@ -223,4 +218,20 @@ offset_top = -58.5
 offset_right = 185.5
 offset_bottom = -7.5
 texture = ExtResource("6_uwjwb")
+stretch_mode = 1
+
+[node name="Beads1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 181.5
+offset_right = 189.5
+offset_bottom = 48.0
+texture = ExtResource("7_f2hlf")
+stretch_mode = 1
+
+[node name="Beads2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -14.5
+offset_right = -6.5
+offset_bottom = 48.0
+texture = ExtResource("7_f2hlf")
 stretch_mode = 1
