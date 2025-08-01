@@ -24,11 +24,12 @@ func get_all_points() -> Array:
 	#return current_points
 	
 	for tower: Tower in towers.get_children():
-		for placement: Node2D in tower.placements.get_children():
-			if tower.loop_interior:
-				interior_points.append(placement.global_position)
-			else:
-				exterior_points.append(placement.global_position)
+		if tower.placed:
+			for placement: Node2D in tower.placements.get_children():
+				if tower.loop_interior:
+					interior_points.append(placement.global_position)
+				else:
+					exterior_points.append(placement.global_position)
 	
 	return [interior_points, exterior_points]
 
@@ -46,6 +47,11 @@ func update_points() -> void:
 	for point in points:
 		pieces.curve.add_point(point)
 		arrows.curve.add_point(point)
+
+
+func _position_in_conveyor(position) -> bool:
+	var polygon = pieces.curve.get_baked_points()
+	return _point_in_polygon(position, polygon)
 
 
 func _find_polygon(included: Array[Vector2], excluded: Array[Vector2], max_iters=100) -> Array[Vector2]:

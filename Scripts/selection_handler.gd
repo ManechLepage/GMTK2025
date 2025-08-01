@@ -12,12 +12,7 @@ var menu_select: Tower
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
 		if hovered_tower:
-			selected_tower = hovered_tower
-			if menu_select:
-				menu_select.unselect()
-			menu_select = hovered_tower
-			selected_tower.select()
-			show_radius_tower = selected_tower
+			_select_tower(hovered_tower)
 		elif show_radius_tower:
 			show_radius_tower.unselect()
 			show_radius_tower = null
@@ -27,6 +22,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("PlayNextWave"):
 		wave_manager.play_next_wave()
+
+func _select_tower(tower) -> void:
+	selected_tower = tower
+	if menu_select:
+		menu_select.unselect()
+	menu_select = tower
+	selected_tower.select()
+	show_radius_tower = selected_tower
 
 func _process(delta: float) -> void:
 	if selected_tower:
