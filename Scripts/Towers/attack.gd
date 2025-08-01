@@ -1,6 +1,12 @@
 class_name Attack
 extends Node2D
 
+enum AttackType {
+	BEAM,
+	RANGE,
+	ZAP
+}
+
 @onready var timer: Timer = $Timer
 
 @export var projectile_scene: PackedScene

@@ -7,6 +7,8 @@ extends Resource
 @export var drop: Dictionary[Item, Vector2i]
 @export var health: int
 
+var effects: Array[Game.Effects]
+
 func get_items_on_death() -> Array[Item]:
 	var final_drop: Array[Item]
 	for item: Item in drop.keys():

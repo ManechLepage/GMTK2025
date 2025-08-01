@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=46 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
 [ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="21_r33sp"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 [ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="23_neg2b"]
 [ext_resource type="Texture2D" uid="uid://80flbgmsbuan" path="res://Graphics/UI/Buttons/WaveStart/normal.aseprite" id="28_ueoa1"]
@@ -34,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://dxdaccf2ghqou" path="res://Graphics/UI/Buttons/WavePause/normal.aseprite" id="31_e08e2"]
 [ext_resource type="Texture2D" uid="uid://7j22tgt2sntu" path="res://Graphics/UI/Buttons/WavePause/pressed.aseprite" id="32_neg2b"]
 [ext_resource type="Texture2D" uid="uid://cde7sm7bpvt45" path="res://Graphics/UI/Buttons/WavePause/hovered.aseprite" id="33_r33sp"]
+[ext_resource type="Texture2D" uid="uid://dj81ongeo7ax5" path="res://Graphics/UI/Health Bar/over2.aseprite" id="36_jwpg7"]
+[ext_resource type="Texture2D" uid="uid://dracyhprxjjqt" path="res://Graphics/UI/Health Bar/progress.aseprite" id="37_k2e45"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u50mg"]
 shader = ExtResource("19_u50mg")
@@ -71,23 +74,26 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.119)
 
-[sub_resource type="Resource" id="Resource_1w6v2"]
+[sub_resource type="Resource" id="Resource_jwpg7"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
 texture = ExtResource("14_3pmx8")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({})
+drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
+ExtResource("16_cbgmd"): Vector2i(0, 2)
+})
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_ueoa1"]
+[sub_resource type="Resource" id="Resource_k2e45"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
 texture = ExtResource("17_1w6v2")
 drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("15_u50mg"): Vector2i(2, 4),
-ExtResource("16_cbgmd"): Vector2i(0, 1)
+ExtResource("15_u50mg"): Vector2i(0, 1),
+ExtResource("16_cbgmd"): Vector2i(0, 1),
+ExtResource("21_r33sp"): Vector2i(0, 1)
 })
 health = 3
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
@@ -181,15 +187,15 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(-25, 2)
-
 [node name="Tower2" parent="Towers" instance=ExtResource("8_b3802")]
 position = Vector2(-6, 60)
 loop_interior = false
 
 [node name="Tower3" parent="Towers" instance=ExtResource("8_b3802")]
 position = Vector2(23, -34)
+
+[node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
+position = Vector2(-25, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -218,13 +224,13 @@ mouse_filter = 2
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_1w6v2")
+piece = SubResource("Resource_jwpg7")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_ueoa1")
+piece = SubResource("Resource_k2e45")
 quantity = 2
 repetition_delay = 1.0
 
@@ -241,6 +247,30 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("12_6iyac")
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -79.0
+offset_right = 291.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 10.0
+value = 10.0
+nine_patch_stretch = true
+stretch_margin_left = 16
+stretch_margin_top = 16
+stretch_margin_right = 16
+stretch_margin_bottom = 16
+texture_over = ExtResource("36_jwpg7")
+texture_progress = ExtResource("37_k2e45")
+texture_progress_offset = Vector2(2, 0)
 
 [node name="Resources" type="Control" parent="CanvasLayer/Control"]
 unique_name_in_owner = true
@@ -353,9 +383,11 @@ texture = ExtResource("16_fevyy")
 [node name="TowerMenu" parent="CanvasLayer/Control" instance=ExtResource("23_gt3je")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_top = 381.0
-offset_bottom = 664.0
-hidden_pos = Vector2(395, 677)
+offset_left = -178.0
+offset_top = -940.0
+offset_right = -3.0
+offset_bottom = -657.0
+hidden_pos = Vector2(395, -616)
 shown_pos = Vector2(395, 42)
 
 [node name="WaveButtonStart" type="TextureButton" parent="CanvasLayer/Control"]

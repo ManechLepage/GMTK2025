@@ -47,6 +47,8 @@ func update_points() -> void:
 	for point in points:
 		pieces.curve.add_point(point)
 		arrows.curve.add_point(point)
+	pieces.curve.add_point(pieces.curve.get_point_position(0))
+	arrows.curve.add_point(arrows.curve.get_point_position(0))
 
 
 func _position_in_conveyor(position) -> bool:

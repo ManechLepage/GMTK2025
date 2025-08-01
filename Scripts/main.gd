@@ -16,7 +16,7 @@ var core: int = 3
 var gold: int = 3
 var copper: int = 5
 var steel: int = 5
-var wood: int = 3
+var wood: int = 10
 
 func _ready() -> void:
 	update_copper()
@@ -88,5 +88,5 @@ func update_wood() -> void:
 	resources.get_child(4).text = str(wood)
 
 func show_menu() -> void:
-	tower_menu.show_menu(Game.get_input_handler().menu_select)
+	tower_menu.show_menu(Game.get_input_handler().hovered_tower)
 	get_tree().paused = true

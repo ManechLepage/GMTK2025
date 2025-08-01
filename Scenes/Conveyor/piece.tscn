@@ -13,6 +13,7 @@ z_index = 2
 z_as_relative = false
 rotates = false
 script = ExtResource("1_kwv0i")
+burn_color = Color(0.998588, 0.242492, 7.70092e-07, 1)
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_sqr73")
@@ -37,9 +38,15 @@ texture_progress = ExtResource("4_lbv4f")
 texture_progress_offset = Vector2(2, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6ycih")
+
+[node name="BurnTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="BurnTimer" to="." method="_on_burn_timer_timeout"]
