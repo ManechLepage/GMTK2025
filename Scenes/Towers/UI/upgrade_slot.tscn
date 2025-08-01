@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://djiht54xlxgxv"]
+[gd_scene load_steps=3 format=3 uid="uid://djiht54xlxgxv"]
 
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_p6vxn"]
 [ext_resource type="Script" uid="uid://y3l7vxxpg2sr" path="res://Scripts/Towers/upgrade_slot.gd" id="2_ijbx3"]
-[ext_resource type="Resource" uid="uid://b5agm42c21d85" path="res://Resources/Upgrades/attack_speed.tres" id="3_1624b"]
 
 [node name="UpgradeSlot" type="Button"]
 custom_minimum_size = Vector2(40, 40)
@@ -13,9 +12,9 @@ offset_right = -1112.0
 offset_bottom = -608.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(20, 20)
 theme = ExtResource("1_p6vxn")
 script = ExtResource("2_ijbx3")
-default_upgrade = ExtResource("3_1624b")
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 0
@@ -25,7 +24,6 @@ offset_right = 122.0
 offset_bottom = 42.0
 scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0.696876, 0.650405, 0.211167, 1)
-text = "Attack speed"
 horizontal_alignment = 1
 autowrap_mode = 2
 

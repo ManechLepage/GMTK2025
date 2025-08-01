@@ -13,4 +13,5 @@ ExtResource("3_mi4gd"): 1
 })
 description = "+30% attack speed"
 name = "Attack Speed"
+stays_in_pool = true
 metadata/_custom_type_script = "uid://ccbceyxrer0ru"

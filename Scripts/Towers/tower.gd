@@ -1,7 +1,6 @@
 class_name Tower
 extends Node2D
 
-@export var valid_upgrades: Array[Upgrade]
 @export var attack_radius: float = 1.0
 @onready var placements: Node2D = $Placements
 @onready var area_of_attack: Sprite2D = $AreaOfAttack
@@ -13,11 +12,15 @@ extends Node2D
 
 var current_upgrades: Array[Upgrade]
 
+var current_shop: Array[Upgrade]
+
+@export var upgrade_pool: Array[Upgrade]
 
 
 func _ready() -> void:
 	update_stats()
 	Game.add_tower.emit(self)
+	load_new_shop()
 
 func _on_area_2d_mouse_entered() -> void:
 	Game.get_input_handler().hovered_tower = self
@@ -43,3 +46,12 @@ func _on_area_of_attack_collision_area_entered(area: Area2D) -> void:
 
 func _on_area_of_attack_collision_area_exited(area: Area2D) -> void:
 	attack_manager.pieces_in_range.erase(area.get_parent())
+
+func load_new_shop() -> void:
+	current_shop.clear()
+	var temp_upgrade_pool: Array[Upgrade] = upgrade_pool.duplicate()
+	for i in range(3):
+		if temp_upgrade_pool.size() > 0:
+			var upgrade: Upgrade = temp_upgrade_pool.pick_random()
+			temp_upgrade_pool.erase(upgrade)
+			current_shop.append(upgrade)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=36 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
-[ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
@@ -65,7 +64,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.119)
 
-[sub_resource type="Resource" id="Resource_ueoa1"]
+[sub_resource type="Resource" id="Resource_1w6v2"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -74,7 +73,7 @@ drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({})
 health = 4
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_6vcvc"]
+[sub_resource type="Resource" id="Resource_ueoa1"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -175,16 +174,15 @@ scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Tower5" parent="Towers" instance=ExtResource("1_jjgbg")]
-position = Vector2(149, -45)
-loop_interior = false
+[node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
+position = Vector2(-25, 2)
 
 [node name="Tower2" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(25, 86)
+position = Vector2(-6, 60)
+loop_interior = false
 
 [node name="Tower3" parent="Towers" instance=ExtResource("8_b3802")]
-position = Vector2(69, 88)
-loop_interior = false
+position = Vector2(23, -34)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -213,13 +211,13 @@ mouse_filter = 2
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 4.0
-piece = SubResource("Resource_ueoa1")
+piece = SubResource("Resource_1w6v2")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_6vcvc")
+piece = SubResource("Resource_ueoa1")
 quantity = 2
 repetition_delay = 1.0
 

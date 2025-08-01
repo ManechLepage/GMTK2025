@@ -25,14 +25,14 @@ signal add_tower(tower: Tower)
 func wait(time: float) -> void:
 	await get_tree().create_timer(time * difficulty_time_multiplier).timeout
 
-func add_item(item: Item) -> void:
+func add_item(item: Item, value: int = 1) -> void:
 	if item.name == "Core":
-		get_main().add_core(1)
+		get_main().add_core(value)
 	elif item.name == "Gold":
-		get_main().add_gold(1)
+		get_main().add_gold(value)
 	elif item.name == "Copper":
-		get_main().add_gold(1)
+		get_main().add_copper(value)
 	elif item.name == "Steel":
-		get_main().add_steel(1)
+		get_main().add_steel(value)
 	else:
-		get_main().add_wood(1)
+		get_main().add_wood(value)

@@ -29,6 +29,5 @@ func load_new_projectile(target_piece: PieceDisplay) -> void:
 	
 
 func _on_timer_timeout() -> void:
-	print(parent.pieces_in_range)
 	if parent.pieces_in_range.size() > 0:
 		load_new_projectile(parent.pieces_in_range[0])

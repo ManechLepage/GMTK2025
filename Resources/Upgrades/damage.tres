@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://dn2c4s7hc5cpl"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_4rhjl"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="3_4rhjl"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="3_b67ln"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/upgrade.gd" id="4_1f6hc"]
+
+[resource]
+script = ExtResource("4_1f6hc")
+cost = Dictionary[ExtResource("1_4rhjl"), int]({
+ExtResource("3_b67ln"): 1,
+ExtResource("3_4rhjl"): 2
+})
+description = "+30% damage"
+name = "Damage"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

@@ -14,9 +14,6 @@ size = Vector2(28, 28)
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_uwg1x")
-valid_upgrades = null
-attack_radius = null
-loop_interior = null
 
 [node name="AreaOfAttackCollision" type="Area2D" parent="."]
 collision_mask = 5

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c48fhdg5j6tqf"]
 
 [ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_vgx6e"]
-[ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="2_qtyuh"]
+[ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="2_vgx6e"]
 
 [resource]
 script = ExtResource("1_vgx6e")
 name = "Copper"
-texture = ExtResource("2_qtyuh")
+texture = ExtResource("2_vgx6e")
 metadata/_custom_type_script = "uid://cqmpxylkyn4yv"
