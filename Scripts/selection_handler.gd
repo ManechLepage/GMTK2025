@@ -7,6 +7,9 @@ var show_radius_tower: Tower
 
 var menu_select: Tower
 
+@onready var tower_menu: TowerMenu = %TowerMenu
+
+@onready var main: Main = $".."
 @onready var wave_manager: WaveManager = $"../WaveManager"
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -20,6 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if menu_select:
 				menu_select.unselect()
 			menu_select = hovered_tower
+			main.show_menu()
 			selected_tower.select()
 			show_radius_tower = selected_tower
 			_select_tower(hovered_tower)
@@ -33,6 +37,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("PlayNextWave"):
 		wave_manager.play_next_wave()
+	
+	if Input.is_action_just_pressed("Escape"):
+		get_tree().paused = false
+		tower_menu.hide_menu()
 
 func _select_tower(tower) -> void:
 	selected_tower = tower

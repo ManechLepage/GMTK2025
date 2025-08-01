@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3gon82yd4rt5"]
+
+[ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_53sfc"]
+[ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="2_lnrq8"]
+
+[node name="ItemCost" type="Control"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 3
+offset_right = 12.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_53sfc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 18.0
+scale = Vector2(0.385, 0.385)
+text = "1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 37.0
+offset_bottom = 33.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_lnrq8")

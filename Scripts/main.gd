@@ -2,6 +2,7 @@ class_name Main
 extends Node2D
 
 @onready var resources: Control = %Resources
+@onready var tower_menu: TowerMenu = %TowerMenu
 
 var core: int = 0
 var gold: int = 0
@@ -43,3 +44,7 @@ func update_steel() -> void:
 
 func update_wood() -> void:
 	resources.get_child(4).text = str(wood)
+
+func show_menu() -> void:
+	tower_menu.show_menu()
+	get_tree().paused = true

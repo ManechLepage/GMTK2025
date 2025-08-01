@@ -1,11 +1,153 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwnr0l2wimhtf"]
+[gd_scene load_steps=7 format=3 uid="uid://dwnr0l2wimhtf"]
 
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_xrv5m"]
+[ext_resource type="Script" uid="uid://brehw688nwlqf" path="res://Scripts/UI/tower_menu.gd" id="2_33j12"]
+[ext_resource type="PackedScene" uid="uid://djiht54xlxgxv" path="res://Scenes/Towers/UI/upgrade_slot.tscn" id="2_fwsj6"]
+[ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="3_xc1pb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xc1pb"]
+texture = ExtResource("3_xc1pb")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_33j12"]
+Panel/styles/panel = SubResource("StyleBoxTexture_xc1pb")
 
 [node name="TowerMenu" type="Panel"]
-offset_left = 16.0
-offset_top = 173.0
-offset_right = 191.0
-offset_bottom = 456.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -277.0
+offset_right = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 mouse_filter = 1
 theme = ExtResource("1_xrv5m")
+script = ExtResource("2_33j12")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 32.0
+offset_right = 164.0
+offset_bottom = 72.0
+theme_override_constants/separation = 16
+
+[node name="UpgradeSlot" parent="HBoxContainer" instance=ExtResource("2_fwsj6")]
+layout_mode = 2
+
+[node name="UpgradeSlot2" parent="HBoxContainer" instance=ExtResource("2_fwsj6")]
+layout_mode = 2
+
+[node name="UpgradeSlot3" parent="HBoxContainer" instance=ExtResource("2_fwsj6")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.642547, 0.768216, 0.872415, 1)
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 74.0
+offset_right = -6.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.642547, 0.768216, 0.872415, 1)
+text = "Tower upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 96.0
+offset_right = 26.0
+offset_bottom = 224.0
+grow_horizontal = 2
+scale = Vector2(1.395, 1.395)
+columns = 2
+
+[node name="UpgradeSlot" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSlot2" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSlot3" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSlot4" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSlot5" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSlot6" parent="GridContainer" instance=ExtResource("2_fwsj6")]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_top = 96.0
+offset_right = 26.0
+offset_bottom = 224.0
+grow_horizontal = 2
+scale = Vector2(1.395, 1.395)
+theme = SubResource("Theme_33j12")
+columns = 2
+
+[node name="EmptySlot" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="EmptySlot2" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="EmptySlot3" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="EmptySlot4" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="EmptySlot5" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="EmptySlot6" type="Panel" parent="GridContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2

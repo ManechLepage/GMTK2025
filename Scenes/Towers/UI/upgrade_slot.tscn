@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://y3l7vxxpg2sr" path="res://Scripts/Towers/upgrade_slot.gd" id="2_ijbx3"]
 
 [node name="UpgradeSlot" type="Button"]
+custom_minimum_size = Vector2(40, 40)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,3 +14,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_p6vxn")
 script = ExtResource("2_ijbx3")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 122.0
+offset_bottom = 42.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.696876, 0.650405, 0.211167, 1)
+text = "Attack speed"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Cost" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 21.0
+offset_right = -2.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

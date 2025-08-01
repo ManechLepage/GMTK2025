@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://b5agm42c21d85"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_3436a"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/upgrade.gd" id="2_pcne5"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="2_tlpl7"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="3_mi4gd"]
+
+[resource]
+script = ExtResource("2_pcne5")
+cost = Dictionary[ExtResource("1_3436a"), int]({
+ExtResource("2_tlpl7"): 2,
+ExtResource("3_mi4gd"): 1
+})
+description = "+30% attack speed"
+name = "Attack Speed"
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"
