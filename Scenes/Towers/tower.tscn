@@ -17,11 +17,11 @@
 [ext_resource type="Resource" uid="uid://u37mlyrlebfr" path="res://Resources/Upgrades/burn.tres" id="15_x5f2w"]
 [ext_resource type="Script" uid="uid://b47k4au1ywie8" path="res://Scripts/Towers/Upgrades/Functional Upgrades/longer_zap.gd" id="16_852ym"]
 [ext_resource type="Resource" uid="uid://3lw8rj8mnlca" path="res://Resources/Upgrades/longer_zap.tres" id="17_7phyr"]
-[ext_resource type="Script" uid="uid://cudgrvatlskhj" path="res://Scripts/Towers/Upgrades/Functional Upgrades/attack_range.gd" id="18_7phyr"]
+[ext_resource type="Script" path="res://Scripts/Towers/Upgrades/Functional Upgrades/attack_range.gd" id="18_7phyr"]
 [ext_resource type="Resource" uid="uid://c568o32mliwtu" path="res://Resources/Upgrades/bigger_range.tres" id="19_ac8tg"]
-[ext_resource type="Script" uid="uid://b8te3am2ekcea" path="res://Scripts/Towers/Upgrades/Functional Upgrades/ice_beam.gd" id="20_38wd3"]
+[ext_resource type="Script" path="res://Scripts/Towers/Upgrades/Functional Upgrades/ice_beam.gd" id="20_38wd3"]
 [ext_resource type="PackedScene" uid="uid://c27dwhbmh7t3d" path="res://Scenes/Towers/Attacks/ice_attack.tscn" id="21_y82to"]
-[ext_resource type="Resource" uid="uid://dk1rss4v781vr" path="res://Resources/Upgrades/ice_beam.tres" id="22_742hl"]
+[ext_resource type="Resource" uid="uid://btmg7b1lh16op" path="res://Resources/Upgrades/ice_beam.tres" id="22_742hl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plphn"]
 radius = 64.0312

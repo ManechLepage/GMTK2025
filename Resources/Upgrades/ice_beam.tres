@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://dk1rss4v781vr"]
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://btmg7b1lh16op"]
 
 [ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_wsle5"]
 [ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="2_bmoqr"]
