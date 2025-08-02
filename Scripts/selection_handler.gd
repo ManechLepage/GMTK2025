@@ -17,9 +17,18 @@ var is_in_menu: bool
 @onready var wave_button_start: TextureButton = %WaveButtonStart
 @onready var wave_button_pause: TextureButton = %WaveButtonPause
 
+@onready var conveyor = $"../ConveyorBelt"
+
 
 func _process(delta: float) -> void:
 	if selected_tower and can_drag_tower:
+		if Input.is_action_pressed("ShiftMoveTower"):
+			selected_tower.placed = false
+			var in_conveyor: bool = conveyor._position_in_conveyor(selected_tower.global_position)
+			selected_tower.loop_interior = in_conveyor
+		elif Input.is_action_just_released("ShiftMoveTower"):
+			selected_tower.placed = true
+		
 		if tower_offset != null:
 			selected_tower.position = selected_tower.get_global_mouse_position() + tower_offset
 		else:
@@ -48,6 +57,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			can_drag_tower = true
 	
 	if Input.is_action_just_released("LeftClick"):
+		if selected_tower:
+			selected_tower.placed = true
 		_unselect_tower()
 		tower_offset = null
 		can_drag_tower = false
