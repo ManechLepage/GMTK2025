@@ -15,6 +15,8 @@ var parent: AttackManager
 
 @export var attack_id: int = 0
 
+var zap_quantity: int = 2
+
 func _ready() -> void:
 	parent = get_parent()
 	update_attack_speed()

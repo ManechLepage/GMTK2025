@@ -5,6 +5,7 @@ extends Node2D
 @onready var tower_menu: TowerMenu = %TowerMenu
 @onready var camera_2d: CameraManager = %Camera2D
 @onready var health_bar: TextureProgressBar = $CanvasLayer/Control/HealthBar
+@onready var conveyor_belt: ConveyorBelt = $ConveyorBelt
 
 enum GameState {
 	BUILDING,

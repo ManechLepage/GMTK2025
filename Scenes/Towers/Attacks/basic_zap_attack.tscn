@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b41tjr1sbdr4f"]
+
+[ext_resource type="PackedScene" uid="uid://7t06ms6wybc4" path="res://Scenes/Towers/Attacks/attack.tscn" id="1_a560y"]
+[ext_resource type="PackedScene" uid="uid://b5gjci3yarkdv" path="res://Scenes/Towers/Projectiles/zap_beam.tscn" id="2_a560y"]
+
+[node name="BasicZapAttack" instance=ExtResource("1_a560y")]
+projectile_scene = ExtResource("2_a560y")
+damage = 2.0
+attack_speed = 0.5
+attack_id = 1
