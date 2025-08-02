@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://b5agm42c21d85" path="res://Resources/Upgrades/attack_speed.tres" id="3_auf2m"]
 [ext_resource type="Resource" uid="uid://dn2c4s7hc5cpl" path="res://Resources/Upgrades/damage.tres" id="4_45teh"]
 [ext_resource type="Texture2D" uid="uid://cxedrjjhl4jdi" path="res://Graphics/Towers/TowerCores/freeze_bot.aseprite" id="5_2eaa0"]
-[ext_resource type="Resource" uid="uid://c568o32mliwtu" path="res://Resources/Upgrades/bigger_range.tres" id="5_auf2m"]
+[ext_resource type="Resource" uid="uid://dk1rss4v781vr" path="res://Resources/Upgrades/ice_beam.tres" id="5_auf2m"]
 [ext_resource type="PackedScene" uid="uid://ben12bfkfrodk" path="res://Scenes/Towers/Attacks/basic_freeze_attack.tscn" id="6_ptyd5"]
 
 [node name="LaserBot2" instance=ExtResource("1_2eaa0")]
