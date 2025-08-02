@@ -1,6 +1,18 @@
 class_name GameManage
 extends Node
 
+@onready var laser_attack: AudioStreamPlayer = $LaserAttack
+@onready var freeze_attack: AudioStreamPlayer = $FreezeAttack
+@onready var zap_attack: AudioStreamPlayer = $ZapAttack
+@onready var ice_beam_attack: AudioStreamPlayer = $IceBeamAttack
+@onready var hurt: AudioStreamPlayer = $Hurt
+@onready var buy: AudioStreamPlayer = $Buy
+@onready var start_wave: AudioStreamPlayer = $StartWave
+@onready var lose: AudioStreamPlayer = $Lose
+@onready var kill_piece: AudioStreamPlayer = $KillPiece
+@onready var burn: AudioStreamPlayer = $Burn
+@onready var win: AudioStreamPlayer = $Win
+
 var difficulty_time_multiplier: float = 1.0
 
 enum Effects {

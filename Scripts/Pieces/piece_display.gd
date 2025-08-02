@@ -41,6 +41,7 @@ func deal_damage(value: float, effects: Array[Game.Effects] = []) -> void:
 		on_death()
 
 func on_death() -> void:
+	Game.kill_piece.play()
 	var items: Array[Item] = piece.get_items_on_death()
 	for item in items:
 		Game.add_item(item)
@@ -74,6 +75,7 @@ func _on_burn_timer_timeout() -> void:
 	var tween = create_tween()
 	tween.tween_property(texture, "modulate", burn_color, 0.2)
 	await tween.finished
+	Game.burn.play()
 	deal_damage(0.5)
 	tween.tween_property(texture, "modulate", Color.WHITE, 0.2)
 
@@ -83,6 +85,7 @@ func _process(delta: float) -> void:
 		did_damage = true
 
 func deal_player_damage() -> void:
+	Game.hurt.play()
 	if not did_damage:
 		Game.get_main().deal_player_damage()
 	Game.get_main().camera_2d.apply_shake(1.0, 10.0)

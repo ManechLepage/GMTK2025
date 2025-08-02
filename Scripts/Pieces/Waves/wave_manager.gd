@@ -6,6 +6,7 @@ var current_wave_index: int = 0
 @onready var wave_label: Label = %WaveLabel
 
 func play_next_wave() -> void:
+	Game.start_wave.play()
 	main.game_state = main.GameState.ROUND
 	if get_child_count() == current_wave_index + 1:
 		return

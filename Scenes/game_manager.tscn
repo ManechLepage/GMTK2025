@@ -1,6 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcw4dkaepgbty"]
+[gd_scene load_steps=13 format=3 uid="uid://dcw4dkaepgbty"]
 
 [ext_resource type="Script" uid="uid://bq2836eq38i04" path="res://Scripts/game_manager.gd" id="1_oj352"]
+[ext_resource type="AudioStream" uid="uid://cn88gbamqjj4r" path="res://Audio/SFX/laser_attack.wav" id="2_e5fcp"]
+[ext_resource type="AudioStream" uid="uid://dhl7t5ev6d37j" path="res://Audio/SFX/freeze.wav" id="3_kmrvs"]
+[ext_resource type="AudioStream" uid="uid://bd6rlpk8v5w05" path="res://Audio/SFX/zap_attack.wav" id="4_e6ru4"]
+[ext_resource type="AudioStream" uid="uid://okpg64e65fw6" path="res://Audio/SFX/ice_beam.wav" id="5_sm5re"]
+[ext_resource type="AudioStream" uid="uid://b232yi7v7mej2" path="res://Audio/SFX/hurt.wav" id="6_hjqsb"]
+[ext_resource type="AudioStream" uid="uid://65utoiyoced8" path="res://Audio/SFX/buy.wav" id="7_y8n5u"]
+[ext_resource type="AudioStream" uid="uid://36c3ir45yexd" path="res://Audio/SFX/start_wave.wav" id="8_5tjy5"]
+[ext_resource type="AudioStream" uid="uid://l7r1epamqn1v" path="res://Audio/SFX/lose.wav" id="9_iu5vk"]
+[ext_resource type="AudioStream" uid="uid://bq0nr3d6vvulk" path="res://Audio/SFX/kill.wav" id="10_88ybb"]
+[ext_resource type="AudioStream" uid="uid://dn1wm7oxmnevj" path="res://Audio/SFX/burn.wav" id="11_iav25"]
+[ext_resource type="AudioStream" uid="uid://bnlccntpt5gu1" path="res://Audio/SFX/win.wav" id="12_fuy7q"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oj352")
+
+[node name="LaserAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e5fcp")
+volume_db = -15.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[node name="FreezeAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kmrvs")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="ZapAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e6ru4")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="IceBeamAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sm5re")
+bus = &"SFX"
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hjqsb")
+bus = &"SFX"
+
+[node name="Buy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y8n5u")
+bus = &"SFX"
+
+[node name="StartWave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5tjy5")
+bus = &"SFX"
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_iu5vk")
+bus = &"SFX"
+
+[node name="KillPiece" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_88ybb")
+bus = &"SFX"
+
+[node name="Burn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_iav25")
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fuy7q")
+bus = &"SFX"

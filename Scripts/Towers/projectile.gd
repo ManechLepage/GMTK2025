@@ -65,6 +65,7 @@ func _ready() -> void:
 		initialize_zap_beam()
 
 func initialize_beam() -> void:
+	Game.laser_attack.play()
 	beam_particles.emitting = true
 	width = 0.0
 	
@@ -77,6 +78,7 @@ func initialize_beam() -> void:
 	queue_free()
 
 func initialize_zap_beam() -> void:
+	Game.zap_attack.play()
 	width = 0.0
 	
 	var tween = create_tween()
@@ -90,6 +92,7 @@ func initialize_zap_beam() -> void:
 	queue_free()
 
 func initialize_range() -> void:
+	Game.freeze_attack.play()
 	points.clear()
 	
 	var tween = create_tween()

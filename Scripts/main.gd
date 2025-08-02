@@ -58,6 +58,7 @@ func has(item: Item, value: int) -> bool:
 	return value <= wood
 
 func buy_upgrade(upgrade: Upgrade) -> void:
+	Game.buy.play()
 	for item: Item in upgrade.cost.keys():
 		Game.add_item(item, -1 * upgrade.cost[item])
 
