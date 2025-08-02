@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource("2_pcne5")
 cost = Dictionary[ExtResource("1_3436a"), int]({
-ExtResource("2_tlpl7"): 2,
-ExtResource("3_mi4gd"): 1
+ExtResource("2_tlpl7"): 3,
+ExtResource("3_mi4gd"): 4
 })
 description = "+30% attack speed"
 name = "Attack Speed"

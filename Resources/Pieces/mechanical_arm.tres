@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=7 format=3 uid="uid://byx8dmelqsol4"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_luqft"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="2_hripv"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="3_hripv"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="4_ia3xv"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="4_yidme"]
+[ext_resource type="Texture2D" uid="uid://bg6lgmcpk7h53" path="res://Graphics/Pieces/mechanical_arm.aseprite" id="6_yidme"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("4_yidme")
+name = "Mechanical Arm"
+texture = ExtResource("6_yidme")
+drop = Dictionary[ExtResource("1_luqft"), Vector2i]({
+ExtResource("2_hripv"): Vector2i(1, 2),
+ExtResource("3_hripv"): Vector2i(0, 1),
+ExtResource("4_ia3xv"): Vector2i(0, 2)
+})
+health = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"

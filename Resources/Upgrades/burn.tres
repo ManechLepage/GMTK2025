@@ -9,7 +9,7 @@
 script = ExtResource("2_qetex")
 cost = Dictionary[ExtResource("1_oqy5f"), int]({
 ExtResource("2_kx6r3"): 1,
-ExtResource("3_b33ty"): 7
+ExtResource("3_b33ty"): 10
 })
 description = "Attacks inflicts burn
 (Deals 0.5 damage every half a second)"

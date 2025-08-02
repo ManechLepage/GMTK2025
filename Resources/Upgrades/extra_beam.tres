@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource("2_y3ly8")
 cost = Dictionary[ExtResource("1_750e5"), int]({
-ExtResource("2_354ee"): 1,
-ExtResource("4_xfsoo"): 5
+ExtResource("2_354ee"): 2,
+ExtResource("4_xfsoo"): 8
 })
 description = "+1 Beam to normal attack"
 name = "Extra beam"

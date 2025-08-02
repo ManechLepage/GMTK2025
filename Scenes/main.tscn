@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=61 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -37,8 +37,11 @@
 [ext_resource type="Texture2D" uid="uid://jnj63pf1ibrf" path="res://Graphics/Pieces/stick.aseprite" id="28_aa8k8"]
 [ext_resource type="Texture2D" uid="uid://80flbgmsbuan" path="res://Graphics/UI/Buttons/WaveStart/normal.aseprite" id="28_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://ckvintgpgiipk" path="res://Graphics/UI/Buttons/WaveStart/pressed.aseprite" id="29_7k868"]
+[ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="29_v2nl5"]
+[ext_resource type="Resource" uid="uid://cfbv16odj6l30" path="res://Resources/Pieces/gun.tres" id="30_dmskm"]
 [ext_resource type="Texture2D" uid="uid://g1pjnd45babd" path="res://Graphics/UI/Buttons/WaveStart/hovered.aseprite" id="30_hpc6h"]
 [ext_resource type="Texture2D" uid="uid://dxdaccf2ghqou" path="res://Graphics/UI/Buttons/WavePause/normal.aseprite" id="31_e08e2"]
+[ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="31_v2nl5"]
 [ext_resource type="Texture2D" uid="uid://7j22tgt2sntu" path="res://Graphics/UI/Buttons/WavePause/pressed.aseprite" id="32_neg2b"]
 [ext_resource type="Texture2D" uid="uid://cde7sm7bpvt45" path="res://Graphics/UI/Buttons/WavePause/hovered.aseprite" id="33_r33sp"]
 [ext_resource type="Texture2D" uid="uid://dj81ongeo7ax5" path="res://Graphics/UI/Health Bar/over2.aseprite" id="36_jwpg7"]
@@ -83,7 +86,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
-[sub_resource type="Resource" id="Resource_s8vy0"]
+[sub_resource type="Resource" id="Resource_nwwfm"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -95,7 +98,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_jut3y"]
+[sub_resource type="Resource" id="Resource_s8vy0"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -109,7 +112,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_v2nl5"]
+[sub_resource type="Resource" id="Resource_jut3y"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Copper Bolt"
@@ -121,7 +124,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_dmskm"]
+[sub_resource type="Resource" id="Resource_v2nl5"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Stick"
@@ -133,7 +136,7 @@ health = 2
 speed = 70.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_xdkp6"]
+[sub_resource type="Resource" id="Resource_dmskm"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -277,13 +280,13 @@ process_mode = 1
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 2.0
-piece = SubResource("Resource_s8vy0")
+piece = SubResource("Resource_nwwfm")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_jut3y")
+piece = SubResource("Resource_s8vy0")
 quantity = 2
 repetition_delay = 1.0
 
@@ -291,21 +294,40 @@ repetition_delay = 1.0
 
 [node name="WaveGroup" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_v2nl5")
+piece = SubResource("Resource_jut3y")
 quantity = 5
 repetition_delay = 1.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_dmskm")
+piece = SubResource("Resource_v2nl5")
 quantity = 5
 repetition_delay = 1.5
 
 [node name="WaveGroup3" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_xdkp6")
+piece = SubResource("Resource_dmskm")
 quantity = 5
 repetition_delay = 1.0
+
+[node name="Wave3" parent="WaveManager" instance=ExtResource("8_d1ilt")]
+
+[node name="WaveGroup" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
+delay = 0.5
+piece = ExtResource("29_v2nl5")
+quantity = 2
+repetition_delay = 0.5
+
+[node name="WaveGroup2" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
+delay = 1.0
+piece = ExtResource("30_dmskm")
+quantity = 1
+
+[node name="WaveGroup3" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
+delay = 1.0
+piece = ExtResource("31_v2nl5")
+quantity = 5
+repetition_delay = 0.7
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -514,7 +536,7 @@ stretch_mode = 0
 layout_mode = 0
 offset_left = 17.0
 offset_top = 13.0
-offset_right = 195.0
+offset_right = 219.0
 offset_bottom = 65.0
 
 [node name="WaveLabel" type="Label" parent="CanvasLayer/Control/WavePanel"]
