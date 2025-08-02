@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://nj2x5tylei18"]
+
+[ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_aa6ne"]
+[ext_resource type="Texture2D" uid="uid://b63ciabbeg86u" path="res://Graphics/Towers/Cogs/cog01.aseprite" id="2_61fhe"]
+[ext_resource type="Texture2D" uid="uid://b4r3fn42cns5" path="res://Graphics/Towers/TowerCores/zapper.aseprite" id="3_bm3jc"]
+[ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="4_biy7w"]
+[ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="5_oj7bc"]
+
+[node name="Button" type="Button"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = -1082.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme = ExtResource("1_aa6ne")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.270222, 0.270222, 0.270222, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+texture = ExtResource("2_61fhe")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.336608, 0.336608, 0.336608, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = -2.0
+offset_right = 57.0
+offset_bottom = 38.0
+rotation = 0.558505
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_61fhe")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 47.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_61fhe")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 47.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_bm3jc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 4.0
+offset_right = 51.0
+offset_bottom = 22.0
+text = "1"
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 8.0
+offset_right = 62.0
+offset_bottom = 21.0
+texture = ExtResource("4_biy7w")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 51.0
+offset_bottom = 39.0
+text = "3"
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 63.0
+offset_bottom = 38.0
+texture = ExtResource("5_oj7bc")
+expand_mode = 1

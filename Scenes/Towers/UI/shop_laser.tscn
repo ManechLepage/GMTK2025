@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds8a5lsmbra25"]
+
+[ext_resource type="PackedScene" uid="uid://nj2x5tylei18" path="res://Scenes/Towers/UI/shop_zapper.tscn" id="1_isys7"]
+[ext_resource type="Texture2D" uid="uid://6kdffkxs7uns" path="res://Graphics/Towers/TowerCores/laser_bot.aseprite" id="2_n4lu8"]
+[ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="3_smgty"]
+
+[node name="Button" instance=ExtResource("1_isys7")]
+
+[node name="TextureRect4" parent="." index="3"]
+texture = ExtResource("2_n4lu8")
+
+[node name="Label2" parent="." index="6"]
+text = "2"
+
+[node name="TextureRect6" parent="." index="7"]
+texture = ExtResource("3_smgty")

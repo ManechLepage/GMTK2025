@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=6 format=3 uid="uid://b5hjgj7gv0a2f"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_5b3tn"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="2_fo6ed"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="3_fo6ed"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="3_r6pl2"]
+[ext_resource type="Texture2D" uid="uid://bw6qmgibu1i31" path="res://Graphics/Pieces/magnet.aseprite" id="5_r6pl2"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_r6pl2")
+name = "Magnet"
+texture = ExtResource("5_r6pl2")
+drop = Dictionary[ExtResource("1_5b3tn"), Vector2i]({
+ExtResource("2_fo6ed"): Vector2i(0, 2),
+ExtResource("3_fo6ed"): Vector2i(1, 1)
+})
+health = 6
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"

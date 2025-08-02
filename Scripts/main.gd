@@ -14,11 +14,11 @@ enum GameState {
 
 var game_state: GameState
 
-var core: int = 3
-var gold: int = 3
-var copper: int = 5
-var steel: int = 5
-var wood: int = 10
+var core: int = 0
+var gold: int = 0
+var copper: int = 0
+var steel: int = 0
+var wood: int = 0
 
 var health: int = 10
 

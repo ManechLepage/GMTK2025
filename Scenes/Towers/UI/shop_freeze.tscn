@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cubmdmtvptpxp"]
+
+[ext_resource type="PackedScene" uid="uid://nj2x5tylei18" path="res://Scenes/Towers/UI/shop_zapper.tscn" id="1_ev7r8"]
+[ext_resource type="Texture2D" uid="uid://cxedrjjhl4jdi" path="res://Graphics/Towers/TowerCores/freeze_bot.aseprite" id="2_ev7r8"]
+[ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="3_u36i8"]
+
+[node name="Button" instance=ExtResource("1_ev7r8")]
+
+[node name="TextureRect4" parent="." index="3"]
+texture = ExtResource("2_ev7r8")
+
+[node name="Label2" parent="." index="6"]
+text = "2"
+
+[node name="TextureRect6" parent="." index="7"]
+texture = ExtResource("3_u36i8")

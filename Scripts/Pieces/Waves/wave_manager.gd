@@ -3,6 +3,7 @@ extends Node
 
 var current_wave_index: int = 0
 @onready var main: Main = $".."
+@onready var wave_label: Label = %WaveLabel
 
 func play_next_wave() -> void:
 	main.game_state = main.GameState.ROUND
@@ -13,3 +14,5 @@ func play_next_wave() -> void:
 	await wave.start_wave()
 	
 	main.finish_wave()
+	current_wave_index += 1
+	wave_label.text = "Wave: " + str(current_wave_index + 1)
