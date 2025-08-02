@@ -4,6 +4,7 @@ extends Node2D
 @onready var resources: Control = %Resources
 @onready var tower_menu: TowerMenu = %TowerMenu
 @onready var camera_2d: CameraManager = %Camera2D
+@onready var health_bar: TextureProgressBar = $CanvasLayer/Control/HealthBar
 
 enum GameState {
 	BUILDING,
@@ -42,6 +43,7 @@ func finish_wave() -> void:
 
 func deal_player_damage() -> void:
 	health -= 1
+	health_bar.value = float(health)
 
 func has(item: Item, value: int) -> bool:
 	if item.name == "Core":

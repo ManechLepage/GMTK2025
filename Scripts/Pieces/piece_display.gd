@@ -10,6 +10,8 @@ var piece: Piece
 @export var burn_color: Color
 @export var freeze_color: Color
 
+var did_damage: bool
+
 func load_piece(_piece: Piece) -> void:
 	piece = _piece
 	texture.texture = piece.texture
@@ -68,12 +70,13 @@ func _on_burn_timer_timeout() -> void:
 	tween.tween_property(texture, "modulate", Color.WHITE, 0.2)
 
 func _process(delta: float) -> void:
-	print(progress_ratio)
 	if progress_ratio < 0.01:
 		deal_player_damage()
+		did_damage = true
 
 func deal_player_damage() -> void:
-	Game.get_main().deal_player_damage()
+	if not did_damage:
+		Game.get_main().deal_player_damage()
 	Game.get_main().camera_2d.apply_shake(1.0, 10.0)
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.5, 1.5), 0.3).from(Vector2(1.0, 1.0)).set_trans(Tween.TRANS_BACK)
