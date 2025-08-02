@@ -17,4 +17,7 @@ upgrade_pool = Array[ExtResource("2_n7qqn")]([ExtResource("3_1rsrx"), ExtResourc
 scale = Vector2(0.835, 0.835)
 texture = ExtResource("5_heg3j")
 
+[node name="Placements" parent="." index="4"]
+position = Vector2(0, 0)
+
 [node name="BasicBeamAttack" parent="AttackManager" index="0" instance=ExtResource("7_heg3j")]

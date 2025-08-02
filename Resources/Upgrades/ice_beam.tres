@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://dk1rss4v781vr"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_wsle5"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="2_bmoqr"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="3_wsle5"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="4_icffs"]
+
+[resource]
+script = ExtResource("4_icffs")
+cost = Dictionary[ExtResource("1_wsle5"), int]({
+ExtResource("2_bmoqr"): 3,
+ExtResource("3_wsle5"): 10
+})
+description = "Adds an ice beam attack"
+name = "Ice Beam"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

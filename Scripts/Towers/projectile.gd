@@ -54,7 +54,7 @@ func get_closest_piece(piece: PieceDisplay) -> PieceDisplay:
 		all_pieces.append(near_piece)
 		distances.append(piece.global_position.distance_squared_to(near_piece.global_position))
 	
-	return all_pieces[distances.find(distances.min())]
+	return all_pieces.pick_random()
 
 func _ready() -> void:
 	if attack_type == AttackType.BEAM:
