@@ -1,6 +1,8 @@
 extends Node2D
 
-var base_tower: PackedScene = load("res://Scenes/Towers/tower.tscn")
+var laser_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/laser_bot.tscn")
+var zapper_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/zapper_bot.tscn")
+var freeze_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/freeze_bot.tscn")
 var tower_parent
 
 var selection_handler
@@ -14,11 +16,12 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("PlaceTower") and not selected_tower:
-		var tower = base_tower.instantiate()
-		tower.position = get_global_mouse_position()
-		tower.placed = false
-		tower_parent.add_child(tower)
-		selected_tower = tower
+		#var tower = base_tower.instantiate()
+		#tower.position = get_global_mouse_position()
+		#tower.placed = false
+		#tower_parent.add_child(tower)
+		#selected_tower = tower
+		pass
 	
 	if Input.is_action_just_pressed("LeftClick") and selected_tower:
 		selected_tower.placed = true
