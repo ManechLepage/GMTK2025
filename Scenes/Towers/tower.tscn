@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://cr72utkx20a4o" path="res://Scripts/Towers/Upgrades/Functional Upgrades/extra_beam.gd" id="11_a541n"]
 [ext_resource type="Resource" uid="uid://cg0503vlyrk71" path="res://Resources/Upgrades/extra_beam.tres" id="12_8e02y"]
 [ext_resource type="PackedScene" uid="uid://dtw1blaln2iy0" path="res://Scenes/Towers/Attacks/basic_beam_attack.tscn" id="12_12u6a"]
-[ext_resource type="Script" uid="uid://ci7hb3nvpxyfp" path="res://Scripts/Towers/Upgrades/Functional Upgrades/burn.gd" id="14_apkep"]
+[ext_resource type="Script" path="res://Scripts/Towers/Upgrades/Functional Upgrades/burn.gd" id="14_apkep"]
 [ext_resource type="Resource" uid="uid://u37mlyrlebfr" path="res://Resources/Upgrades/burn.tres" id="15_x5f2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plphn"]

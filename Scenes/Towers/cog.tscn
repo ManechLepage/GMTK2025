@@ -9,6 +9,7 @@ speed = 1.0
 
 [node name="Cog1" type="Sprite2D" parent="."]
 modulate = Color(0.215902, 0.215902, 0.215902, 1)
+z_index = -1
 texture = ExtResource("1_teu6r")
 
 [node name="Cog2" type="Sprite2D" parent="."]
