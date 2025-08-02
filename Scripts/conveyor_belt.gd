@@ -2,6 +2,7 @@ class_name ConveyorBelt
 extends Line2D
 
 @onready var towers: Node2D = $"../Towers"
+@onready var obstacles: Node2D = $"../Obstacles"
 @onready var start: Sprite2D = $Start
 
 @export var all_points: Array[Vector2]
@@ -15,7 +16,7 @@ func _ready() -> void:
 	pass
 
 func get_all_points() -> Array:
-	var interior_points: Array[Vector2] = all_points.duplicate()
+	var interior_points: Array[Vector2] = [] #all_points.duplicate()
 	var exterior_points: Array[Vector2] = []
 	
 	#var current_points: Array[Vector2] = all_points.duplicate()
@@ -31,6 +32,12 @@ func get_all_points() -> Array:
 					interior_points.append(placement.global_position)
 				else:
 					exterior_points.append(placement.global_position)
+	
+	for obstacle: Obstacle in obstacles.get_children():
+		for in_placement in obstacle.included_placements.get_children():
+			interior_points.append(in_placement.global_position)
+		for ex_placement in obstacle.excluded_placements.get_children():
+			exterior_points.append(ex_placement.global_position)
 	
 	return [interior_points, exterior_points]
 
