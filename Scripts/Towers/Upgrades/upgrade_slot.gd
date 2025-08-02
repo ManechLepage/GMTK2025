@@ -6,7 +6,7 @@ var upgrade: Upgrade
 const ITEM_COST = preload("res://Scenes/Towers/UI/item_cost.tscn")
 
 @onready var name_label: Label = $Name
-@onready var cost: HBoxContainer = $Cost
+@onready var cost: VBoxContainer = $Cost
 
 @export var is_shop: bool = false
 

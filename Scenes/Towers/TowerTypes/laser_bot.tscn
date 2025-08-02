@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4tti4g1y12ry"]
+[gd_scene load_steps=10 format=3 uid="uid://b4tti4g1y12ry"]
 
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_4mgm8"]
 [ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="2_n7qqn"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://cg0503vlyrk71" path="res://Resources/Upgrades/extra_beam.tres" id="5_8emnb"]
 [ext_resource type="Texture2D" uid="uid://6kdffkxs7uns" path="res://Graphics/Towers/TowerCores/laser_bot.aseprite" id="5_heg3j"]
 [ext_resource type="Resource" uid="uid://u37mlyrlebfr" path="res://Resources/Upgrades/burn.tres" id="6_8emnb"]
+[ext_resource type="Resource" uid="uid://c568o32mliwtu" path="res://Resources/Upgrades/bigger_range.tres" id="7_0eq20"]
 [ext_resource type="PackedScene" uid="uid://dtw1blaln2iy0" path="res://Scenes/Towers/Attacks/basic_beam_attack.tscn" id="7_heg3j"]
 
 [node name="LaserBot" instance=ExtResource("1_4mgm8")]
-upgrade_pool = Array[ExtResource("2_n7qqn")]([ExtResource("3_1rsrx"), ExtResource("4_6yehw"), ExtResource("5_8emnb"), ExtResource("6_8emnb")])
+upgrade_pool = Array[ExtResource("2_n7qqn")]([ExtResource("3_1rsrx"), ExtResource("4_6yehw"), ExtResource("5_8emnb"), ExtResource("6_8emnb"), ExtResource("7_0eq20")])
 
 [node name="Texture" parent="." index="3"]
 scale = Vector2(0.835, 0.835)

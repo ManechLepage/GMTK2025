@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://3lw8rj8mnlca"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_e4ylq"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="2_imbtl"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="3_e4ylq"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="4_teja2"]
+
+[resource]
+script = ExtResource("4_teja2")
+cost = Dictionary[ExtResource("1_e4ylq"), int]({
+ExtResource("2_imbtl"): 2,
+ExtResource("3_e4ylq"): 6
+})
+description = "+1 Target by the zap attack"
+name = "Longer Zap"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

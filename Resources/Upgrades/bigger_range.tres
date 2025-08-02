@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://c568o32mliwtu"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_aeihp"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="2_aeihp"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="3_tgvgf"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="4_5moto"]
+
+[resource]
+script = ExtResource("4_5moto")
+cost = Dictionary[ExtResource("1_aeihp"), int]({
+ExtResource("2_aeihp"): 4,
+ExtResource("3_tgvgf"): 4
+})
+description = "+30% attack range"
+name = "Attack Range"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1k767oe7iwhm"]
+[gd_scene load_steps=20 format=3 uid="uid://d1k767oe7iwhm"]
 
 [ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
 [ext_resource type="Script" uid="uid://c60ju7b0wc3y0" path="res://Scripts/Towers/tower.gd" id="1_uwg1x"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dtw1blaln2iy0" path="res://Scenes/Towers/Attacks/basic_beam_attack.tscn" id="12_12u6a"]
 [ext_resource type="Script" path="res://Scripts/Towers/Upgrades/Functional Upgrades/burn.gd" id="14_apkep"]
 [ext_resource type="Resource" uid="uid://u37mlyrlebfr" path="res://Resources/Upgrades/burn.tres" id="15_x5f2w"]
+[ext_resource type="Script" uid="uid://b47k4au1ywie8" path="res://Scripts/Towers/Upgrades/Functional Upgrades/longer_zap.gd" id="16_852ym"]
+[ext_resource type="Resource" uid="uid://3lw8rj8mnlca" path="res://Resources/Upgrades/longer_zap.tres" id="17_7phyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_plphn"]
 radius = 64.0312
@@ -85,6 +87,10 @@ upgrade = ExtResource("12_8e02y")
 [node name="Burn" type="Node" parent="UpgradeManager"]
 script = ExtResource("14_apkep")
 upgrade = ExtResource("15_x5f2w")
+
+[node name="LongerZap" type="Node" parent="UpgradeManager"]
+script = ExtResource("16_852ym")
+upgrade = ExtResource("17_7phyr")
 
 [connection signal="area_entered" from="AreaOfAttackCollision" to="." method="_on_area_of_attack_collision_area_entered"]
 [connection signal="area_exited" from="AreaOfAttackCollision" to="." method="_on_area_of_attack_collision_area_exited"]
