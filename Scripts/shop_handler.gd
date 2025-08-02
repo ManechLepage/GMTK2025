@@ -1,5 +1,11 @@
 extends Node2D
 
+@export var core: Item
+@export var copper: Item
+@export var gold: Item
+@export var steel: Item
+@export var wood: Item
+
 var laser_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/laser_bot.tscn")
 var zapper_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/zapper_bot.tscn")
 var freeze_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/freeze_bot.tscn")
@@ -34,3 +40,34 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta):
 	if selected_tower:
 		selected_tower.global_position = get_global_mouse_position()
+
+func _place_tower(tower_scene):
+	var tower = tower_scene.instantiate()
+	tower.position = get_global_mouse_position()
+	tower.placed = false
+	tower_parent.add_child(tower)
+	selected_tower = tower
+
+func _on_laser_buy_request() -> void:
+	var cost: Dictionary[Item, int] = {
+		core: 1,
+		steel: 2
+	}
+	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
+		_place_tower(laser_bot)
+
+func _on_zapper_buy_request() -> void:
+	var cost: Dictionary[Item, int] = {
+		core: 1,
+		wood: 3
+	}
+	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
+		_place_tower(zapper_bot)
+
+func _on_freeze_buy_request() -> void:
+	var cost: Dictionary[Item, int] = {
+		core: 1,
+		copper: 2
+	}
+	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
+		_place_tower(zapper_bot)

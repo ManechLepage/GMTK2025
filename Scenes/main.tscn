@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=64 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
 [ext_resource type="Shader" uid="uid://bibmcns78lo7j" path="res://Scripts/Shaders/blur.gdshader" id="5_ueoa1"]
+[ext_resource type="Resource" uid="uid://wuyqyj2t6ef8" path="res://Resources/Items/core.tres" id="6_v2nl5"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/laser_bot.tscn" id="8_b3802"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
@@ -235,6 +236,11 @@ mouse_filter = 2
 
 [node name="ShopHandler" type="Node2D" parent="."]
 script = ExtResource("2_gt3je")
+core = ExtResource("6_v2nl5")
+copper = ExtResource("21_r33sp")
+gold = ExtResource("29_jut3y")
+steel = ExtResource("16_cbgmd")
+wood = ExtResource("15_u50mg")
 
 [node name="SelectionHandler" type="Node" parent="." groups=["InputHandler"]]
 process_mode = 3
@@ -610,7 +616,7 @@ offset_right = -123.0
 offset_bottom = 57.0
 scale = Vector2(2.635, 2.635)
 
-[node name="Button" parent="CanvasLayer/Control/TowerShop" instance=ExtResource("46_nwwfm")]
+[node name="Freeze" parent="CanvasLayer/Control/TowerShop" instance=ExtResource("46_nwwfm")]
 layout_mode = 1
 offset_left = 14.0
 offset_top = 256.0
@@ -620,3 +626,6 @@ scale = Vector2(2.635, 2.635)
 
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonStart" to="SelectionHandler" method="play_wave_request"]
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonPause" to="SelectionHandler" method="_on_wave_button_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/TowerShop/Laser" to="ShopHandler" method="_on_laser_buy_request"]
+[connection signal="pressed" from="CanvasLayer/Control/TowerShop/Zapper" to="ShopHandler" method="_on_zapper_buy_request"]
+[connection signal="pressed" from="CanvasLayer/Control/TowerShop/Freeze" to="ShopHandler" method="_on_freeze_buy_request"]

@@ -66,7 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _select_tower(tower) -> void:
 	selected_tower = tower
-	tower_offset = hovered_tower.global_position - main.get_global_mouse_position()
+	tower_offset = selected_tower.global_position - main.get_global_mouse_position()
 	selected_tower.select()
 
 func _unselect_tower() -> void:
