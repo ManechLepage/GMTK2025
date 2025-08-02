@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=7 format=3 uid="uid://cfbv16odj6l30"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_tuiwp"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="3_gdowv"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="4_qt2fw"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="4_tuiwp"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="5_6axbc"]
+[ext_resource type="Texture2D" uid="uid://cwa258pccnauv" path="res://Graphics/Pieces/gun.aseprite" id="6_tuiwp"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("5_6axbc")
+name = "Lazer Gun"
+texture = ExtResource("6_tuiwp")
+drop = Dictionary[ExtResource("1_tuiwp"), Vector2i]({
+ExtResource("3_gdowv"): Vector2i(1, 2),
+ExtResource("4_qt2fw"): Vector2i(0, 1),
+ExtResource("4_tuiwp"): Vector2i(0, 1)
+})
+health = 8
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"

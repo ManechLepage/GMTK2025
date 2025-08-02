@@ -2,6 +2,7 @@ class_name ConveyorBelt
 extends Line2D
 
 @onready var towers: Node2D = $"../Towers"
+@onready var start: Sprite2D = $Start
 
 @export var all_points: Array[Vector2]
 @export var speed: float = 50.0
@@ -35,6 +36,8 @@ func get_all_points() -> Array:
 
 func _process(delta: float) -> void:
 	update_points()
+	
+	start.position = points[0]
 
 func update_points() -> void:
 	var all_pts: Array = get_all_points()

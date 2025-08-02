@@ -15,6 +15,7 @@ z_as_relative = false
 rotates = false
 script = ExtResource("1_kwv0i")
 burn_color = Color(0.998588, 0.242492, 7.70092e-07, 1)
+freeze_color = Color(0.365593, 0.742885, 0.940526, 1)
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_sqr73")

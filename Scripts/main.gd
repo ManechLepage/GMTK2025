@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var resources: Control = %Resources
 @onready var tower_menu: TowerMenu = %TowerMenu
+@onready var camera_2d: CameraManager = %Camera2D
 
 enum GameState {
 	BUILDING,
@@ -17,6 +18,8 @@ var gold: int = 3
 var copper: int = 5
 var steel: int = 5
 var wood: int = 10
+
+var health: int = 10
 
 func _ready() -> void:
 	update_copper()
@@ -36,6 +39,9 @@ func can_buy(cost: Dictionary[Item, int]) -> bool:
 func finish_wave() -> void:
 	game_state = GameState.BUILDING
 	add_core(1)
+
+func deal_player_damage() -> void:
+	health -= 1
 
 func has(item: Item, value: int) -> bool:
 	if item.name == "Core":

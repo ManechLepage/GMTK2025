@@ -5,8 +5,8 @@ extends Path2D
 const PIECE = preload("res://Scenes/Conveyor/piece.tscn")
 
 func _process(delta: float) -> void:
-	for follow: PathFollow2D in get_children():
-		follow.progress -= conveyor_belt.speed * delta
+	for follow: PieceDisplay in get_children():
+		follow.progress -= follow.piece.speed * delta
 
 func create_piece(piece: Piece) -> void:
 	var piece_display: PieceDisplay = PIECE.instantiate()

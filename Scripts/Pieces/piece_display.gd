@@ -8,6 +8,7 @@ var piece: Piece
 @onready var burn_timer: Timer = $BurnTimer
 
 @export var burn_color: Color
+@export var freeze_color: Color
 
 func load_piece(_piece: Piece) -> void:
 	piece = _piece
@@ -29,6 +30,8 @@ func deal_damage(value: float, effects: Array[Game.Effects] = []) -> void:
 			piece.effects.append(effect)
 			if effect == Game.Effects.BURN:
 				apply_burn()
+			if effect == Game.Effects.FREEZE:
+				apply_freeze()
 	
 	if piece.health <= 0:
 		on_death()
@@ -37,14 +40,42 @@ func on_death() -> void:
 	var items: Array[Item] = piece.get_items_on_death()
 	for item in items:
 		Game.add_item(item)
+	
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(0.0, 0.0), 0.3).from(Vector2(1.0, 1.0)).set_trans(Tween.TRANS_BACK)	
+	await tween.finished
 	queue_free()
 
 func apply_burn() -> void:
 	burn_timer.start()
 
+func apply_freeze() -> void:
+	var tween = create_tween()
+	tween.tween_property(texture, "modulate", freeze_color, 0.2)
+	piece.speed *= 0.5
+	
+	await get_tree().create_timer(2.0).timeout
+	
+	var tween2 = create_tween()
+	tween2.tween_property(texture, "modulate", Color.WHITE, 0.2)
+	piece.speed *= 2
+
 func _on_burn_timer_timeout() -> void:
 	var tween = create_tween()
-	tween.tween_property(self, "modulate", burn_color, 0.2)
+	tween.tween_property(texture, "modulate", burn_color, 0.2)
 	await tween.finished
 	deal_damage(0.5)
-	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
+	tween.tween_property(texture, "modulate", Color.WHITE, 0.2)
+
+func _process(delta: float) -> void:
+	print(progress_ratio)
+	if progress_ratio < 0.01:
+		deal_player_damage()
+
+func deal_player_damage() -> void:
+	Game.get_main().deal_player_damage()
+	Game.get_main().camera_2d.apply_shake(1.0, 10.0)
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.5, 1.5), 0.3).from(Vector2(1.0, 1.0)).set_trans(Tween.TRANS_BACK)
+	await tween.finished
+	queue_free()

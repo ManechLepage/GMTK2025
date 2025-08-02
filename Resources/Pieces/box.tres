@@ -18,4 +18,5 @@ ExtResource("2_cfbiy"): Vector2i(0, 1),
 ExtResource("4_8kxym"): Vector2i(0, 1)
 })
 health = 3
+speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"

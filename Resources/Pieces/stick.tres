@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=5 format=3 uid="uid://dkmk240w5tqo5"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_6w6mu"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="2_xboxw"]
+[ext_resource type="Texture2D" uid="uid://jnj63pf1ibrf" path="res://Graphics/Pieces/stick.aseprite" id="4_oxq53"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="5_fv6so"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("5_fv6so")
+name = "Stick"
+texture = ExtResource("4_oxq53")
+drop = Dictionary[ExtResource("1_6w6mu"), Vector2i]({
+ExtResource("2_xboxw"): Vector2i(0, 2)
+})
+health = 2
+speed = 70.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
