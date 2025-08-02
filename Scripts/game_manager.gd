@@ -5,7 +5,8 @@ var difficulty_time_multiplier: float = 1.0
 
 enum Effects {
 	FREEZE,
-	BURN
+	BURN,
+	KNOCKBACK
 }
 
 func get_input_handler() -> SelectionHandler:

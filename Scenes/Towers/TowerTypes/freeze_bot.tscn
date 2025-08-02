@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5egjdq1cef44"]
+[gd_scene load_steps=9 format=3 uid="uid://c5egjdq1cef44"]
 
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_2eaa0"]
 [ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="2_ptyd5"]
@@ -6,11 +6,12 @@
 [ext_resource type="Resource" uid="uid://dn2c4s7hc5cpl" path="res://Resources/Upgrades/damage.tres" id="4_45teh"]
 [ext_resource type="Texture2D" uid="uid://cxedrjjhl4jdi" path="res://Graphics/Towers/TowerCores/freeze_bot.aseprite" id="5_2eaa0"]
 [ext_resource type="Resource" uid="uid://btmg7b1lh16op" path="res://Resources/Upgrades/ice_beam.tres" id="5_auf2m"]
+[ext_resource type="Resource" uid="uid://03go5vbrv7ux" path="res://Resources/Upgrades/knockback.tres" id="6_45teh"]
 [ext_resource type="PackedScene" uid="uid://ben12bfkfrodk" path="res://Scenes/Towers/Attacks/basic_freeze_attack.tscn" id="6_ptyd5"]
 
 [node name="LaserBot2" instance=ExtResource("1_2eaa0")]
 attack_radius = 0.7
-upgrade_pool = Array[ExtResource("2_ptyd5")]([ExtResource("3_auf2m"), ExtResource("4_45teh"), ExtResource("5_auf2m")])
+upgrade_pool = Array[ExtResource("2_ptyd5")]([ExtResource("3_auf2m"), ExtResource("4_45teh"), ExtResource("5_auf2m"), ExtResource("6_45teh")])
 
 [node name="Texture" parent="." index="3"]
 texture = ExtResource("5_2eaa0")

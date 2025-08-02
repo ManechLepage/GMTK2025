@@ -17,8 +17,8 @@ var game_state: GameState
 
 var core: int = 0
 var gold: int = 0
-var copper: int = 0
-var steel: int = 0
+var copper: int = 10
+var steel: int = 10
 var wood: int = 0
 
 var health: int = 10

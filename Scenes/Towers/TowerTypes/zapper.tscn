@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b37vw7hfcpfn7"]
+[gd_scene load_steps=10 format=3 uid="uid://b37vw7hfcpfn7"]
 
 [ext_resource type="PackedScene" uid="uid://d1k767oe7iwhm" path="res://Scenes/Towers/tower.tscn" id="1_eoj62"]
 [ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="2_8nu8x"]
@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://3lw8rj8mnlca" path="res://Resources/Upgrades/longer_zap.tres" id="5_tof5n"]
 [ext_resource type="Resource" uid="uid://c568o32mliwtu" path="res://Resources/Upgrades/bigger_range.tres" id="6_eoj62"]
 [ext_resource type="PackedScene" uid="uid://b41tjr1sbdr4f" path="res://Scenes/Towers/Attacks/basic_zap_attack.tscn" id="6_vj6xr"]
+[ext_resource type="Resource" uid="uid://03go5vbrv7ux" path="res://Resources/Upgrades/knockback.tres" id="7_8nu8x"]
 [ext_resource type="Texture2D" uid="uid://b4r3fn42cns5" path="res://Graphics/Towers/TowerCores/zapper.aseprite" id="7_tof5n"]
 
 [node name="LaserBot" instance=ExtResource("1_eoj62")]
-upgrade_pool = Array[ExtResource("2_8nu8x")]([ExtResource("3_rp5ff"), ExtResource("4_vjhku"), ExtResource("5_tof5n"), ExtResource("6_eoj62")])
+upgrade_pool = Array[ExtResource("2_8nu8x")]([ExtResource("3_rp5ff"), ExtResource("4_vjhku"), ExtResource("5_tof5n"), ExtResource("6_eoj62"), ExtResource("7_8nu8x")])
 
 [node name="Texture" parent="." index="3"]
 texture = ExtResource("7_tof5n")

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=5 format=3 uid="uid://03go5vbrv7ux"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_0761m"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="3_0761m"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="3_lh5lt"]
+[ext_resource type="Script" uid="uid://ccbceyxrer0ru" path="res://Scripts/Towers/Upgrades/upgrade.gd" id="4_rrjf7"]
+
+[resource]
+script = ExtResource("4_rrjf7")
+cost = Dictionary[ExtResource("1_0761m"), int]({
+ExtResource("3_lh5lt"): 10,
+ExtResource("3_0761m"): 10
+})
+description = "Attacks now apply knockback
+"
+name = "Knockback"
+stays_in_pool = true
+metadata/_custom_type_script = "uid://ccbceyxrer0ru"

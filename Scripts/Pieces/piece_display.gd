@@ -34,6 +34,8 @@ func deal_damage(value: float, effects: Array[Game.Effects] = []) -> void:
 				apply_burn()
 			if effect == Game.Effects.FREEZE:
 				apply_freeze()
+			if effect == Game.Effects.KNOCKBACK:
+				apply_knockback()
 	
 	if piece.health <= 0:
 		on_death()
@@ -61,6 +63,12 @@ func apply_freeze() -> void:
 	var tween2 = create_tween()
 	tween2.tween_property(texture, "modulate", Color.WHITE, 0.2)
 	piece.speed *= 2
+
+func apply_knockback() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "progress", 15.0, 0.3).as_relative()
+	print(progress)
+	progress = max(1.0, progress)
 
 func _on_burn_timer_timeout() -> void:
 	var tween = create_tween()
