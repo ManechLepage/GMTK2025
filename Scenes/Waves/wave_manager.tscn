@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dxmk7tabins44"]
+[gd_scene load_steps=38 format=3 uid="uid://dxmk7tabins44"]
 
 [ext_resource type="Script" uid="uid://cediaya3dkpks" path="res://Scripts/Pieces/Waves/wave_manager.gd" id="1_24b6x"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="2_73ycp"]
@@ -11,18 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="10_kf23u"]
 [ext_resource type="Texture2D" uid="uid://crb5jvccuvwat" path="res://Graphics/Pieces/copper_bolt.aseprite" id="11_7y012"]
 [ext_resource type="Texture2D" uid="uid://jnj63pf1ibrf" path="res://Graphics/Pieces/stick.aseprite" id="12_bom2i"]
-[ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="12_xo1u1"]
-[ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="13_iedce"]
-[ext_resource type="Resource" uid="uid://dkmk240w5tqo5" path="res://Resources/Pieces/stick.tres" id="14_73ycp"]
-[ext_resource type="Resource" uid="uid://cfbv16odj6l30" path="res://Resources/Pieces/gun.tres" id="15_7rpea"]
-[ext_resource type="Resource" uid="uid://b5hjgj7gv0a2f" path="res://Resources/Pieces/magnet.tres" id="16_akpy1"]
-[ext_resource type="Resource" uid="uid://byx8dmelqsol4" path="res://Resources/Pieces/mechanical_arm.tres" id="17_ft4pc"]
-[ext_resource type="Resource" uid="uid://bnt2wdebn8omy" path="res://Resources/Pieces/copper_bolt_buffed.tres" id="18_0gf07"]
-[ext_resource type="Resource" uid="uid://18nn3uwlx3f7" path="res://Resources/Pieces/bolt_buffed.tres" id="19_g08fm"]
-[ext_resource type="Resource" uid="uid://b4q66co7t04ra" path="res://Resources/Pieces/magnet_buffed.tres" id="20_8gdv1"]
-[ext_resource type="Resource" uid="uid://c8av125iun23b" path="res://Resources/Pieces/robot.tres" id="21_6hms8"]
+[ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="12_ft4pc"]
+[ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="13_0gf07"]
+[ext_resource type="Texture2D" uid="uid://cwa258pccnauv" path="res://Graphics/Pieces/gun.aseprite" id="14_g08fm"]
+[ext_resource type="Texture2D" uid="uid://bw6qmgibu1i31" path="res://Graphics/Pieces/magnet.aseprite" id="15_8gdv1"]
+[ext_resource type="Texture2D" uid="uid://bg6lgmcpk7h53" path="res://Graphics/Pieces/mechanical_arm.aseprite" id="16_6hms8"]
+[ext_resource type="Texture2D" uid="uid://beoj3a22scfb4" path="res://Graphics/Pieces/robot.aseprite" id="17_kf23u"]
 
-[sub_resource type="Resource" id="Resource_5nmv3"]
+[sub_resource type="Resource" id="Resource_ft4pc"]
 resource_local_to_scene = true
 script = ExtResource("6_0gf07")
 name = "Box"
@@ -36,7 +32,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_c315r"]
+[sub_resource type="Resource" id="Resource_0gf07"]
 resource_local_to_scene = true
 script = ExtResource("6_0gf07")
 name = "Copper Bolt"
@@ -45,6 +41,147 @@ drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
 ExtResource("9_6hms8"): Vector2i(1, 2)
 })
 health = 4
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_g08fm"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Stick"
+texture = ExtResource("12_bom2i")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 2)
+})
+health = 2
+speed = 70.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_8gdv1"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Bolt"
+texture = ExtResource("12_ft4pc")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(1, 2)
+})
+health = 3
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_6hms8"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Box"
+texture = ExtResource("10_kf23u")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 1),
+ExtResource("5_ft4pc"): Vector2i(0, 1),
+ExtResource("9_6hms8"): Vector2i(0, 1)
+})
+health = 3
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_kf23u"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Bolt"
+texture = ExtResource("12_ft4pc")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(1, 2)
+})
+health = 3
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_7y012"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Copper Bolt"
+texture = ExtResource("11_7y012")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("9_6hms8"): Vector2i(1, 2)
+})
+health = 3
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_bom2i"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Stick"
+texture = ExtResource("12_bom2i")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 2)
+})
+health = 2
+speed = 70.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_8kdar"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Lazer Gun"
+texture = ExtResource("14_g08fm")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(1, 2),
+ExtResource("9_6hms8"): Vector2i(0, 1),
+ExtResource("13_0gf07"): Vector2i(0, 1)
+})
+health = 8
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_gs2cn"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Stick"
+texture = ExtResource("12_bom2i")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 2)
+})
+health = 2
+speed = 70.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_l5shl"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Magnet"
+texture = ExtResource("15_8gdv1")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 1),
+ExtResource("5_ft4pc"): Vector2i(1, 1)
+})
+health = 6
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_5nmv3"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Lazer Gun"
+texture = ExtResource("14_g08fm")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(1, 2),
+ExtResource("9_6hms8"): Vector2i(0, 1),
+ExtResource("13_0gf07"): Vector2i(0, 1)
+})
+health = 8
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_c315r"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Mechanical Arm"
+texture = ExtResource("16_6hms8")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(1, 2),
+ExtResource("13_0gf07"): Vector2i(0, 1),
+ExtResource("9_6hms8"): Vector2i(0, 2)
+})
+health = 10
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
@@ -60,13 +197,88 @@ health = 2
 speed = 70.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
+[sub_resource type="Resource" id="Resource_sp7qv"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Mechanical Arm"
+texture = ExtResource("16_6hms8")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(1, 2),
+ExtResource("13_0gf07"): Vector2i(0, 1),
+ExtResource("9_6hms8"): Vector2i(0, 2)
+})
+health = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_0oiyd"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Copper Bolt"
+texture = ExtResource("11_7y012")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("9_6hms8"): Vector2i(0, 1)
+})
+health = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_nil4f"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Bolt"
+texture = ExtResource("12_ft4pc")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(0, 1)
+})
+health = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_kahor"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Magnet"
+texture = ExtResource("15_8gdv1")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 1),
+ExtResource("5_ft4pc"): Vector2i(1, 1)
+})
+health = 30
+speed = 30.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_sp4xd"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Lazer Gun"
+texture = ExtResource("14_g08fm")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("5_ft4pc"): Vector2i(1, 2),
+ExtResource("9_6hms8"): Vector2i(0, 1),
+ExtResource("13_0gf07"): Vector2i(0, 1)
+})
+health = 8
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_gjjuk"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Robot"
+texture = ExtResource("17_kf23u")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({})
+health = 200
+speed = 40.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_24b6x")
 
 [node name="Wave1" parent="." instance=ExtResource("2_73ycp")]
 
 [node name="WaveGroup2" parent="Wave1" instance=ExtResource("3_7rpea")]
-piece = SubResource("Resource_5nmv3")
+piece = SubResource("Resource_ft4pc")
 quantity = 2
 repetition_delay = 3.0
 
@@ -74,25 +286,25 @@ repetition_delay = 3.0
 
 [node name="WaveGroup" parent="Wave2" instance=ExtResource("3_7rpea")]
 delay = 3.0
-piece = SubResource("Resource_c315r")
+piece = SubResource("Resource_0gf07")
 quantity = 3
 repetition_delay = 3.0
 
 [node name="WaveGroup2" parent="Wave2" instance=ExtResource("3_7rpea")]
 delay = 1.0
-piece = SubResource("Resource_x22ku")
+piece = SubResource("Resource_g08fm")
 quantity = 1
 
 [node name="Wave3" parent="." instance=ExtResource("2_73ycp")]
 
 [node name="WaveGroup3" parent="Wave3" instance=ExtResource("3_7rpea")]
 delay = 2.0
-piece = ExtResource("12_xo1u1")
+piece = SubResource("Resource_8gdv1")
 quantity = 3
 repetition_delay = 3.0
 
 [node name="WaveGroup4" parent="Wave3" instance=ExtResource("3_7rpea")]
-piece = SubResource("Resource_5nmv3")
+piece = SubResource("Resource_6hms8")
 quantity = 3
 repetition_delay = 1.5
 
@@ -100,19 +312,19 @@ repetition_delay = 1.5
 
 [node name="WaveGroup3" parent="Wave4" instance=ExtResource("3_7rpea")]
 delay = 1.0
-piece = ExtResource("12_xo1u1")
+piece = SubResource("Resource_kf23u")
 quantity = 3
 repetition_delay = 1.0
 
 [node name="WaveGroup5" parent="Wave4" instance=ExtResource("3_7rpea")]
 delay = 3.0
-piece = ExtResource("13_iedce")
+piece = SubResource("Resource_7y012")
 quantity = 3
 repetition_delay = 1.0
 
 [node name="WaveGroup6" parent="Wave4" instance=ExtResource("3_7rpea")]
 delay = 1.0
-piece = ExtResource("14_73ycp")
+piece = SubResource("Resource_bom2i")
 quantity = 3
 repetition_delay = 1.0
 
@@ -120,12 +332,12 @@ repetition_delay = 1.0
 
 [node name="WaveGroup5" parent="Wave5" instance=ExtResource("3_7rpea")]
 delay = 2.0
-piece = ExtResource("15_7rpea")
+piece = SubResource("Resource_8kdar")
 quantity = 3
 repetition_delay = 3.0
 
 [node name="WaveGroup6" parent="Wave5" instance=ExtResource("3_7rpea")]
-piece = ExtResource("14_73ycp")
+piece = SubResource("Resource_gs2cn")
 quantity = 5
 repetition_delay = 1.5
 
@@ -133,12 +345,12 @@ repetition_delay = 1.5
 
 [node name="WaveGroup5" parent="Wave6" instance=ExtResource("3_7rpea")]
 delay = 2.0
-piece = ExtResource("16_akpy1")
+piece = SubResource("Resource_l5shl")
 quantity = 3
 repetition_delay = 3.0
 
 [node name="WaveGroup6" parent="Wave6" instance=ExtResource("3_7rpea")]
-piece = ExtResource("15_7rpea")
+piece = SubResource("Resource_5nmv3")
 quantity = 4
 repetition_delay = 1.5
 
@@ -146,12 +358,12 @@ repetition_delay = 1.5
 
 [node name="WaveGroup5" parent="Wave7" instance=ExtResource("3_7rpea")]
 delay = 2.0
-piece = ExtResource("17_ft4pc")
+piece = SubResource("Resource_c315r")
 quantity = 2
 repetition_delay = 3.0
 
 [node name="WaveGroup6" parent="Wave7" instance=ExtResource("3_7rpea")]
-piece = ExtResource("14_73ycp")
+piece = SubResource("Resource_x22ku")
 quantity = 4
 repetition_delay = 0.5
 
@@ -159,18 +371,18 @@ repetition_delay = 0.5
 
 [node name="WaveGroup5" parent="Wave8" instance=ExtResource("3_7rpea")]
 delay = 2.0
-piece = ExtResource("17_ft4pc")
+piece = SubResource("Resource_sp7qv")
 quantity = 5
 repetition_delay = 2.0
 
 [node name="WaveGroup6" parent="Wave8" instance=ExtResource("3_7rpea")]
 delay = 1.0
-piece = ExtResource("18_0gf07")
+piece = SubResource("Resource_0oiyd")
 quantity = 5
 repetition_delay = 1.0
 
 [node name="WaveGroup7" parent="Wave8" instance=ExtResource("3_7rpea")]
-piece = ExtResource("19_g08fm")
+piece = SubResource("Resource_nil4f")
 quantity = 5
 repetition_delay = 1.0
 
@@ -178,18 +390,18 @@ repetition_delay = 1.0
 
 [node name="WaveGroup5" parent="Wave9" instance=ExtResource("3_7rpea")]
 delay = 4.0
-piece = ExtResource("20_8gdv1")
+piece = SubResource("Resource_kahor")
 quantity = 2
 repetition_delay = 4.0
 
 [node name="WaveGroup6" parent="Wave9" instance=ExtResource("3_7rpea")]
 delay = 5.0
-piece = ExtResource("15_7rpea")
+piece = SubResource("Resource_sp4xd")
 quantity = 10
 repetition_delay = 0.5
 
 [node name="Wave10" parent="." instance=ExtResource("2_73ycp")]
 
 [node name="WaveGroup7" parent="Wave10" instance=ExtResource("3_7rpea")]
-piece = ExtResource("21_6hms8")
+piece = SubResource("Resource_gjjuk")
 quantity = 1
