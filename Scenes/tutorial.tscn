@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://7g0lxgu4soiy"]
+[gd_scene load_steps=18 format=3 uid="uid://7g0lxgu4soiy"]
 
-[ext_resource type="Script" path="res://Scripts/UI/tutorial.gd" id="1_omtrn"]
+[ext_resource type="Script" uid="uid://bacc1eh1camac" path="res://Scripts/UI/tutorial.gd" id="1_omtrn"]
 [ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="2_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://bt6253yxwt7yk" path="res://Graphics/UI/Tutorial/Conveyor.png" id="2_p8jf4"]
 [ext_resource type="Texture2D" uid="uid://c6cc5led5gnj0" path="res://Graphics/UI/Tutorial/BuyTowers.png" id="3_p1f1o"]
@@ -9,8 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://whklkspopifd" path="res://Graphics/UI/Tutorial/Laser.png" id="5_ys4pu"]
 [ext_resource type="Texture2D" uid="uid://dxv6mxogyatf4" path="res://Graphics/UI/Tutorial/Zapper.png" id="6_h2ono"]
 [ext_resource type="Texture2D" uid="uid://bfxjceir5tan" path="res://Graphics/UI/Tutorial/Freeze.png" id="7_on4kn"]
+[ext_resource type="Texture2D" uid="uid://bubap77w1acvv" path="res://Graphics/UI/Tutorial/MoveTower.png" id="9_8mnmb"]
 [ext_resource type="Texture2D" uid="uid://bc7m1248odu2b" path="res://Graphics/UI/Decorations/wooden_beam.aseprite" id="10_8va2t"]
+[ext_resource type="Texture2D" uid="uid://bxoc6njs8oarq" path="res://Graphics/UI/Tutorial/ShopUpgrades.png" id="10_t6ver"]
+[ext_resource type="Texture2D" uid="uid://2bvk2k5xem1d" path="res://Graphics/UI/Tutorial/EnemySpawn.png" id="11_2nb4t"]
 [ext_resource type="Texture2D" uid="uid://bwrhpic5kbi2i" path="res://Graphics/UI/Decorations/beads.aseprite" id="11_8mnmb"]
+[ext_resource type="Texture2D" uid="uid://cbjxioyftnfcu" path="res://Graphics/UI/Tutorial/KillEnemy.png" id="12_jb51l"]
+[ext_resource type="Texture2D" uid="uid://c28u1w6u1fljs" path="res://Graphics/UI/Tutorial/CompleteLoop.png" id="13_dxsep"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koko0"]
 texture = ExtResource("10_8va2t")
@@ -29,8 +34,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_p8jf4")
 script = ExtResource("1_omtrn")
-descriptions = Array[String](["This is the conveyor. Place towers to destroy the incoming components before they complete the loop.", "You can build towers using a Core, given every round.", "There are 3 tower types, each one with different abilities.", "The first one, the Laser bot, shoots a beam to the enemies!", "The second one, the Zapper bot, shoots an electrified ray, rebounding between enemies.", "The last one, the Freeze bot, shows enemies close by."])
-previews = Array[Texture2D]([ExtResource("2_p8jf4"), ExtResource("3_p1f1o"), ExtResource("4_p1f1o"), ExtResource("5_ys4pu"), ExtResource("6_h2ono"), ExtResource("7_on4kn")])
+descriptions = Array[String](["The conveyor. Place towers to destroy the incoming components before they complete the loop.", "You can build towers using a Core, given every round.", "There are 3 tower types, each one with different abilities.", "The first one, the Laser bot, shoots a beam to the enemies!", "The second one, the Zapper bot, shoots an electrified ray, rebounding between enemies.", "The last one, the Freeze bot, shows enemies close by.", "Drag towers to reshape the belt. Hold Shift to hover them over it.", "Right click: by spending resources, make your towers stronger with many upgrades!", "Components incoming! They don’t feel, but they don’t forgive either.", "By shooting these enemies, you can gain more resources!", "Beware! Every part that completes the loop costs you a life."])
+previews = Array[Texture2D]([ExtResource("2_p8jf4"), ExtResource("3_p1f1o"), ExtResource("4_p1f1o"), ExtResource("5_ys4pu"), ExtResource("6_h2ono"), ExtResource("7_on4kn"), ExtResource("9_8mnmb"), ExtResource("10_t6ver"), ExtResource("11_2nb4t"), ExtResource("12_jb51l"), ExtResource("13_dxsep")])
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -184,6 +189,7 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_koko0")
 
 [node name="Beads1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 148.0
 offset_top = -172.0
 offset_right = 156.0
@@ -192,6 +198,7 @@ texture = ExtResource("11_8mnmb")
 stretch_mode = 1
 
 [node name="Beads2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -156.0
 offset_top = -172.0
 offset_right = -148.0
@@ -201,6 +208,7 @@ stretch_mode = 1
 
 [node name="Beads3" type="TextureRect" parent="."]
 modulate = Color(0.396598, 0.377402, 0.937687, 1)
+layout_mode = 0
 offset_left = -166.0
 offset_top = -172.0
 offset_right = -158.0
@@ -210,6 +218,7 @@ stretch_mode = 1
 
 [node name="Beads4" type="TextureRect" parent="."]
 modulate = Color(0.396598, 0.377402, 0.937687, 1)
+layout_mode = 0
 offset_left = 158.0
 offset_top = -172.0
 offset_right = 166.0
