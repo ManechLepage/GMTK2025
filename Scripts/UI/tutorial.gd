@@ -44,6 +44,7 @@ func _process(_delta) -> void:
 func _remove_tutorial():
 	Game.did_tutorial = true
 	get_tree().paused = false
+	Game.get_main().blur.visible = false
 	queue_free()
 
 func _update_tutorial_panel():
