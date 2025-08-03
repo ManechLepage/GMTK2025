@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d1k767oe7iwhm"]
+[gd_scene load_steps=27 format=3 uid="uid://d1k767oe7iwhm"]
 
 [ext_resource type="PackedScene" uid="uid://n6jkd8kidghl" path="res://Scenes/Towers/cog.tscn" id="1_nh6md"]
 [ext_resource type="Script" uid="uid://c60ju7b0wc3y0" path="res://Scripts/Towers/tower.gd" id="1_uwg1x"]
@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://c568o32mliwtu" path="res://Resources/Upgrades/bigger_range.tres" id="19_ac8tg"]
 [ext_resource type="Script" uid="uid://b8te3am2ekcea" path="res://Scripts/Towers/Upgrades/Functional Upgrades/ice_beam.gd" id="20_38wd3"]
 [ext_resource type="Script" uid="uid://ysyuuvqldni" path="res://Scripts/Towers/Upgrades/Functional Upgrades/knock_back.gd" id="20_742hl"]
+[ext_resource type="Resource" uid="uid://03go5vbrv7ux" path="res://Resources/Upgrades/knockback.tres" id="21_iv3am"]
 [ext_resource type="PackedScene" uid="uid://c27dwhbmh7t3d" path="res://Scenes/Towers/Attacks/ice_attack.tscn" id="21_y82to"]
 [ext_resource type="Resource" uid="uid://btmg7b1lh16op" path="res://Resources/Upgrades/ice_beam.tres" id="22_742hl"]
 
@@ -104,6 +105,7 @@ upgrade = ExtResource("19_ac8tg")
 
 [node name="Knockback" type="Node" parent="UpgradeManager"]
 script = ExtResource("20_742hl")
+upgrade = ExtResource("21_iv3am")
 
 [node name="IceBeam" type="Node" parent="UpgradeManager"]
 script = ExtResource("20_38wd3")
