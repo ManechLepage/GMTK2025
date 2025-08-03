@@ -53,6 +53,9 @@ func start_animation() -> void:
 	tween.tween_method(tween_animation, 1.0, -1.0, 1.5).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	
+	if not Game.did_tutorial:
+		blur.visible = true
+	
 	var tween_2 = create_tween()
 	control.modulate.a = 0.0
 	control.visible = true
