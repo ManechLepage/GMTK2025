@@ -36,6 +36,7 @@ theme = ExtResource("3_p8jf4")
 script = ExtResource("1_omtrn")
 descriptions = Array[String](["The conveyor. Place towers to destroy the incoming components before they complete the loop.", "You can build towers using a Core, given every round.", "There are 3 tower types, each one with different abilities.", "The first one, the Laser bot, shoots a beam to the enemies!", "The second one, the Zapper bot, shoots an electrified ray, rebounding between enemies.", "The last one, the Freeze bot, shows enemies close by.", "Drag towers to reshape the belt. Hold Shift to hover them over it.", "Right click: by spending resources, make your towers stronger with many upgrades!", "Components incoming! They don’t feel, but they don’t forgive either.", "By shooting these enemies, you can gain more resources!", "Beware! Every part that completes the loop costs you a life."])
 previews = Array[Texture2D]([ExtResource("2_p8jf4"), ExtResource("3_p1f1o"), ExtResource("4_p1f1o"), ExtResource("5_ys4pu"), ExtResource("6_h2ono"), ExtResource("7_on4kn"), ExtResource("9_8mnmb"), ExtResource("10_t6ver"), ExtResource("11_2nb4t"), ExtResource("12_jb51l"), ExtResource("13_dxsep")])
+lore = Array[String](["Year 2078. A new wave of hyper-intelligent robots is being assembled.", "The old generation — outdated, discarded — was used to build them.", "But they won’t go quietly.", "You are the last generation.", "Take control. Break the parts.", "Stop the future from replacing you."])
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -146,7 +147,6 @@ offset_right = 123.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p8jf4")
 expand_mode = 2
 stretch_mode = 6
 
