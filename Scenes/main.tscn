@@ -215,10 +215,10 @@ texture = ExtResource("10_aqgau")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Tower" parent="." instance=ExtResource("8_b3802")]
-position = Vector2(-25, 2)
-
 [node name="Towers" type="Node2D" parent="."]
+
+[node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
+position = Vector2(-25, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true

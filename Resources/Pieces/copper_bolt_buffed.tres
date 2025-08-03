@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Piece" load_steps=5 format=3 uid="uid://bnt2wdebn8omy"]
+
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="1_a5otv"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="2_vwq7o"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="3_dmtrw"]
+[ext_resource type="Texture2D" uid="uid://crb5jvccuvwat" path="res://Graphics/Pieces/copper_bolt.aseprite" id="4_u40ix"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_dmtrw")
+name = "Copper Bolt"
+texture = ExtResource("4_u40ix")
+drop = Dictionary[ExtResource("1_a5otv"), Vector2i]({
+ExtResource("2_vwq7o"): Vector2i(0, 1)
+})
+health = 10
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
