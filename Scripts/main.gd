@@ -8,6 +8,7 @@ extends Node2D
 @onready var conveyor_belt: ConveyorBelt = $ConveyorBelt
 @onready var animation: ColorRect = $Animation
 @onready var control: Control = $CanvasLayer/Control
+@onready var control_2: Control = $CanvasLayer/Control2
 
 enum GameState {
 	BUILDING,
@@ -19,8 +20,8 @@ var game_state: GameState
 
 var core: int = 0
 var gold: int = 0
-var copper: int = 10
-var steel: int = 10
+var copper: int = 0
+var steel: int = 0
 var wood: int = 0
 
 var health: int = 10
@@ -38,6 +39,7 @@ func _ready() -> void:
 
 func start_animation() -> void:
 	control.visible = false
+	control_2.visible = false
 	
 	var tween = create_tween()
 	tween.tween_method(tween_animation, 1.0, -1.0, 1.5).set_ease(Tween.EASE_OUT)
@@ -79,8 +81,11 @@ func has(item: Item, value: int) -> bool:
 
 func buy_upgrade(upgrade: Upgrade) -> void:
 	Game.buy.play()
-	for item: Item in upgrade.cost.keys():
-		Game.add_item(item, -1 * upgrade.cost[item])
+	apply_cost(upgrade.cost)
+
+func apply_cost(cost: Dictionary[Item, int]) -> void:
+	for item: Item in cost.keys():
+		Game.add_item(item, -1 * cost[item])
 
 func add_core(value: int) -> void:
 	core += value

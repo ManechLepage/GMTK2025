@@ -10,7 +10,9 @@
 texture = ExtResource("2_ev7r8")
 
 [node name="Label2" parent="." index="6"]
-text = "2"
+offset_left = 39.0
+offset_right = 51.0
+text = "6"
 
 [node name="TextureRect6" parent="." index="7"]
 texture = ExtResource("3_u36i8")

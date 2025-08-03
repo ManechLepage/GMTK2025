@@ -9,7 +9,7 @@
 script = ExtResource("4_1f6hc")
 cost = Dictionary[ExtResource("1_4rhjl"), int]({
 ExtResource("3_b67ln"): 3,
-ExtResource("3_4rhjl"): 5
+ExtResource("3_4rhjl"): 4
 })
 description = "+30% damage"
 name = "Damage"

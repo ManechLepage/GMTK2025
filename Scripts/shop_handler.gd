@@ -6,9 +6,9 @@ extends Node2D
 @export var steel: Item
 @export var wood: Item
 
-var laser_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/laser_bot.tscn")
-var zapper_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/zapper_bot.tscn")
-var freeze_bot: PackedScene = load("res://Scenes/Towers/TowerTypes/freeze_bot.tscn")
+const ZAPPER = preload("res://Scenes/Towers/TowerTypes/zapper.tscn")
+const FREEZE_BOT = preload("res://Scenes/Towers/TowerTypes/freeze_bot.tscn")
+const LASER_BOT = preload("res://Scenes/Towers/TowerTypes/laser_bot.tscn")
 var tower_parent
 
 var selection_handler
@@ -50,24 +50,27 @@ func _place_tower(tower_scene):
 
 func _on_laser_buy_request() -> void:
 	var cost: Dictionary[Item, int] = {
-		core: 1,
-		steel: 2
+		core: 2,
+		steel: 6
 	}
 	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
-		_place_tower(laser_bot)
+		_place_tower(LASER_BOT)
+		Game.get_main().apply_cost(cost)
 
 func _on_zapper_buy_request() -> void:
 	var cost: Dictionary[Item, int] = {
-		core: 1,
-		wood: 3
+		core: 2,
+		wood: 8
 	}
 	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
-		_place_tower(zapper_bot)
+		_place_tower(ZAPPER)
+		Game.get_main().apply_cost(cost)
 
 func _on_freeze_buy_request() -> void:
 	var cost: Dictionary[Item, int] = {
-		core: 1,
-		copper: 2
+		core: 2,
+		copper: 6
 	}
 	if Game.get_main().can_buy(cost) and Game.get_main().game_state == Game.get_main().GameState.BUILDING:
-		_place_tower(zapper_bot)
+		_place_tower(FREEZE_BOT)
+		Game.get_main().apply_cost(cost)

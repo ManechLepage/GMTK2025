@@ -1,6 +1,124 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxmk7tabins44"]
+[gd_scene load_steps=19 format=3 uid="uid://dxmk7tabins44"]
 
 [ext_resource type="Script" uid="uid://cediaya3dkpks" path="res://Scripts/Pieces/Waves/wave_manager.gd" id="1_24b6x"]
+[ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="2_73ycp"]
+[ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="3_7rpea"]
+[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="4_akpy1"]
+[ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="5_ft4pc"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="6_0gf07"]
+[ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="8_8gdv1"]
+[ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="9_6hms8"]
+[ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="10_kf23u"]
+[ext_resource type="Texture2D" uid="uid://crb5jvccuvwat" path="res://Graphics/Pieces/copper_bolt.aseprite" id="11_7y012"]
+[ext_resource type="Texture2D" uid="uid://jnj63pf1ibrf" path="res://Graphics/Pieces/stick.aseprite" id="12_bom2i"]
+[ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="12_xo1u1"]
+[ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="13_iedce"]
+[ext_resource type="Resource" uid="uid://dkmk240w5tqo5" path="res://Resources/Pieces/stick.tres" id="14_73ycp"]
+[ext_resource type="Resource" uid="uid://cfbv16odj6l30" path="res://Resources/Pieces/gun.tres" id="15_7rpea"]
+
+[sub_resource type="Resource" id="Resource_5nmv3"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Box"
+texture = ExtResource("10_kf23u")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 1),
+ExtResource("5_ft4pc"): Vector2i(0, 1),
+ExtResource("9_6hms8"): Vector2i(0, 1)
+})
+health = 3
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_c315r"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Copper Bolt"
+texture = ExtResource("11_7y012")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("9_6hms8"): Vector2i(1, 2)
+})
+health = 4
+speed = 50.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
+
+[sub_resource type="Resource" id="Resource_x22ku"]
+resource_local_to_scene = true
+script = ExtResource("6_0gf07")
+name = "Stick"
+texture = ExtResource("12_bom2i")
+drop = Dictionary[ExtResource("4_akpy1"), Vector2i]({
+ExtResource("8_8gdv1"): Vector2i(0, 2)
+})
+health = 2
+speed = 70.0
+metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_24b6x")
+
+[node name="Wave1" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup2" parent="Wave1" instance=ExtResource("3_7rpea")]
+piece = SubResource("Resource_5nmv3")
+quantity = 3
+repetition_delay = 2.0
+
+[node name="Wave2" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup" parent="Wave2" instance=ExtResource("3_7rpea")]
+delay = 3.0
+piece = SubResource("Resource_c315r")
+quantity = 3
+repetition_delay = 3.0
+
+[node name="WaveGroup2" parent="Wave2" instance=ExtResource("3_7rpea")]
+delay = 1.0
+piece = SubResource("Resource_x22ku")
+quantity = 1
+
+[node name="Wave3" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup3" parent="Wave3" instance=ExtResource("3_7rpea")]
+delay = 2.0
+piece = ExtResource("12_xo1u1")
+quantity = 3
+repetition_delay = 3.0
+
+[node name="WaveGroup4" parent="Wave3" instance=ExtResource("3_7rpea")]
+piece = SubResource("Resource_5nmv3")
+quantity = 3
+repetition_delay = 1.5
+
+[node name="Wave4" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup3" parent="Wave4" instance=ExtResource("3_7rpea")]
+delay = 1.0
+piece = ExtResource("12_xo1u1")
+quantity = 3
+repetition_delay = 1.0
+
+[node name="WaveGroup5" parent="Wave4" instance=ExtResource("3_7rpea")]
+delay = 3.0
+piece = ExtResource("13_iedce")
+quantity = 3
+repetition_delay = 1.0
+
+[node name="WaveGroup6" parent="Wave4" instance=ExtResource("3_7rpea")]
+delay = 1.0
+piece = ExtResource("14_73ycp")
+quantity = 3
+repetition_delay = 1.0
+
+[node name="Wave5" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup5" parent="Wave5" instance=ExtResource("3_7rpea")]
+delay = 2.0
+piece = ExtResource("15_7rpea")
+quantity = 3
+repetition_delay = 3.0
+
+[node name="WaveGroup6" parent="Wave5" instance=ExtResource("3_7rpea")]
+piece = ExtResource("14_73ycp")
+quantity = 5
+repetition_delay = 1.5
