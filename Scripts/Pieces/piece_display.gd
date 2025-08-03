@@ -10,7 +10,8 @@ var piece: Piece
 @export var burn_color: Color
 @export var freeze_color: Color
 
-var did_damage: bool
+var did_damage: bool = false
+var is_dead: bool = false
 
 func load_piece(_piece: Piece) -> void:
 	piece = _piece
@@ -41,6 +42,7 @@ func deal_damage(value: float, effects: Array[Game.Effects] = []) -> void:
 		on_death()
 
 func on_death() -> void:
+	is_dead = true
 	Game.kill_piece.play()
 	var items: Array[Item] = piece.get_items_on_death()
 	for item in items:
@@ -85,10 +87,10 @@ func _process(delta: float) -> void:
 		did_damage = true
 
 func deal_player_damage() -> void:
-	Game.hurt.play()
-	if not did_damage:
+	if not did_damage and not is_dead:
 		Game.get_main().deal_player_damage()
-	Game.get_main().camera_2d.apply_shake(1.0, 10.0)
+		Game.get_main().camera_2d.apply_shake(1.0, 10.0)
+		Game.hurt.play()
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.5, 1.5), 0.3).from(Vector2(1.0, 1.0)).set_trans(Tween.TRANS_BACK)
 	await tween.finished
