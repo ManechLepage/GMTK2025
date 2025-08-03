@@ -11,6 +11,7 @@ extends Node2D
 @onready var control_2: Control = $CanvasLayer/Control2
 @onready var blur: ColorRect = %Blur
 @onready var wave_manager: WaveManager = $WaveManager
+@onready var selection_handler: SelectionHandler = $SelectionHandler
 
 enum GameState {
 	BUILDING,
@@ -63,21 +64,9 @@ func can_buy(cost: Dictionary[Item, int]) -> bool:
 	return true
 
 func death_animation() -> void:
-	var tween_2 = create_tween()
-	control.visible = true
-	tween_2.tween_property(control, "modulate:a", 0.0, 1.0).from(1.0).set_ease(Tween.EASE_OUT)
-	await tween_2.finished
-	
-	control_2.visible = true
-	control_2.scale = Vector2.ZERO
-	control_2.get_child(0).text = "You lost at wave " + str(wave_manager.current_wave_index) + "!"
-	var tween = create_tween()
-	tween.tween_property(control_2, "scale", Vector2(1.0, 1.0), 1.5).set_trans(Tween.TRANS_BACK)
-	
-	await tween.finished
-	blur.visible = true
-	
+	selection_handler.death_animation()
 	get_tree().paused = true
+
 
 func finish_wave() -> void:
 	game_state = GameState.BUILDING

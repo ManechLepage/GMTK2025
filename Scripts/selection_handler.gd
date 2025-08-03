@@ -10,6 +10,9 @@ var can_drag_tower: bool = false
 var is_in_menu: bool
 
 const MAIN_MENU = preload("res://Scenes/main_menu.tscn")
+@onready var control_2: Control = $"../CanvasLayer/Control2"
+@onready var blur: ColorRect = %Blur
+@onready var control: Control = $"../CanvasLayer/Control"
 
 @onready var tower_menu: TowerMenu = %TowerMenu
 
@@ -105,3 +108,18 @@ func _on_wave_button_pause_pressed() -> void:
 
 func _on_restart_button_pressed() -> void:
 	get_tree().change_scene_to_packed(MAIN_MENU)
+
+func death_animation() -> void:
+	var tween_2 = create_tween()
+	control.visible = true
+	tween_2.tween_property(control, "modulate:a", 0.0, 1.0).from(1.0).set_ease(Tween.EASE_OUT)
+	await tween_2.finished
+	
+	control_2.visible = true
+	control_2.scale = Vector2.ZERO
+	control_2.get_child(0).text = "You lost at wave " + str(wave_manager.current_wave_index) + "!"
+	var tween = create_tween()
+	tween.tween_property(control_2, "scale", Vector2(1.0, 1.0), 1.5).set_trans(Tween.TRANS_BACK)
+	
+	await tween.finished
+	blur.visible = true
