@@ -199,7 +199,6 @@ texture = ExtResource("10_aqgau")
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="LaserBot" parent="Towers" instance=ExtResource("8_b3802")]
-loop_interior = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true

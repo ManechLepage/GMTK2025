@@ -57,9 +57,9 @@ func apply_burn() -> void:
 func apply_freeze() -> void:
 	var tween = create_tween()
 	tween.tween_property(texture, "modulate", freeze_color, 0.2)
-	piece.speed *= 0.5
+	piece.speed *= 0.7
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	
 	var tween2 = create_tween()
 	tween2.tween_property(texture, "modulate", Color.WHITE, 0.2)

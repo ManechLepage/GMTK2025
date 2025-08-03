@@ -42,6 +42,7 @@ func _process(_delta) -> void:
 	_update_tutorial_panel()
 
 func _remove_tutorial():
+	Game.did_tutorial = true
 	get_tree().paused = false
 	queue_free()
 

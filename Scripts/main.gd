@@ -12,6 +12,7 @@ extends Node2D
 @onready var blur: ColorRect = %Blur
 @onready var wave_manager: WaveManager = $WaveManager
 @onready var selection_handler: SelectionHandler = $SelectionHandler
+@onready var tutorial: Control = $CanvasLayer/Control/Tutorial
 
 enum GameState {
 	BUILDING,
@@ -44,6 +45,9 @@ func start_animation() -> void:
 	control.visible = false
 	control_2.visible = false
 	
+	if Game.did_tutorial:
+		tutorial.visible = false
+	
 	var tween = create_tween()
 	tween.tween_method(tween_animation, 1.0, -1.0, 1.5).set_ease(Tween.EASE_OUT)
 	await tween.finished
@@ -54,7 +58,8 @@ func start_animation() -> void:
 	tween_2.tween_property(control, "modulate:a", 1.0, 1.0).from(0.0).set_ease(Tween.EASE_OUT)
 	await tween_2.finished
 	
-	get_tree().paused = true
+	if not Game.did_tutorial:
+		get_tree().paused = true
 
 func tween_animation(value: float) -> void:
 	animation.material.set_shader_parameter("height", value)

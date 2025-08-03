@@ -92,11 +92,12 @@ func _unselect_tower() -> void:
 	selected_tower = null
 
 func play_wave_request() -> void:
-	if main.game_state == main.GameState.BUILDING:
-		wave_manager.play_next_wave()
-	if main.game_state == main.GameState.PAUSED:
-		main.game_state = main.GameState.ROUND
-		get_tree().paused = false
+	if Game.did_tutorial:
+		if main.game_state == main.GameState.BUILDING:
+			wave_manager.play_next_wave()
+		if main.game_state == main.GameState.PAUSED:
+			main.game_state = main.GameState.ROUND
+			get_tree().paused = false
 
 func exit_menu() -> void:
 	get_tree().paused = false

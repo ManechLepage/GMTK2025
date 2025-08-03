@@ -16,6 +16,8 @@ extends Node
 
 var difficulty_time_multiplier: float = 1.0
 
+var did_tutorial: bool = false
+
 enum Effects {
 	FREEZE,
 	BURN,

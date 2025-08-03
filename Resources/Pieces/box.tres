@@ -13,7 +13,7 @@ script = ExtResource("3_8kxym")
 name = "Box"
 texture = ExtResource("5_cfbiy")
 drop = Dictionary[ExtResource("1_querw"), Vector2i]({
-ExtResource("2_8kxym"): Vector2i(1, 2),
+ExtResource("2_8kxym"): Vector2i(2, 4),
 ExtResource("2_cfbiy"): Vector2i(0, 1),
 ExtResource("4_8kxym"): Vector2i(0, 1)
 })
