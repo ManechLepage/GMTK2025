@@ -21,6 +21,8 @@ func animate_title() -> void:
 	conveyor_belt.start_animation()
 	await conveyor_belt_2.start_animation()
 	
+	Game.music.play()
+	
 	conveyor_belt.start_spawning()
 	
 	play_button.modulate.a = 0.0

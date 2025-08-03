@@ -12,6 +12,7 @@ extends Node
 @onready var kill_piece: AudioStreamPlayer = $KillPiece
 @onready var burn: AudioStreamPlayer = $Burn
 @onready var win: AudioStreamPlayer = $Win
+@onready var music: AudioStreamPlayer = $Music
 
 var difficulty_time_multiplier: float = 1.0
 

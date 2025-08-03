@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcw4dkaepgbty"]
+[gd_scene load_steps=14 format=3 uid="uid://dcw4dkaepgbty"]
 
 [ext_resource type="Script" uid="uid://bq2836eq38i04" path="res://Scripts/game_manager.gd" id="1_oj352"]
 [ext_resource type="AudioStream" uid="uid://8s1hk7b0hksc" path="res://Audio/SFX/laser_3.wav" id="2_kmrvs"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bq0nr3d6vvulk" path="res://Audio/SFX/kill.wav" id="10_88ybb"]
 [ext_resource type="AudioStream" uid="uid://dn1wm7oxmnevj" path="res://Audio/SFX/burn.wav" id="11_iav25"]
 [ext_resource type="AudioStream" uid="uid://bnlccntpt5gu1" path="res://Audio/SFX/win.wav" id="12_fuy7q"]
+[ext_resource type="AudioStream" uid="uid://dfdocjjuym4rb" path="res://Audio/Music/ytmp3free.cc_peractorum-royalty-free-8-bit-lofi-hip-hop-youtubemp3free.org.mp3" id="13_e6ru4"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oj352")
@@ -63,3 +64,7 @@ bus = &"SFX"
 [node name="Win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fuy7q")
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_e6ru4")
+volume_db = -30.0
