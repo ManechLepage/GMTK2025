@@ -11,7 +11,7 @@ script = ExtResource("3_dmtrw")
 name = "Copper Bolt"
 texture = ExtResource("4_u40ix")
 drop = Dictionary[ExtResource("1_a5otv"), Vector2i]({
-ExtResource("2_vwq7o"): Vector2i(0, 1)
+ExtResource("2_vwq7o"): Vector2i(1, 3)
 })
 health = 10
 speed = 50.0

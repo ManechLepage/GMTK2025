@@ -13,7 +13,7 @@ script = ExtResource("5_1xknh")
 name = "Mechanical Arm"
 texture = ExtResource("6_nryxp")
 drop = Dictionary[ExtResource("1_io365"), Vector2i]({
-ExtResource("2_y6odt"): Vector2i(1, 2),
+ExtResource("2_y6odt"): Vector2i(2, 7),
 ExtResource("3_3xvb1"): Vector2i(0, 1),
 ExtResource("4_l7mwv"): Vector2i(0, 2)
 })

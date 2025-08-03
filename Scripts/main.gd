@@ -67,7 +67,6 @@ func can_buy(cost: Dictionary[Item, int]) -> bool:
 
 func death_animation() -> void:
 	selection_handler.death_animation()
-	get_tree().paused = true
 
 
 func finish_wave() -> void:

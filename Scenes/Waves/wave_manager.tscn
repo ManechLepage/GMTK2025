@@ -300,7 +300,7 @@ quantity = 1
 [node name="WaveGroup3" parent="Wave3" instance=ExtResource("3_7rpea")]
 delay = 2.0
 piece = SubResource("Resource_8gdv1")
-quantity = 3
+quantity = 4
 repetition_delay = 3.0
 
 [node name="WaveGroup4" parent="Wave3" instance=ExtResource("3_7rpea")]
@@ -319,7 +319,7 @@ repetition_delay = 1.0
 [node name="WaveGroup5" parent="Wave4" instance=ExtResource("3_7rpea")]
 delay = 3.0
 piece = SubResource("Resource_7y012")
-quantity = 3
+quantity = 4
 repetition_delay = 1.0
 
 [node name="WaveGroup6" parent="Wave4" instance=ExtResource("3_7rpea")]
@@ -333,12 +333,12 @@ repetition_delay = 1.0
 [node name="WaveGroup5" parent="Wave5" instance=ExtResource("3_7rpea")]
 delay = 2.0
 piece = SubResource("Resource_8kdar")
-quantity = 3
+quantity = 4
 repetition_delay = 3.0
 
 [node name="WaveGroup6" parent="Wave5" instance=ExtResource("3_7rpea")]
 piece = SubResource("Resource_gs2cn")
-quantity = 5
+quantity = 6
 repetition_delay = 1.5
 
 [node name="Wave6" parent="." instance=ExtResource("2_73ycp")]
@@ -346,12 +346,12 @@ repetition_delay = 1.5
 [node name="WaveGroup5" parent="Wave6" instance=ExtResource("3_7rpea")]
 delay = 2.0
 piece = SubResource("Resource_l5shl")
-quantity = 3
+quantity = 4
 repetition_delay = 3.0
 
 [node name="WaveGroup6" parent="Wave6" instance=ExtResource("3_7rpea")]
 piece = SubResource("Resource_5nmv3")
-quantity = 4
+quantity = 6
 repetition_delay = 1.5
 
 [node name="Wave7" parent="." instance=ExtResource("2_73ycp")]
