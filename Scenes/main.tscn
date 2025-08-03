@@ -518,7 +518,6 @@ offset_bottom = 302.0
 scale = Vector2(2.635, 2.635)
 
 [node name="Tutorial" parent="CanvasLayer/Control" instance=ExtResource("40_aqgau")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Control2/Button" to="SelectionHandler" method="_on_button_pressed"]
