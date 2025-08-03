@@ -1,0 +1,182 @@
+[gd_scene load_steps=24 format=3 uid="uid://cxxttrqr6apm6"]
+
+[ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dsqqxf6y6ptee" path="res://Scripts/UI/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Script" uid="uid://qsqxdqfvd5sf" path="res://Scripts/camera.gd" id="2_16hvj"]
+[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_trj04"]
+[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_n45e2"]
+[ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_opfnp"]
+[ext_resource type="Shader" uid="uid://coqmtpdxnfpuw" path="res://Scripts/Shaders/main_menu.gdshader" id="6_4nkqq"]
+[ext_resource type="Script" uid="uid://btreddyk5xgj6" path="res://Scripts/UI/conveyor_belt_menu_animation.gd" id="7_yhxw7"]
+[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="8_mkpwh"]
+[ext_resource type="Resource" uid="uid://bwyqyy8w7wt67" path="res://Resources/Pieces/bolt.tres" id="9_4nkqq"]
+[ext_resource type="Texture2D" uid="uid://80flbgmsbuan" path="res://Graphics/UI/Buttons/WaveStart/normal.aseprite" id="9_vr1f0"]
+[ext_resource type="Resource" uid="uid://cfbv16odj6l30" path="res://Resources/Pieces/gun.tres" id="10_ehtkc"]
+[ext_resource type="Texture2D" uid="uid://ckvintgpgiipk" path="res://Graphics/UI/Buttons/WaveStart/pressed.aseprite" id="10_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://g1pjnd45babd" path="res://Graphics/UI/Buttons/WaveStart/hovered.aseprite" id="11_5egv6"]
+[ext_resource type="Resource" uid="uid://dkmk240w5tqo5" path="res://Resources/Pieces/stick.tres" id="11_6dk6o"]
+[ext_resource type="Resource" uid="uid://byx8dmelqsol4" path="res://Resources/Pieces/mechanical_arm.tres" id="12_jr6u5"]
+[ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="13_6m47u"]
+[ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="14_84iac"]
+[ext_resource type="Resource" uid="uid://b5hjgj7gv0a2f" path="res://Resources/Pieces/magnet.tres" id="15_5n0dv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp0ys"]
+shader = ExtResource("2_ce3w2")
+shader_parameter/scale = Vector2(0.07, 0.13)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/background_color = Color(0.299547, 0.299547, 0.299547, 1)
+shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
+shader_parameter/coarse_grid_color = Color(0.393085, 0.393086, 0.393085, 1)
+shader_parameter/coarse_grid_line_width = Vector2(0.05, 0.05)
+shader_parameter/fine_grid_color = Color(0.374139, 0.374139, 0.374139, 0.8)
+shader_parameter/fine_grid_subdivisions = 1.0
+shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhxw7"]
+shader = ExtResource("4_opfnp")
+shader_parameter/outerRadius = 1.043
+shader_parameter/MainAlpha = 0.694
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehtkc"]
+shader = ExtResource("6_4nkqq")
+shader_parameter/AspectRatio = 1.5
+shader_parameter/Diamonds = 10.0
+shader_parameter/pixel_size = 0.08
+shader_parameter/height = -1.0
+shader_parameter/disable_pixel = false
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_n45e2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+zoom = Vector2(3, 3)
+script = ExtResource("2_16hvj")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+material = SubResource("ShaderMaterial_cp0ys")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_n45e2")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_yhxw7")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Animation" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ehtkc")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ConveyorBelt2" type="Line2D" parent="."]
+texture_repeat = 2
+position = Vector2(192, 4)
+points = PackedVector2Array(0, 0)
+closed = true
+width = 15.0
+texture = ExtResource("2_trj04")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("7_yhxw7")
+reverse = true
+
+[node name="ConveyorBelt" type="Line2D" parent="."]
+texture_repeat = 2
+position = Vector2(-192, 4)
+points = PackedVector2Array(0, 0)
+closed = true
+width = 15.0
+texture = ExtResource("2_trj04")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("7_yhxw7")
+pieces = Array[ExtResource("8_mkpwh")]([ExtResource("9_4nkqq"), ExtResource("10_ehtkc"), ExtResource("11_6dk6o"), ExtResource("12_jr6u5"), ExtResource("13_6m47u"), ExtResource("14_84iac"), ExtResource("15_5n0dv")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_28flt")
+
+[node name="Title" type="Label" parent="CanvasLayer/Menu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.5
+offset_top = -166.5
+offset_right = 292.5
+offset_bottom = 166.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_y = 10
+theme_override_font_sizes/font_size = 120
+text = "Conveyor Madness"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/Menu"]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -269.0
+offset_right = 128.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("9_vr1f0")
+texture_pressed = ExtResource("10_t1dhk")
+texture_hover = ExtResource("11_5egv6")
+stretch_mode = 0
+
+[connection signal="timeout" from="Timer" to="ConveyorBelt" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Menu/PlayButton" to="." method="_on_play_button_pressed"]

@@ -6,6 +6,8 @@ extends Node2D
 @onready var camera_2d: CameraManager = %Camera2D
 @onready var health_bar: TextureProgressBar = $CanvasLayer/Control/HealthBar
 @onready var conveyor_belt: ConveyorBelt = $ConveyorBelt
+@onready var animation: ColorRect = $Animation
+@onready var control: Control = $CanvasLayer/Control
 
 enum GameState {
 	BUILDING,
@@ -24,6 +26,8 @@ var wood: int = 0
 var health: int = 10
 
 func _ready() -> void:
+	await start_animation()
+	
 	update_copper()
 	update_core()
 	update_gold()
@@ -31,6 +35,22 @@ func _ready() -> void:
 	update_wood()
 	
 	game_state = GameState.BUILDING
+
+func start_animation() -> void:
+	control.visible = false
+	
+	var tween = create_tween()
+	tween.tween_method(tween_animation, 1.0, -1.0, 1.5).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	
+	var tween_2 = create_tween()
+	control.modulate.a = 0.0
+	control.visible = true
+	tween_2.tween_property(control, "modulate:a", 1.0, 1.0).from(0.0).set_ease(Tween.EASE_OUT)
+	await tween_2.finished
+
+func tween_animation(value: float) -> void:
+	animation.material.set_shader_parameter("height", value)
 
 func can_buy(cost: Dictionary[Item, int]) -> bool:
 	for item: Item in cost.keys():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=67 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
-[ext_resource type="Script" path="res://Scripts/obstacle_handler.gd" id="5_dmskm"]
+[ext_resource type="Script" uid="uid://bjt18xknf0spb" path="res://Scripts/obstacle_handler.gd" id="5_dmskm"]
 [ext_resource type="Shader" uid="uid://bibmcns78lo7j" path="res://Scripts/Shaders/blur.gdshader" id="5_ueoa1"]
+[ext_resource type="Shader" uid="uid://coqmtpdxnfpuw" path="res://Scripts/Shaders/main_menu.gdshader" id="5_xdkp6"]
 [ext_resource type="Resource" uid="uid://wuyqyj2t6ef8" path="res://Resources/Items/core.tres" id="6_v2nl5"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/laser_bot.tscn" id="8_b3802"]
@@ -68,6 +69,14 @@ shader = ExtResource("4_ueoa1")
 shader_parameter/outerRadius = 1.043
 shader_parameter/MainAlpha = 0.694
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54nrm"]
+shader = ExtResource("5_xdkp6")
+shader_parameter/AspectRatio = 1.5
+shader_parameter/Diamonds = 10.0
+shader_parameter/pixel_size = 0.08
+shader_parameter/height = -1.0
+shader_parameter/disable_pixel = false
+
 [sub_resource type="Environment" id="Environment_7u77a"]
 background_mode = 3
 glow_enabled = true
@@ -87,7 +96,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
-[sub_resource type="Resource" id="Resource_dmskm"]
+[sub_resource type="Resource" id="Resource_xdkp6"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -99,7 +108,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_xdkp6"]
+[sub_resource type="Resource" id="Resource_54nrm"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -113,7 +122,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_54nrm"]
+[sub_resource type="Resource" id="Resource_55jeb"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Copper Bolt"
@@ -125,7 +134,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_55jeb"]
+[sub_resource type="Resource" id="Resource_gsvbx"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Stick"
@@ -137,7 +146,7 @@ health = 2
 speed = 70.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_gsvbx"]
+[sub_resource type="Resource" id="Resource_bv80c"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -149,7 +158,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_bv80c"]
+[sub_resource type="Resource" id="Resource_ptfg5"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -163,7 +172,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_ptfg5"]
+[sub_resource type="Resource" id="Resource_2daye"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Lazer Gun"
@@ -177,7 +186,7 @@ health = 8
 speed = 40.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_2daye"]
+[sub_resource type="Resource" id="Resource_1semv"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Copper Bolt"
@@ -223,6 +232,22 @@ script = ExtResource("3_1w6v2")
 
 [node name="Vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6vcvc")
+custom_minimum_size = Vector2(10.91, 3.835)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Animation" type="ColorRect" parent="."]
+z_index = 100
+z_as_relative = false
+material = SubResource("ShaderMaterial_54nrm")
 custom_minimum_size = Vector2(10.91, 3.835)
 anchors_preset = 15
 anchor_right = 1.0
@@ -353,13 +378,13 @@ process_mode = 1
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 2.0
-piece = SubResource("Resource_dmskm")
+piece = SubResource("Resource_xdkp6")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_xdkp6")
+piece = SubResource("Resource_54nrm")
 quantity = 2
 repetition_delay = 1.0
 
@@ -367,19 +392,19 @@ repetition_delay = 1.0
 
 [node name="WaveGroup" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_54nrm")
+piece = SubResource("Resource_55jeb")
 quantity = 5
 repetition_delay = 1.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_55jeb")
+piece = SubResource("Resource_gsvbx")
 quantity = 5
 repetition_delay = 1.5
 
 [node name="WaveGroup3" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_gsvbx")
+piece = SubResource("Resource_bv80c")
 quantity = 5
 repetition_delay = 1.0
 
@@ -387,18 +412,18 @@ repetition_delay = 1.0
 
 [node name="WaveGroup" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 0.5
-piece = SubResource("Resource_bv80c")
+piece = SubResource("Resource_ptfg5")
 quantity = 2
 repetition_delay = 0.5
 
 [node name="WaveGroup2" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_ptfg5")
+piece = SubResource("Resource_2daye")
 quantity = 1
 
 [node name="WaveGroup3" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_2daye")
+piece = SubResource("Resource_1semv")
 quantity = 5
 repetition_delay = 0.7
 
@@ -406,6 +431,7 @@ repetition_delay = 0.7
 process_mode = 3
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_cbgmd")
 layout_mode = 3
 anchors_preset = 15
