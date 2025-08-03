@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cxxttrqr6apm6"]
+[gd_scene load_steps=22 format=3 uid="uid://cxxttrqr6apm6"]
 
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dsqqxf6y6ptee" path="res://Scripts/UI/main_menu.gd" id="1_n45e2"]
 [ext_resource type="Script" uid="uid://qsqxdqfvd5sf" path="res://Scripts/camera.gd" id="2_16hvj"]
-[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_trj04"]
-[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://cdcmtvq8e8dck" path="res://Graphics/background.aseprite" id="3_mkpwh"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_opfnp"]
 [ext_resource type="Shader" uid="uid://coqmtpdxnfpuw" path="res://Scripts/Shaders/main_menu.gdshader" id="6_4nkqq"]
 [ext_resource type="Script" uid="uid://btreddyk5xgj6" path="res://Scripts/UI/conveyor_belt_menu_animation.gd" id="7_yhxw7"]
@@ -20,18 +19,6 @@
 [ext_resource type="Resource" uid="uid://bgxhvtv1i180h" path="res://Resources/Pieces/box.tres" id="13_6m47u"]
 [ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="14_84iac"]
 [ext_resource type="Resource" uid="uid://b5hjgj7gv0a2f" path="res://Resources/Pieces/magnet.tres" id="15_5n0dv"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cp0ys"]
-shader = ExtResource("2_ce3w2")
-shader_parameter/scale = Vector2(0.07, 0.13)
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/background_color = Color(0.299547, 0.299547, 0.299547, 1)
-shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
-shader_parameter/coarse_grid_color = Color(0.393085, 0.393086, 0.393085, 1)
-shader_parameter/coarse_grid_line_width = Vector2(0.05, 0.05)
-shader_parameter/fine_grid_color = Color(0.374139, 0.374139, 0.374139, 0.8)
-shader_parameter/fine_grid_subdivisions = 1.0
-shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhxw7"]
 shader = ExtResource("4_opfnp")
@@ -54,21 +41,13 @@ unique_name_in_owner = true
 zoom = Vector2(3, 3)
 script = ExtResource("2_16hvj")
 
-[node name="Background" type="ColorRect" parent="."]
-z_index = -100
-material = SubResource("ShaderMaterial_cp0ys")
-custom_minimum_size = Vector2(10.91, 3.835)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Background" type="TextureRect" parent="."]
 offset_left = -192.0
 offset_top = -108.0
 offset_right = 192.0
 offset_bottom = 108.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("3_n45e2")
+texture = ExtResource("3_mkpwh")
+stretch_mode = 1
 
 [node name="Vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_yhxw7")

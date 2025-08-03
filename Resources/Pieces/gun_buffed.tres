@@ -15,7 +15,7 @@ texture = ExtResource("6_pq4s6")
 drop = Dictionary[ExtResource("1_2ry48"), Vector2i]({
 ExtResource("2_ub0s4"): Vector2i(1, 2),
 ExtResource("3_6b1ot"): Vector2i(0, 1),
-ExtResource("4_trqho"): Vector2i(0, 1)
+ExtResource("4_trqho"): Vector2i(0, 3)
 })
 health = 10
 speed = 80.0

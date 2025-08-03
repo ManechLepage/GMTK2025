@@ -112,6 +112,7 @@ func _on_restart_button_pressed() -> void:
 	get_tree().change_scene_to_packed(MAIN_MENU)
 
 func death_animation() -> void:
+	get_tree().paused = true
 	Game.lose.play()
 	
 	var tween_2 = create_tween()
@@ -122,6 +123,24 @@ func death_animation() -> void:
 	control_2.visible = true
 	control_2.scale = Vector2.ZERO
 	control_2.get_child(0).text = "You lost at wave " + str(wave_manager.current_wave_index) + "!"
+	var tween = create_tween()
+	tween.tween_property(control_2, "scale", Vector2(1.0, 1.0), 1.5).set_trans(Tween.TRANS_BACK)
+	
+	await tween.finished
+	blur.visible = true
+
+func win_animation() -> void:
+	get_tree().paused = true
+	Game.win.play()
+	
+	var tween_2 = create_tween()
+	control.visible = true
+	tween_2.tween_property(control, "modulate:a", 0.0, 1.0).from(1.0).set_ease(Tween.EASE_OUT)
+	await tween_2.finished
+	
+	control_2.visible = true
+	control_2.scale = Vector2.ZERO
+	control_2.get_child(0).text = "You win!"
 	var tween = create_tween()
 	tween.tween_property(control_2, "scale", Vector2(1.0, 1.0), 1.5).set_trans(Tween.TRANS_BACK)
 	

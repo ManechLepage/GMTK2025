@@ -12,8 +12,8 @@ script = ExtResource("4_t6put")
 name = "Magnet"
 texture = ExtResource("5_4s0t4")
 drop = Dictionary[ExtResource("1_tko6y"), Vector2i]({
-ExtResource("2_vhold"): Vector2i(0, 1),
-ExtResource("3_rvxfl"): Vector2i(1, 1)
+ExtResource("2_vhold"): Vector2i(1, 8),
+ExtResource("3_rvxfl"): Vector2i(2, 1)
 })
 health = 30
 speed = 30.0

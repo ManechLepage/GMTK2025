@@ -28,7 +28,7 @@ func animate_title() -> void:
 	conveyor_belt.start_spawning()
 	
 	play_button.modulate.a = 0.0
-	play_button.visible = true
+	#play_button.visible = true
 	var tween2 = create_tween()
 	tween2.tween_property(play_button, "modulate:a", 1.0, 1.5).set_ease(Tween.EASE_OUT)
 	await tween2.finished
