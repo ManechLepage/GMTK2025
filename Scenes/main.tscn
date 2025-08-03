@@ -1,11 +1,11 @@
-[gd_scene load_steps=66 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=47 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://tyi5c7jbrg63" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
-[ext_resource type="Script" path="res://Scripts/background.gd" id="3_1w6v2"]
+[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_1w6v2"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
 [ext_resource type="Script" uid="uid://bjt18xknf0spb" path="res://Scripts/obstacle_handler.gd" id="5_dmskm"]
@@ -14,34 +14,23 @@
 [ext_resource type="Resource" uid="uid://wuyqyj2t6ef8" path="res://Resources/Items/core.tres" id="6_v2nl5"]
 [ext_resource type="PackedScene" uid="uid://dxmk7tabins44" path="res://Scenes/Waves/wave_manager.tscn" id="7_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b4tti4g1y12ry" path="res://Scenes/Towers/TowerTypes/laser_bot.tscn" id="8_b3802"]
-[ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="8_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://dseik1ylmutl5" path="res://Scenes/Waves/wave_group.tscn" id="9_6iyac"]
 [ext_resource type="Texture2D" uid="uid://d0rgxyrcr6d7n" path="res://Graphics/ConveyorBelt/start.aseprite" id="10_aqgau"]
 [ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="12_6iyac"]
-[ext_resource type="Script" uid="uid://cqmpxylkyn4yv" path="res://Scripts/Items/item.gd" id="12_ee4r6"]
-[ext_resource type="PackedScene" uid="uid://b37vw7hfcpfn7" path="res://Scenes/Towers/TowerTypes/zapper.tscn" id="12_k2e45"]
-[ext_resource type="PackedScene" uid="uid://c5egjdq1cef44" path="res://Scenes/Towers/TowerTypes/freeze_bot.tscn" id="13_536cc"]
-[ext_resource type="Script" uid="uid://cjcywhuonibh0" path="res://Scripts/Pieces/piece.gd" id="13_gt3je"]
 [ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="13_k12tt"]
-[ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="14_3pmx8"]
 [ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="14_h1bgf"]
-[ext_resource type="Script" path="res://Scripts/camera.gd" id="15_8cuat"]
+[ext_resource type="Script" uid="uid://qsqxdqfvd5sf" path="res://Scripts/camera.gd" id="15_8cuat"]
 [ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="15_b3802"]
 [ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="15_u50mg"]
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
-[ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
+[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
 [ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="21_r33sp"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 [ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="23_neg2b"]
-[ext_resource type="Texture2D" uid="uid://crb5jvccuvwat" path="res://Graphics/Pieces/copper_bolt.aseprite" id="27_kwxat"]
-[ext_resource type="Texture2D" uid="uid://jnj63pf1ibrf" path="res://Graphics/Pieces/stick.aseprite" id="28_aa8k8"]
 [ext_resource type="Texture2D" uid="uid://80flbgmsbuan" path="res://Graphics/UI/Buttons/WaveStart/normal.aseprite" id="28_ueoa1"]
 [ext_resource type="Texture2D" uid="uid://ckvintgpgiipk" path="res://Graphics/UI/Buttons/WaveStart/pressed.aseprite" id="29_7k868"]
 [ext_resource type="Resource" uid="uid://7orx6y1o3nc0" path="res://Resources/Items/gold.tres" id="29_jut3y"]
 [ext_resource type="Texture2D" uid="uid://g1pjnd45babd" path="res://Graphics/UI/Buttons/WaveStart/hovered.aseprite" id="30_hpc6h"]
-[ext_resource type="Texture2D" uid="uid://cwa258pccnauv" path="res://Graphics/Pieces/gun.aseprite" id="30_v2nl5"]
 [ext_resource type="Texture2D" uid="uid://dxdaccf2ghqou" path="res://Graphics/UI/Buttons/WavePause/normal.aseprite" id="31_e08e2"]
 [ext_resource type="Texture2D" uid="uid://7j22tgt2sntu" path="res://Graphics/UI/Buttons/WavePause/pressed.aseprite" id="32_neg2b"]
 [ext_resource type="Texture2D" uid="uid://cde7sm7bpvt45" path="res://Graphics/UI/Buttons/WavePause/hovered.aseprite" id="33_r33sp"]
@@ -94,108 +83,6 @@ shader = ExtResource("5_ueoa1")
 shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
-
-[sub_resource type="Resource" id="Resource_dmskm"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Bolt"
-texture = ExtResource("14_3pmx8")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("16_cbgmd"): Vector2i(0, 2)
-})
-health = 4
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_xdkp6"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Box"
-texture = ExtResource("17_1w6v2")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("15_u50mg"): Vector2i(0, 1),
-ExtResource("16_cbgmd"): Vector2i(0, 1),
-ExtResource("21_r33sp"): Vector2i(0, 1)
-})
-health = 3
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_54nrm"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Copper Bolt"
-texture = ExtResource("27_kwxat")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("21_r33sp"): Vector2i(1, 2)
-})
-health = 4
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_55jeb"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Stick"
-texture = ExtResource("28_aa8k8")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("15_u50mg"): Vector2i(0, 2)
-})
-health = 2
-speed = 70.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_gsvbx"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Bolt"
-texture = ExtResource("14_3pmx8")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("16_cbgmd"): Vector2i(1, 2)
-})
-health = 4
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_bv80c"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Box"
-texture = ExtResource("17_1w6v2")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("15_u50mg"): Vector2i(1, 2),
-ExtResource("16_cbgmd"): Vector2i(0, 1),
-ExtResource("21_r33sp"): Vector2i(0, 1)
-})
-health = 3
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_ptfg5"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Lazer Gun"
-texture = ExtResource("30_v2nl5")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("16_cbgmd"): Vector2i(1, 2),
-ExtResource("21_r33sp"): Vector2i(0, 1),
-ExtResource("29_jut3y"): Vector2i(0, 1)
-})
-health = 8
-speed = 40.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
-
-[sub_resource type="Resource" id="Resource_2daye"]
-resource_local_to_scene = true
-script = ExtResource("13_gt3je")
-name = "Copper Bolt"
-texture = ExtResource("27_kwxat")
-drop = Dictionary[ExtResource("12_ee4r6"), Vector2i]({
-ExtResource("21_r33sp"): Vector2i(1, 2)
-})
-health = 4
-speed = 50.0
-metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cbgmd"]
 shader = ExtResource("19_u50mg")
@@ -333,13 +220,6 @@ texture = ExtResource("10_aqgau")
 [node name="Tower" parent="Towers" instance=ExtResource("8_b3802")]
 position = Vector2(-25, 2)
 
-[node name="Zapper" parent="Towers" instance=ExtResource("12_k2e45")]
-position = Vector2(18, -31)
-
-[node name="LaserBot2" parent="Towers" instance=ExtResource("13_536cc")]
-position = Vector2(44, 59)
-loop_interior = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 zoom = Vector2(3, 3)
@@ -366,64 +246,51 @@ mouse_filter = 2
 [node name="WaveManager" parent="." instance=ExtResource("7_hptm8")]
 process_mode = 1
 
-[node name="Wave1" parent="WaveManager" instance=ExtResource("8_d1ilt")]
-
-[node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
-delay = 2.0
-piece = SubResource("Resource_dmskm")
-quantity = 3
-repetition_delay = 2.0
-
-[node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_xdkp6")
-quantity = 2
-repetition_delay = 1.0
-
-[node name="Wave2" parent="WaveManager" instance=ExtResource("8_d1ilt")]
-
-[node name="WaveGroup" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_54nrm")
-quantity = 5
-repetition_delay = 1.0
-
-[node name="WaveGroup2" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_55jeb")
-quantity = 5
-repetition_delay = 1.5
-
-[node name="WaveGroup3" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_gsvbx")
-quantity = 5
-repetition_delay = 1.0
-
-[node name="Wave3" parent="WaveManager" instance=ExtResource("8_d1ilt")]
-
-[node name="WaveGroup" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
-delay = 0.5
-piece = SubResource("Resource_bv80c")
-quantity = 2
-repetition_delay = 0.5
-
-[node name="WaveGroup2" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_ptfg5")
-quantity = 1
-
-[node name="WaveGroup3" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
-delay = 1.0
-piece = SubResource("Resource_2daye")
-quantity = 5
-repetition_delay = 0.7
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control2" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 392.0
+offset_top = 171.0
+offset_right = -410.0
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_6iyac")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "You lost at wave 10 !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -31.0
+offset_right = 147.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Restart"
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_cbgmd")
 layout_mode = 3
 anchors_preset = 15

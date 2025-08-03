@@ -57,11 +57,11 @@ texture = ExtResource("3_bm3jc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 43.0
+offset_left = 39.0
 offset_top = 4.0
 offset_right = 51.0
 offset_bottom = 22.0
-text = "1"
+text = "2"
 
 [node name="TextureRect5" type="TextureRect" parent="."]
 layout_mode = 0
@@ -74,11 +74,11 @@ expand_mode = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 39.0
+offset_left = 35.0
 offset_top = 21.0
-offset_right = 51.0
+offset_right = 52.0
 offset_bottom = 39.0
-text = "3"
+text = "10"
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 layout_mode = 0

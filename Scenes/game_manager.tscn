@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcw4dkaepgbty"]
 
 [ext_resource type="Script" uid="uid://bq2836eq38i04" path="res://Scripts/game_manager.gd" id="1_oj352"]
-[ext_resource type="AudioStream" uid="uid://cn88gbamqjj4r" path="res://Audio/SFX/laser_attack.wav" id="2_e5fcp"]
+[ext_resource type="AudioStream" uid="uid://8s1hk7b0hksc" path="res://Audio/SFX/laser_3.wav" id="2_kmrvs"]
 [ext_resource type="AudioStream" uid="uid://dhl7t5ev6d37j" path="res://Audio/SFX/freeze.wav" id="3_kmrvs"]
 [ext_resource type="AudioStream" uid="uid://bd6rlpk8v5w05" path="res://Audio/SFX/zap_attack.wav" id="4_e6ru4"]
 [ext_resource type="AudioStream" uid="uid://okpg64e65fw6" path="res://Audio/SFX/ice_beam.wav" id="5_sm5re"]
@@ -17,9 +17,9 @@
 script = ExtResource("1_oj352")
 
 [node name="LaserAttack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_e5fcp")
-volume_db = -15.0
-pitch_scale = 2.0
+stream = ExtResource("2_kmrvs")
+volume_db = -25.0
+pitch_scale = 0.7
 bus = &"SFX"
 
 [node name="FreezeAttack" type="AudioStreamPlayer" parent="."]
