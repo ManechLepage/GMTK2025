@@ -16,5 +16,5 @@ ExtResource("2_vhold"): Vector2i(1, 8),
 ExtResource("3_rvxfl"): Vector2i(2, 1)
 })
 health = 30
-speed = 30.0
+speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
