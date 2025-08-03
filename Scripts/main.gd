@@ -47,6 +47,7 @@ func start_animation() -> void:
 	
 	if Game.did_tutorial:
 		tutorial.visible = false
+		blur.visible = false
 	
 	var tween = create_tween()
 	tween.tween_method(tween_animation, 1.0, -1.0, 1.5).set_ease(Tween.EASE_OUT)
@@ -59,6 +60,7 @@ func start_animation() -> void:
 	await tween_2.finished
 	
 	if not Game.did_tutorial:
+		blur.visible = true
 		get_tree().paused = true
 
 func tween_animation(value: float) -> void:
