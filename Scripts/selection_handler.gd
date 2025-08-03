@@ -9,6 +9,8 @@ var can_drag_tower: bool = false
 
 var is_in_menu: bool
 
+const MAIN_MENU = preload("res://Scenes/main_menu.tscn")
+
 @onready var tower_menu: TowerMenu = %TowerMenu
 
 @onready var main: Main = $".."
@@ -100,3 +102,6 @@ func exit_menu() -> void:
 func _on_wave_button_pause_pressed() -> void:
 	main.game_state = main.GameState.PAUSED
 	get_tree().paused = true
+
+func _on_restart_button_pressed() -> void:
+	get_tree().change_scene_to_packed(MAIN_MENU)

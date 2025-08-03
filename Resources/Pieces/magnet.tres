@@ -12,7 +12,7 @@ script = ExtResource("3_r6pl2")
 name = "Magnet"
 texture = ExtResource("5_r6pl2")
 drop = Dictionary[ExtResource("1_5b3tn"), Vector2i]({
-ExtResource("2_fo6ed"): Vector2i(0, 2),
+ExtResource("2_fo6ed"): Vector2i(0, 1),
 ExtResource("3_fo6ed"): Vector2i(1, 1)
 })
 health = 6
