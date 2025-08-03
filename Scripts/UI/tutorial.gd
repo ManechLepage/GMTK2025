@@ -15,6 +15,9 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("TutorialNext"):
 		tutorial_index += 1
+		if tutorial_index == _get_max_index() + 1:
+			_remove_tutorial()
+			return
 	if Input.is_action_just_pressed("TutorialBack"):
 		tutorial_index -= 1
 	
@@ -23,17 +26,23 @@ func _process(_delta) -> void:
 	_update_progress_text()
 	_update_tutorial_panel()
 
+func _remove_tutorial():
+	get_tree().paused = false
+	queue_free()
+
 func _update_tutorial_panel():
 	if descriptions.size() > tutorial_index:
 		description.text = descriptions[tutorial_index]
 	if previews.size() > tutorial_index:
 		preview.texture = previews[tutorial_index]
 
+func _get_max_index():
+	return max(descriptions.size(), previews.size()) - 1
+
 func _update_progress_text():
-	var max_index = max(descriptions.size(), previews.size()) - 1
+	var max_index = _get_max_index()
 	progress_text.text = str(tutorial_index + 1) + "/" + str(max_index + 1)
 
 func _cap_index(tutorial_index):
-	var max_index = max(descriptions.size(), previews.size()) - 1
+	var max_index = _get_max_index()
 	return max(min(tutorial_index, max_index), 0)
-	
