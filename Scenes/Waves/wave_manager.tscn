@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxmk7tabins44"]
+[gd_scene load_steps=21 format=3 uid="uid://dxmk7tabins44"]
 
 [ext_resource type="Script" uid="uid://cediaya3dkpks" path="res://Scripts/Pieces/Waves/wave_manager.gd" id="1_24b6x"]
 [ext_resource type="PackedScene" uid="uid://cpl0mh056ebqp" path="res://Scenes/Waves/wave.tscn" id="2_73ycp"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://tgmljh64cbg1" path="res://Resources/Pieces/copper_bolt.tres" id="13_iedce"]
 [ext_resource type="Resource" uid="uid://dkmk240w5tqo5" path="res://Resources/Pieces/stick.tres" id="14_73ycp"]
 [ext_resource type="Resource" uid="uid://cfbv16odj6l30" path="res://Resources/Pieces/gun.tres" id="15_7rpea"]
+[ext_resource type="Resource" uid="uid://b5hjgj7gv0a2f" path="res://Resources/Pieces/magnet.tres" id="16_akpy1"]
+[ext_resource type="Resource" uid="uid://byx8dmelqsol4" path="res://Resources/Pieces/mechanical_arm.tres" id="17_ft4pc"]
 
 [sub_resource type="Resource" id="Resource_5nmv3"]
 resource_local_to_scene = true
@@ -122,3 +124,29 @@ repetition_delay = 3.0
 piece = ExtResource("14_73ycp")
 quantity = 5
 repetition_delay = 1.5
+
+[node name="Wave6" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup5" parent="Wave6" instance=ExtResource("3_7rpea")]
+delay = 2.0
+piece = ExtResource("16_akpy1")
+quantity = 3
+repetition_delay = 3.0
+
+[node name="WaveGroup6" parent="Wave6" instance=ExtResource("3_7rpea")]
+piece = ExtResource("15_7rpea")
+quantity = 4
+repetition_delay = 1.5
+
+[node name="Wave7" parent="." instance=ExtResource("2_73ycp")]
+
+[node name="WaveGroup5" parent="Wave7" instance=ExtResource("3_7rpea")]
+delay = 2.0
+piece = ExtResource("17_ft4pc")
+quantity = 2
+repetition_delay = 3.0
+
+[node name="WaveGroup6" parent="Wave7" instance=ExtResource("3_7rpea")]
+piece = ExtResource("14_73ycp")
+quantity = 4
+repetition_delay = 0.5

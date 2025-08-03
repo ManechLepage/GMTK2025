@@ -215,9 +215,10 @@ texture = ExtResource("10_aqgau")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="Tower" parent="." instance=ExtResource("8_b3802")]
+position = Vector2(-25, 2)
 
-[node name="LaserBot" parent="Towers" instance=ExtResource("12_k2e45")]
+[node name="Towers" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
@@ -260,6 +261,7 @@ offset_right = -410.0
 offset_bottom = -229.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(175, 125)
 theme = ExtResource("12_6iyac")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control2"]
@@ -273,7 +275,7 @@ text = "You lost at wave 10 !"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Control2"]
+[node name="RestartButton" type="Button" parent="CanvasLayer/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -536,6 +538,7 @@ offset_right = -122.0
 offset_bottom = 302.0
 scale = Vector2(2.635, 2.635)
 
+[connection signal="pressed" from="CanvasLayer/Control2/RestartButton" to="SelectionHandler" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonStart" to="SelectionHandler" method="play_wave_request"]
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonPause" to="SelectionHandler" method="_on_wave_button_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TowerShop/Laser" to="ShopHandler" method="_on_laser_buy_request"]
