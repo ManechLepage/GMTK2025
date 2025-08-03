@@ -53,6 +53,8 @@ func start_animation() -> void:
 	control.visible = true
 	tween_2.tween_property(control, "modulate:a", 1.0, 1.0).from(0.0).set_ease(Tween.EASE_OUT)
 	await tween_2.finished
+	
+	get_tree().paused = true
 
 func tween_animation(value: float) -> void:
 	animation.material.set_shader_parameter("height", value)
