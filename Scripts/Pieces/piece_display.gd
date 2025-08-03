@@ -69,8 +69,7 @@ func apply_freeze() -> void:
 
 func apply_knockback() -> void:
 	var tween = create_tween()
-	tween.tween_property(self, "progress", 15.0, 0.3).as_relative()
-	print(progress)
+	tween.tween_property(self, "progress", 15.0, 0.4).as_relative()
 	progress = max(1.0, progress)
 
 func _on_burn_timer_timeout() -> void:
