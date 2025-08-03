@@ -11,20 +11,20 @@ func _ready() -> void:
 	
 	# First triangle
 	var p1 = first_triangle.get_children()[0].global_position
-	var p2 = first_triangle.get_children()[0].global_position
-	var p3 = first_triangle.get_children()[0].global_position
+	var p2 = first_triangle.get_children()[1].global_position
+	var p3 = first_triangle.get_children()[2].global_position
 	
 	var obstacle1 = _random_point_in_triangle(rng, p1, p2, p3)
-	var obstacle1_scale = rng.randf_range(0.75, 2)
+	var obstacle1_scale = rng.randf_range(0.75, 1.5)
 	_spawn_obstacle(obstacle1, obstacle1_scale)
 	
 	# Second triangle
 	p1 = second_triangle.get_children()[0].global_position
-	p2 = second_triangle.get_children()[0].global_position
-	p3 = second_triangle.get_children()[0].global_position
+	p2 = second_triangle.get_children()[1].global_position
+	p3 = second_triangle.get_children()[2].global_position
 	
 	var obstacle2 = _random_point_in_triangle(rng, p1, p2, p3)
-	var obstacle2_scale = rng.randf_range(0.75, 2)
+	var obstacle2_scale = rng.randf_range(0.75, 1.5)
 	_spawn_obstacle(obstacle2, obstacle2_scale)
 
 func _spawn_obstacle(position, scale):
@@ -38,7 +38,8 @@ func _random_point_in_triangle(rng, p1, p2, p3):
 	var v = rng.randf_range(0, 1)
 	
 	if u + v > 1:
-		u = 1 - u
-		v = 1 - v
+		u = 1.0 - u
+		v = 1.0 - v
 	
-	return p1 + u * (p2 - p1) + v * (p3 - p1)
+	var point = p1 + u * (p2 - p1) + v * (p3 - p1)
+	return point

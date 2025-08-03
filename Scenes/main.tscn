@@ -1,12 +1,11 @@
-[gd_scene load_steps=67 format=3 uid="uid://8eqjqsaps8ap"]
+[gd_scene load_steps=66 format=3 uid="uid://8eqjqsaps8ap"]
 
 [ext_resource type="Script" uid="uid://dbbo3keta02ga" path="res://Scripts/main.gd" id="1_h1bgf"]
 [ext_resource type="Script" uid="uid://cft2rkwv3da2b" path="res://Scripts/selection_handler.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://chxx2s0q0soil" path="res://Scripts/conveyor_belt.gd" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://cbi51es4mt54e" path="res://Graphics/ConveyorBelt/background.aseprite" id="2_21xkr"]
 [ext_resource type="Script" uid="uid://tyi5c7jbrg63" path="res://Scripts/shop_handler.gd" id="2_gt3je"]
-[ext_resource type="Script" uid="uid://bff68my6bu7ip" path="res://Scripts/background.gd" id="3_1w6v2"]
-[ext_resource type="PackedScene" uid="uid://cmid7b5v2obbj" path="res://Scenes/obstacle.tscn" id="3_jjvhh"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="3_1w6v2"]
 [ext_resource type="Script" uid="uid://c5s7c4ydvfhs" path="res://Scripts/path_2d.gd" id="4_21xkr"]
 [ext_resource type="Shader" uid="uid://bmqtfq3a13bdg" path="res://Scripts/Shaders/vignette.gdshader" id="4_ueoa1"]
 [ext_resource type="Script" uid="uid://bjt18xknf0spb" path="res://Scripts/obstacle_handler.gd" id="5_dmskm"]
@@ -26,13 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://btev74q67lpj" path="res://Graphics/Items/gold_bar.aseprite" id="13_k12tt"]
 [ext_resource type="Texture2D" uid="uid://bdl0puvhf507r" path="res://Graphics/Pieces/bolt.aseprite" id="14_3pmx8"]
 [ext_resource type="Texture2D" uid="uid://de5mg7tv0yx0y" path="res://Graphics/Items/copper_bar.aseprite" id="14_h1bgf"]
-[ext_resource type="Script" uid="uid://qsqxdqfvd5sf" path="res://Scripts/camera.gd" id="15_8cuat"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="15_8cuat"]
 [ext_resource type="Texture2D" uid="uid://ccwg0n8guk3jj" path="res://Graphics/Items/steel.aseprite" id="15_b3802"]
 [ext_resource type="Resource" uid="uid://djg3ufskpvc3e" path="res://Resources/Items/wood.tres" id="15_u50mg"]
 [ext_resource type="Resource" uid="uid://c627qw6rs7p0r" path="res://Resources/Items/steel.tres" id="16_cbgmd"]
 [ext_resource type="Texture2D" uid="uid://dqycdxfk4uv4h" path="res://Graphics/Items/wood.aseprite" id="16_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bmpdukm2chq0e" path="res://Graphics/Pieces/box.aseprite" id="17_1w6v2"]
-[ext_resource type="Shader" uid="uid://c2s6lyu5340t2" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/background.gdshader" id="19_u50mg"]
 [ext_resource type="Resource" uid="uid://c48fhdg5j6tqf" path="res://Resources/Items/copper.tres" id="21_r33sp"]
 [ext_resource type="PackedScene" uid="uid://dwnr0l2wimhtf" path="res://Scenes/Towers/UI/tower_menu.tscn" id="23_gt3je"]
 [ext_resource type="Texture2D" uid="uid://ccgwn61y3tatb" path="res://Graphics/Items/core.aseprite" id="23_neg2b"]
@@ -328,13 +327,6 @@ script = ExtResource("4_21xkr")
 texture = ExtResource("10_aqgau")
 
 [node name="Obstacles" type="Node2D" parent="."]
-
-[node name="Obstacle" parent="Obstacles" instance=ExtResource("3_jjvhh")]
-position = Vector2(-61, 30)
-
-[node name="Obstacle2" parent="Obstacles" instance=ExtResource("3_jjvhh")]
-position = Vector2(55, -61)
-scale = Vector2(1.25, 1.25)
 
 [node name="Towers" type="Node2D" parent="."]
 
