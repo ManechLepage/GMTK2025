@@ -67,8 +67,8 @@ script = ExtResource("1_24b6x")
 
 [node name="WaveGroup2" parent="Wave1" instance=ExtResource("3_7rpea")]
 piece = SubResource("Resource_5nmv3")
-quantity = 3
-repetition_delay = 2.0
+quantity = 2
+repetition_delay = 3.0
 
 [node name="Wave2" parent="." instance=ExtResource("2_73ycp")]
 
