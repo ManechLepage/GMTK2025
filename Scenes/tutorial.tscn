@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://7g0lxgu4soiy"]
 
-[ext_resource type="Script" uid="uid://bacc1eh1camac" path="res://Scripts/UI/tutorial.gd" id="1_omtrn"]
+[ext_resource type="Script" path="res://Scripts/UI/tutorial.gd" id="1_omtrn"]
 [ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="2_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://bt6253yxwt7yk" path="res://Graphics/UI/Tutorial/Conveyor.png" id="2_p8jf4"]
 [ext_resource type="Texture2D" uid="uid://c6cc5led5gnj0" path="res://Graphics/UI/Tutorial/BuyTowers.png" id="3_p1f1o"]
