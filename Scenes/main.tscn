@@ -95,7 +95,7 @@ shader_parameter/samples = 22
 shader_parameter/lod = 2
 shader_parameter/tint_color = Color(0, 0, 0, 0.113)
 
-[sub_resource type="Resource" id="Resource_xdkp6"]
+[sub_resource type="Resource" id="Resource_dmskm"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -107,7 +107,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_54nrm"]
+[sub_resource type="Resource" id="Resource_xdkp6"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -121,7 +121,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_55jeb"]
+[sub_resource type="Resource" id="Resource_54nrm"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Copper Bolt"
@@ -133,7 +133,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_gsvbx"]
+[sub_resource type="Resource" id="Resource_55jeb"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Stick"
@@ -145,7 +145,7 @@ health = 2
 speed = 70.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_bv80c"]
+[sub_resource type="Resource" id="Resource_gsvbx"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Bolt"
@@ -157,7 +157,7 @@ health = 4
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_ptfg5"]
+[sub_resource type="Resource" id="Resource_bv80c"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Box"
@@ -171,7 +171,7 @@ health = 3
 speed = 50.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_2daye"]
+[sub_resource type="Resource" id="Resource_ptfg5"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Lazer Gun"
@@ -185,7 +185,7 @@ health = 8
 speed = 40.0
 metadata/_custom_type_script = "uid://cjcywhuonibh0"
 
-[sub_resource type="Resource" id="Resource_1semv"]
+[sub_resource type="Resource" id="Resource_2daye"]
 resource_local_to_scene = true
 script = ExtResource("13_gt3je")
 name = "Copper Bolt"
@@ -370,13 +370,13 @@ process_mode = 1
 
 [node name="WaveGroup" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 2.0
-piece = SubResource("Resource_xdkp6")
+piece = SubResource("Resource_dmskm")
 quantity = 3
 repetition_delay = 2.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave1" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_54nrm")
+piece = SubResource("Resource_xdkp6")
 quantity = 2
 repetition_delay = 1.0
 
@@ -384,19 +384,19 @@ repetition_delay = 1.0
 
 [node name="WaveGroup" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_55jeb")
+piece = SubResource("Resource_54nrm")
 quantity = 5
 repetition_delay = 1.0
 
 [node name="WaveGroup2" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_gsvbx")
+piece = SubResource("Resource_55jeb")
 quantity = 5
 repetition_delay = 1.5
 
 [node name="WaveGroup3" parent="WaveManager/Wave2" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_bv80c")
+piece = SubResource("Resource_gsvbx")
 quantity = 5
 repetition_delay = 1.0
 
@@ -404,18 +404,18 @@ repetition_delay = 1.0
 
 [node name="WaveGroup" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 0.5
-piece = SubResource("Resource_ptfg5")
+piece = SubResource("Resource_bv80c")
 quantity = 2
 repetition_delay = 0.5
 
 [node name="WaveGroup2" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_2daye")
+piece = SubResource("Resource_ptfg5")
 quantity = 1
 
 [node name="WaveGroup3" parent="WaveManager/Wave3" instance=ExtResource("9_6iyac")]
 delay = 1.0
-piece = SubResource("Resource_1semv")
+piece = SubResource("Resource_2daye")
 quantity = 5
 repetition_delay = 0.7
 

@@ -1,0 +1,143 @@
+[gd_scene load_steps=6 format=3 uid="uid://7g0lxgu4soiy"]
+
+[ext_resource type="Script" uid="uid://bacc1eh1camac" path="res://Scripts/UI/tutorial.gd" id="1_omtrn"]
+[ext_resource type="Texture2D" uid="uid://tl727u505sr5" path="res://Graphics/UI/Panels/empty_small_panel.aseprite" id="2_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://bt6253yxwt7yk" path="res://Graphics/UI/Tutorial/Conveyor.png" id="2_p8jf4"]
+[ext_resource type="Texture2D" uid="uid://c6cc5led5gnj0" path="res://Graphics/UI/Tutorial/BuyTowers.png" id="3_p1f1o"]
+[ext_resource type="Theme" uid="uid://b434ba74uq75h" path="res://Graphics/UI/main_theme.tres" id="3_p8jf4"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_omtrn")
+descriptions = Array[String](["This is the conveyor. Place towers to destroy the incoming components before they complete the loop.", "You can build towers using a Core, given every round."])
+previews = Array[Texture2D]([ExtResource("2_p8jf4"), ExtResource("3_p1f1o")])
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -178.5
+offset_right = 171.5
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DescriptionBox" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 52.785
+offset_right = 40.0
+offset_bottom = 92.785
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Description" type="Label" parent="DescriptionBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -38.0
+offset_right = 92.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_p8jf4")
+theme_override_colors/font_color = Color(0.643137, 0.768627, 0.870588, 1)
+theme_override_font_sizes/font_size = 16
+text = "Description here and there is some more text that does not fix ohh nooooo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Preview" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Image" type="TextureRect" parent="Preview"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -157.0
+offset_right = 123.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p8jf4")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Overlays" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Overlays"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.5
+offset_top = -178.0
+offset_right = 139.5
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i6t4g")
+
+[node name="Background2" type="TextureRect" parent="Overlays"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -3.0
+offset_right = 140.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_i6t4g")
