@@ -10,9 +10,11 @@ extends Node2D
 const MAIN = preload("res://Scenes/main.tscn")
 
 func _ready() -> void:
+	animation.material.set_shader_parameter("height", -1.0)
 	animate_title()
 
 func animate_title() -> void:
+	
 	var tween = create_tween()
 	tween.tween_property(title, "position", Vector2(0.0, -140.0), 2.0).as_relative().set_trans(Tween.TRANS_BACK)
 	

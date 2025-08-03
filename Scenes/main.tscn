@@ -542,6 +542,7 @@ scale = Vector2(2.635, 2.635)
 visible = false
 layout_mode = 1
 
+[connection signal="pressed" from="CanvasLayer/Control2/Button" to="SelectionHandler" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonStart" to="SelectionHandler" method="play_wave_request"]
 [connection signal="pressed" from="CanvasLayer/Control/WaveButtonPause" to="SelectionHandler" method="_on_wave_button_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TowerShop/Laser" to="ShopHandler" method="_on_laser_buy_request"]

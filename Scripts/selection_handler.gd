@@ -10,6 +10,7 @@ var can_drag_tower: bool = false
 var is_in_menu: bool
 
 const MAIN_MENU = preload("res://Scenes/main_menu.tscn")
+
 @onready var control_2: Control = $"../CanvasLayer/Control2"
 @onready var blur: ColorRect = %Blur
 @onready var control: Control = $"../CanvasLayer/Control"
@@ -107,9 +108,12 @@ func _on_wave_button_pause_pressed() -> void:
 	get_tree().paused = true
 
 func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(MAIN_MENU)
 
 func death_animation() -> void:
+	Game.lose.play()
+	
 	var tween_2 = create_tween()
 	control.visible = true
 	tween_2.tween_property(control, "modulate:a", 0.0, 1.0).from(1.0).set_ease(Tween.EASE_OUT)
@@ -123,3 +127,6 @@ func death_animation() -> void:
 	
 	await tween.finished
 	blur.visible = true
+
+func _on_button_pressed() -> void:
+	_on_restart_button_pressed()
